@@ -6,9 +6,14 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+### Usuário da Loja:
+- Gerente de loja de autopeças. João, 45 anos, com formação em administração de empresas. Trabalha na loja de autopeças há 10 anos e é responsável pelo estoque e pela gestão de compras. Ele precisa acessar o sistema para cadastrar e atualizar produtos, gerenciar o estoque, exibir produtos disponíveis e verificar o histórico de produtos reservados.
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+### Administrador do Sistema:
+- Fábio, programador e desenvolvedor de sistemas, 39 anos, formado em Sistemas da Informação. Ele é responsável por desenvolver e manter o sistema Auto Book, garantindo que os usuários tenham uma experiência fácil e intuitiva ao usar a plataforma. Ela precisa monitorar e atualizar o sistema regularmente, além de estar disponível para responder às solicitações dos usuários em caso de problemas técnicos.
+
+### Comprador: 
+- Motorista de aplicativo. Mario, 30 anos, com formação em engenharia. Ele usa seu carro para trabalhar como motorista de aplicativo e precisa encontrar rapidamente as peças de reposição necessárias para manter seu veículo em bom estado. Ele precisa acessar o sistema para buscar produtos, reservar produtos e verificar o histórico de reservas.
 
 > **Links Úteis**:
 > - [Rock Content](https://rockcontent.com/blog/personas/)
@@ -22,14 +27,33 @@ Lembre-se que você deve ser enumerar e descrever precisamente e personalizada t
 
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+### Usuário:
+- Como um motorista que depende do meu carro para trabalhar, eu quero poder encontrar a peça que preciso com rapidez e eficiência, para que eu possa reparar meu veículo o mais rápido possível e voltar a trabalhar.
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+- Como um mecânico que atende a vários clientes em um dia, eu quero poder localizar e reservar peças de maneira conveniente e confiável, para que eu possa atender aos pedidos de meus clientes com eficiência.
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+### Loja:
+- Como proprietário de oficina, eu quero ter acesso a um sistema que me permita gerenciar meus pedidos de peças, de forma que eu possa controlar o estoque de minha oficina e planejar adequadamente a manutenção e reparo dos veículos de meus clientes.
+Como proprietário de loja de autopeças, eu quero ter acesso a uma plataforma que me permita divulgar meu estoque para clientes em potencial, para que eu possa aumentar minhas vendas e minha visibilidade no mercado.
+Como uma loja, eu quero poder cadastrar novos produtos manualmente ou através da importação de uma planilha Excel, para que eu possa gerenciar meu estoque de forma eficiente.
+
+- Como proprietário de loja de autopeças, eu quero poder atualizar ou excluir produtos existentes, para que eu possa manter meu estoque atualizado e oferecer aos usuários produtos disponíveis em estoque.
+Como proprietário de loja de autopeças, eu quero poder ver os produtos disponíveis em estoque em tempo real, para que eu possa oferecer aos usuários informações precisas e atualizadas sobre os produtos que estou vendendo.
+
+- Como proprietário de loja de autopeças, eu quero poder receber notificações de reservas de produtos, para que eu possa preparar os produtos para o cliente e evitar atrasos ou problemas de estoque.
+Como proprietário de loja de autopeças, eu quero poder ver um histórico dos produtos reservados, para que eu possa controlar o fluxo de vendas e o estoque da minha loja.
+
+### Comprador:
+- Como um comprador, eu quero poder buscar produtos facilmente, utilizando diferentes filtros e opções de pesquisa, para que eu possa encontrar rapidamente o produto que estou procurando.
+
+- Como um comprador de peças de reposição, eu quero ter acesso a informações precisas e atualizadas sobre a disponibilidade de peças, preços e marcas, para que eu possa tomar uma decisão de compra informada e confiável.
+
+- Como um comprador, eu quero poder reservar produtos facilmente, com apenas alguns cliques, para que eu possa garantir que o produto estará disponível quando eu for buscá-lo.
+
+- Como um comprador, eu quero poder ver um histórico das minhas reservas anteriores, para que eu possa controlar minhas compras e planejar minhas atividades futuras com base na disponibilidade dos produtos.
+
+- Como um entusiasta de carros, eu quero poder encontrar peças de reposição personalizadas para o meu veículo, para que eu possa melhorar seu desempenho e aparência de acordo com minha preferência pessoal
+
 
 > **Links Úteis**:
 > - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
@@ -40,15 +64,23 @@ Apresente aqui as histórias de usuário que são relevantes para o projeto de s
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
-
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade | Responsável |
-|------|-----------------------------------------|----| ----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA |  |
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA | |
-
+| ID | Descrição | Prioridade | Responsável |
+| :---         |     :---      |          :--- | :---   |
+| RF-001 | Cadastro de Usuário | Alta   |  |
+| RF-002 | Login       | Media     |  |
+| RF-003 | Cadastro de produto único e importação de excel | Alta |  |
+| RF-004 | Atualizar produto único e a importação de excel | Alta |  |
+| RF-005 | Deletar Produto | Alta |  |
+| RF-006 | Mostrar Produtos disponíveis em estoque | Alta |  |
+| RF-007 | Exibir produtos reservados | Baixa |  |
+| RF-008 | Notificação indicando se o produto foi reservado | Baixa |  |
+| RF-009 | Histórico de produtos reservados | Baixa |  |
+| RF-010 | Buscar produtos | Alta |  |
+| RF-011 | Reservar produtos | Alta |  |
+| RF-012 | Histórico de reservas | Media |  |
+| RF-013 | Tipos de Acesso | Media |  |
 
 ### Requisitos não Funcionais
 
