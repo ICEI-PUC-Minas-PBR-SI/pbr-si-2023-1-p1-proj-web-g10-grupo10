@@ -1,9 +1,5 @@
 # Especificações do Projeto
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
-
 ## Personas
 
 ### Usuário da Loja:
@@ -14,16 +10,6 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ### Comprador: 
 - Motorista de aplicativo. Mario, 30 anos, com formação em engenharia. Ele usa seu carro para trabalhar como motorista de aplicativo e precisa encontrar rapidamente as peças de reposição necessárias para manter seu veículo em bom estado. Ele precisa acessar o sistema para buscar produtos, reservar produtos e verificar o histórico de reservas.
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
 
 ## Histórias de Usuários
 
@@ -54,14 +40,6 @@ Como proprietário de loja de autopeças, eu quero poder ver um histórico dos p
 
 - Como um entusiasta de carros, eu quero poder encontrar peças de reposição personalizadas para o meu veículo, para que eu possa melhorar seu desempenho e aparência de acordo com minha preferência pessoal
 
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
-
 ## Requisitos
 
 ### Requisitos Funcionais
@@ -84,25 +62,17 @@ Como proprietário de loja de autopeças, eu quero poder ver um histórico dos p
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+| ID | Descrição | Prioridade | 
+| :---         |     :---      |          :--- |
+| RNF-001 | A aplicação deve ser responsiva e se adaptar a diferentes dispositivos e tamanhos de tela | Média   |
+| RNF-002 |A aplicação deve ser segura, com mecanismos de autenticação e autorização para garantir a privacidade dos dados dos usuários | Alta     |
+| RNF-003 | A aplicação deve ser de fácil utilização e possuir uma interface intuitiva e amigável ao usuário | Alta |
+| RNF-004 | A aplicação deve ser escalável e suportar um grande número de usuários simultâneos sem comprometer a performance | Alta |
+| RNF-005 | A aplicação deve ter um tempo de resposta rápido, para que os usuários não tenham que esperar muito tempo para realizar suas ações | Alta |
+| RNF-006 | A aplicação deve ser compatível com diferentes navegadores e sistemas operacionais | Média |
+| RNF-007 | A aplicação deve ser modular e fácil de ser mantida e atualizada | Média |
+| RNF-008 | A aplicação deve estar disponível 24 horas por dia, 7 dias por semana | Alta |
+| RNF-009 | A aplicação deve ser integrável com outros sistemas utilizados pelos usuários, como sistemas de pagamento e de gestão de estoque.(futuro) | Média |
 
 ## Restrições
 
@@ -112,10 +82,10 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
 |02| Não pode ser desenvolvido um módulo de backend        |
-
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+|03| O sistema deve utilizar CRUD Json-server para a persistência de dados |
+|04| O tempo de resposta do sistema deve ser de no máximo 2 segundos |
+|05| O sistema deve ser capaz de lidar com um grande volume de acessos simultâneos |
+|06| O sistema deve garantir a segurança das informações dos usuários, incluindo dados de login e informações de pagamento, utilizando criptografia |
+|07| O sistema deve estar em conformidade com as leis e regulamentações locais, estaduais e federais |
+|08| O sistema deve ser testado e validado regularmente para garantir a qualidade e a confiabilidade |
+|09| O sistema deve ter backups regulares para garantir a disponibilidade dos dados e informações em caso de falhas ou interrupções |
