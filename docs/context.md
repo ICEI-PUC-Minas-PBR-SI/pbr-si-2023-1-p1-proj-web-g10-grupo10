@@ -1,54 +1,46 @@
 # Introdução
 
-Imagine que você deseja apresentar este projeto para investidores que deverão decidir se investem ou não no desenvolvimento da sua ferramenta.
+Com o crescimento notório das indústrias automotivas e o aumento das frotas de automóveis nas ruas, o mercado de autopeças começa a crescer visando atender as necessidades destes clientes, sejam eles, revendedores de autopeças, proprietários de veículos, donos de oficinas e mecânicos em geral que demandam uma quantidade expressiva de peças de reposição.
 
-A **Introdução** consiste das etapas: *Contextualização -- Definição do problema -- Definição dos Objetivos -- Justificativa*, e tem como função situar o seu trabalho dentro de um contexto de mercado e mostrar a importância da sua proposta para resolver a dor de um usuário.
+Hoje no mercado existem diversas lojas especializadas neste ramo, no entanto, no momento em que o veículo apresenta uma falha e precisa ter uma peça trocada ou passar pelo processo de revisão de motor (troca de óleo, filtro, pastilha, etc), inicia-se o processo de orçamento, contato com as lojas para saber se existe a peça disponível, valor, marca, entre outras informações. 
 
-
-A Contextualização deve situar sem projeto em um determinado contexto de mercado, a fim de fornecer informações adicionais que possam ajudar a entender melhor o assunto que você irá abordar. Serve também para definir a relevância do seu assunto, uma vez que mostra o tamanho do mercado em que se está inserido. Ela pode envolver a análise de vários aspectos, como o ambiente histórico, cultural, político e social em que o problema a ser atacado surgiu.
-
-Escreva de 2 a 3 parágrafos para contetualizar o seu projeto.
+Auto Book chega no mercado para revolucionar, um site com diversas lojas cadastradas do ramo automotivo em que pela localização do cliente é indicado o estabelecimento mais próximo onde será possível buscar pela peça específica e consultar se existe quantidade disponível em estoque, o valor e a marca, além disso, será possível realizar a reserva da mercadoria. A loja será notificada e o comprador terá um prazo para retirar a mercadoria diretamente no estabelecimento.
 
 ## Problema
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
+Nos dias de hoje, mesmo com as diversas tecnologias que temos, muitas pessoas enfrentam grandes desafios quando precisam localizar ou trocar as peças de seus automóveis.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+Às vezes por falta de informação, de tempo ou até mesmo por preguiça não conseguem localizar a peça necessária e nem mesmo sabem onde procurá-la. Sem contar, é claro, as vezes em que o cliente precisa de uma peça específica e, mesmo que com muito esforço, não consegue encontrá-la e quando consegue ao chegar no local, a mesma não está mais disponível, muitas vezes por falta de reserva.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+A Auto Book promete ajudar o cliente nessa tarefa, melhorando a experiência do cliente na busca, localização e reserva de auto peças, evitando um esforço maior e economizando um grande tempo do consumidor final.
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+O objetivo geral do projeto Auto Book é melhorar a experiência de compra de autopeças para consumidores e profissionais do ramo, proporcionando uma plataforma que facilite a localização, consulta de disponibilidade e reserva de peças em lojas cadastradas próximas à localização do cliente.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+### Os objetivos específicos do projeto são:
+- Reduzir o tempo gasto na busca por peças: Ao fornecer informações precisas sobre a disponibilidade e localização das peças necessárias, o Auto Book permitirá que os clientes economizem tempo e evitem visitas desnecessárias a várias lojas em busca da peça desejada.
+
+- Aumentar a satisfação do cliente: Ao simplificar o processo de compra de peças, o Auto Book pode ajudar a melhorar a satisfação do cliente com o serviço prestado pelas lojas cadastradas, além de fidelizar esses clientes, que poderão voltar a usar a plataforma em futuras necessidades de reparo e manutenção de seus veículos.
+
+- Aumentar a eficiência e transparência no processo de compras de peças: Ao fornecer informações precisas sobre a disponibilidade, preço e marca das peças em estoque nas lojas cadastradas, o Auto Book pode ajudar a melhorar a eficiência e transparência no processo de compras de peças para os consumidores e profissionais do ramo automotivo, tornando a compra de peças mais conveniente e confiável.
+
+Os resultados esperados do projeto incluem uma redução no tempo e esforço necessário para a aquisição de peças, um aumento na satisfação do cliente e a melhoria do relacionamento entre lojas e clientes, resultando em um aumento nas vendas e fidelização de clientes para as lojas cadastradas.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Atualmente, quando você quer comprar alguma peça para o seu carro, é necessário buscar a mesma e os métodos atuais consistem em ligar para a oficina ou ir pessoalmente verificar se eles possuem a peça e se ela se encontra disponível para a compra. Pensando nessa dificuldade para obter a peça desejada, elaboramos o nosso projeto onde o cliente sem sair de casa consegue verificar as informações a respeito da peça e até mesmo reservá-la para retirar posteriormente, deste modo facilitamos a vida do usuário e consequentemente aumentarem as vendas das lojas de peças cadastradas em nosso sistema.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+O público-alvo da aplicação Auto Book é composto por pessoas que trabalham ou têm interesse no ramo automotivo, tais como mecânicos, proprietários de oficinas, donos de lojas de autopeças e proprietários de veículos. Essas pessoas precisam de acesso rápido e fácil a informações sobre peças e estoque, a fim de realizar reparos e manutenção de veículos de forma eficiente.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+O público-alvo também pode incluir pessoas que buscam informações sobre peças e acessórios para veículos, incluindo entusiastas de carros e proprietários que desejam personalizar seus veículos. Além disso, a aplicação pode ser útil para empresas que prestam serviços de entrega de peças automotivas.
+
+
+Dessa forma a aplicação Auto Book é composta por pessoas com conhecimentos básicos em tecnologia e com conhecimentos variados em automóveis. Alguns usuários podem ter uma compreensão mais avançada de mecânica automotiva, como mecânicos profissionais, enquanto outros têm conhecimentos limitados sobre o funcionamento de um veículo.
+
+
+A aplicação visa ajudar todos esses usuários, independentemente do nível de conhecimento em tecnologia ou mecânica automotiva, a localizar e adquirir as peças necessárias para a manutenção ou reparo de seus veículos. A aplicação simplifica o processo de busca por peças, permitindo que o usuário localize facilmente as lojas de autopeças mais próximas, visualize as informações de estoque e preços e reserve a peça necessária, tudo em uma única plataforma.
+
