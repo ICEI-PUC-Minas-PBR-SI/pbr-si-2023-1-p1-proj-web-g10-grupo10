@@ -15,6 +15,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 * Andrômeda Santos de Moura
 * Arthur Antunes Gomes Pinto
 * Caio Maciel Magalhães
+* Ester Giovanna Teixeira
 * Flávia Sergina Rodrigues
 * Isaac Portela da Silva
 * Pedro Henrique Assunção
