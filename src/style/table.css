@@ -1,4 +1,7 @@
 .container-tabela{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
   margin-top: 30px;
@@ -52,4 +55,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.container-tabela .caixa-paginacao{
+  margin-top: 20px;
 }
