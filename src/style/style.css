@@ -3,6 +3,16 @@
 :root{
   --cor-header-first: #FFFFFF;
   --cor-header-second: #3F51B5; 
+  --border-color-table: #ACACAC;
+  --background-active-button: #E1EFFF; 
+  
+  --color-success: rgba(52, 189, 90, 0.9);
+  --color-success-light: #9EEDB4; 
+  --color-warning: #555151FA;
+  --color-warning-light: #E9EB79;
+  --color-danger: #C62121;
+  --color-danger-light: #DC777D;
+  
 }
 body{
   font-family: 'Lato', sans-serif;
@@ -20,7 +30,7 @@ body{
 }
 main{
   width:100%;
-  height:100%;
+  overflow-x: hidden;
 }
 main .container-busca-avançada,  main .caixa-principal-produtos{
   display: flex;

@@ -8,6 +8,7 @@
 }
 .tab-container .icon-filter-advanced{
     font-size: 1.5em;
+    cursor: pointer;
 }
 .tab-container .tab {
     display: flex;
@@ -25,4 +26,7 @@
     font-size: 1em;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+}
+.tab-container .tab.active {
+    background-color: var(--background-active-button);
 }

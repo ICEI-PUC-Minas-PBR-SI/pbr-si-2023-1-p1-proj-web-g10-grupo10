@@ -1,0 +1,12 @@
+@media screen and (max-width:900px){
+  header nav .navbar-collapse{
+    border-radius: 2px !important;
+    padding-left: 20px ;
+  }
+}
+
+@media screen and (max-width:1200px){
+  .container-tabela table tbody .table-line > .item-acoes{
+    flex-wrap: wrap;
+  }
+}
