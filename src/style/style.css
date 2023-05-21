@@ -42,3 +42,32 @@ main .container-busca-avançada,  main .caixa-principal-produtos{
 main .container-busca-avançada .container-fluid{
   background-color: var(--cor-header-second);
 }
+ main .container{
+  background-color: var(--cor-header-second);
+ }
+ main .row{
+  background-color: var(--cor-header-first);
+ }
+ main .perfil{
+  width: 250px;
+ }
+ main .user{
+  width: px;
+ }
+
+/*
+FOOTER
+*/
+
+footer{
+  background-color: var(--cor-header-second);
+}
+.marca-icon{
+  width: 50px;
+}
+.contato-icon{
+  width: 25px;
+}
+.social-icons{
+  width: 50px;
+}
