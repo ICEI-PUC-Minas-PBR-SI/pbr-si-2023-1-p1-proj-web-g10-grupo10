@@ -27,6 +27,7 @@ header nav .navbar-collapse{
   border-top-left-radius: 80px;
   border-bottom-left-radius: 80px;
   background-color: var(--cor-header-second);
+  justify-content: center;
 }
 .caixa-icone .navbar-brand img{
   height: 70px;
@@ -87,4 +88,22 @@ main .container-busca-avançada,  main .caixa-principal-produtos{
 }
 main .container-busca-avançada .container-fluid{
   background-color: var(--cor-header-second);
+}
+
+
+/*
+FOOTER
+*/
+
+footer{
+  background-color: var(--cor-header-second);
+}
+.marca-icon{
+  width: 50px;
+}
+.contato-icon{
+  width: 25px;
+}
+.social-icons{
+  width: 50px;
 }
