@@ -1,0 +1,31 @@
+.tab-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+.tab-container .icon-filter-advanced{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.tab-container .tab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 30%;
+    min-width: 200px;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--cor-header-second);
+    background-color: var(--cor-header-first);
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.tab-container .tab.active {
+    background-color: var(--background-active-button);
+}
