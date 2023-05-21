@@ -50,7 +50,7 @@
                                 <li><a class="dropdown-item" href="#">Perto de você</a></li>
                             </ul>
                         </li>
-                        
+
 
                         <li class="nav-item">
                             <a class="nav-link text-light" href="./historico-reservas.html">Histórico de Reservas</a>
@@ -60,9 +60,19 @@
                         <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
                         <i class="fas fa-search"></i>
                     </form>
+
                     <div class="caixa-perfil-notifications">
-                        <a href="#" class="text-decoration-none" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"><i class="fas fa-user"></i>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button"
+                                aria-expanded="false"><i class="fas fa-user"></i> <span>Olá Julia Saldanha</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Perfil Usuário</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Métricas de Venda</a></li>
+                            </ul>
+                        </li>
 
                         <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -100,7 +110,8 @@
         <div class="container py-5" style="background-color: #3F51B5;">
             <div class="row mx-5 rounded-top-4 border-bottom border-dark">
                 <div class="col col-12 col-md-3 py-5 ps-5">
-                    <img src="image/produtos/anel-segmento-corsa-1.4-std-flex-93305514.webp" alt="Teste" class="rounded-circle border border-black">
+                    <img src="image/Perfil/Perfil.png" alt="Teste"
+                        class="user rounded-circle border border-black">
                 </div>
                 <div class="col col-md-8 py-5">
                     <h5>Julia Saldanha</h5>
@@ -113,22 +124,23 @@
                     <h2>Dados Pessoais:</h2>
                     <form>
                         <div class="col-12 mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Email</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
                         </div>
                         <div class="col-12 mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
                         </div>
-                        </div>
-                        <div class="col-3">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                      </form>
-
                 </div>
+                <div class="col-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                </form>
+
             </div>
-            
+        </div>
+
         </div>
     </main>
 

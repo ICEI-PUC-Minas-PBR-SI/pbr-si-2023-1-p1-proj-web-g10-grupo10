@@ -39,11 +39,17 @@ header nav .caixa-perfil-notifications{
     align-items: center;
     gap: 15px;
 }
+header nav .caixa-perfil-notifications li{
+    list-style: none;
+}
 header nav .caixa-perfil-notifications a{
     display: flex;
     align-items: center;
     gap: 10px;
     color: #FFFFFF;
+}
+header nav .caixa-perfil-notifications li ul li a{
+    color: black;
 }
 header nav .caixa-perfil-notifications a i{
     font-size: 1.4em;
