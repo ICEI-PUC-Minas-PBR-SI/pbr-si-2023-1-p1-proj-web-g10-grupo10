@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/secundary-tab.css">
     <link rel="stylesheet" href="style/table.css">
+    <link rel="stylesheet" href="style/filtro.css">
 </head>
 <body>
 <header>
@@ -65,118 +66,168 @@
 
 <main class="container-fluid d-flex flex-column align-items-xxl-center mt-4">
     <section class="tab-container">
-        <div class="icon-filter-advanced"><i class="fas fa-filter"></i></div>
+        <div data-target="#modal-filtro" id="filtro" data-toggle="modal" class="icon-filter-advanced"><i class="fas fa-filter"></i></div>
         <div class="tab"><i class="fab fa-opencart"></i> <span>Produtos</span></div>
         <div class="tab active"><i class="fas fa-history"></i> <span>Histórico Reservas</span></div>
     </section>
-    
-    <section class="container-tabela">
-        <table>
-            <thead>
-                <tr>
-                    <th>Data de Reserva</th>
-                    <th>Nome do Cliente</th>
-                    <th>Descricão da Peça</th>
-                    <th>Status</th>
-                    <th>Quantidade Reservadas</th>
-                    <th>Valor Total</th>
-                    <th>Data Retirada</th>
-                    <th>Acões</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="table-line">
-                    <td>01/01/2021</td>
-                    <td>João da Silva</td>
-                    <td>Peça 1</td>
-                    <td><span class="status pending">Reservado</span></td>
-                    <td>1</td>
-                    <td>R$ 100,00</td>
-                    <td>01/01/2021</td>
-                    <td class="item-acoes">
-                        <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                    </td>
-                </tr>
-                
-                <tr class="table-line">
-                    <td>01/01/2021</td>
-                    <td>João da Silva</td>
-                    <td>Peça 1</td>
-                    <td><span class="status pending">Pendente</span></td>
-                    <td>1</td>
-                    <td>R$ 100,00</td>
-                    <td>01/01/2021</td>
-                    <td class="item-acoes">
-                        <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                    </td>
-                </tr>
-                
-                <tr class="table-line">
-                    <td>01/01/2021</td>
-                    <td>João da Silva</td>
-                    <td>Peça 1</td>
-                    <td><span class="status canceled">Cancelado</span></td>
-                    <td>1</td>
-                    <td>R$ 100,00</td>
-                    <td>01/01/2021</td>
-                    <td class="item-acoes">
-                        <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                    </td>
-                </tr>
-                
-                <tr class="table-line">
-                    <td>01/01/2021</td>
-                    <td>João da Silva</td>
-                    <td>Peça 1</td>
-                    <td><span class="status sucess">Reservado</span></td>
-                    <td>1</td>
-                    <td>R$ 100,00</td>
-                    <td>01/01/2021</td>
-                    <td class="item-acoes">
-                        <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                    </td>
-                </tr>
-                
-                <tr class="table-line">
-                    <td>01/01/2021</td>
-                    <td>João da Silva</td>
-                    <td>Peça 1</td>
-                    <td><span class="status sucess">Reservado</span></td>
-                    <td>1</td>
-                    <td>R$ 100,00</td>
-                    <td>01/01/2021</td>
-                    <td class="item-acoes">
-                        <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                    </td>
-                </tr>
-                
-                <tr class="table-line">
-                    <td>01/01/2021</td>
-                    <td>João da Silva</td>
-                    <td>Peça 1</td>
-                    <td><span class="status sucess">Reservado</span></td>
-                    <td>1</td>
-                    <td>R$ 100,00</td>
-                    <td>01/01/2021</td>
-                    <td class="item-acoes">
-                        <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                        <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        
+
+    <div class="modal fade" id="modal-filtro" tabindex="-1" role="dialog" aria-labelledby="#modal-filtro" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-filter"></i><span>Filtrar Resultados</span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="situacao-reserva" class="col-form-label label-principal">Situação Reservsa:</label>
+                            <div class="caixa-input-seach">
+                                <i class="fas fa-search"></i>
+                                <input type="text" class="form-control" id="situacao-reserva">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label label-principal">Data Reserva:</label>
+                            <div class="form-group">
+                                <label for="data-inicio-reserva" class="col-form-label">De:</label>
+                                <input type="date"  id="data-inicio-reserva">
+
+                                <label for="data-fim-reserva" class="col-form-label">Até:</label>
+                                <input type="date" id="data-fim-reserva">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label label-principal">Data Retirada:</label>
+                            <div class="form-group">
+                                <label for="data-inicio-retirada" class="col-form-label">De:</label>
+                                <input type="date"  id="data-inicio-retirada">
+
+                                <label for="data-fim-retirada" class="col-form-label">Até:</label>
+                                <input type="date" id="data-fim-retirada">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-filtrar" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn-filtrar">Filtrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    <section class="component-tabela">
+        <div class="container-tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data de Reserva</th>
+                        <th>Nome do Cliente</th>
+                        <th>Descricão da Peça</th>
+                        <th>Status</th>
+                        <th>Quantidade Reservadas</th>
+                        <th>Valor Total</th>
+                        <th>Data Retirada</th>
+                        <th>Acões</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-line">
+                        <td>01/01/2021</td>
+                        <td>João da Silva</td>
+                        <td>Peça 1</td>
+                        <td><span class="status pending">Reservado</span></td>
+                        <td>1</td>
+                        <td>R$ 100,00</td>
+                        <td>01/01/2021</td>
+                        <td class="item-acoes">
+                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
+                        </td>
+                    </tr>
+                    
+                    <tr class="table-line">
+                        <td>01/01/2021</td>
+                        <td>João da Silva</td>
+                        <td>Peça 1</td>
+                        <td><span class="status pending">Pendente</span></td>
+                        <td>1</td>
+                        <td>R$ 100,00</td>
+                        <td>01/01/2021</td>
+                        <td class="item-acoes">
+                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
+                        </td>
+                    </tr>
+                    
+                    <tr class="table-line">
+                        <td>01/01/2021</td>
+                        <td>João da Silva</td>
+                        <td>Peça 1</td>
+                        <td><span class="status canceled">Cancelado</span></td>
+                        <td>1</td>
+                        <td>R$ 100,00</td>
+                        <td>01/01/2021</td>
+                        <td class="item-acoes">
+                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
+                        </td>
+                    </tr>
+                    
+                    <tr class="table-line">
+                        <td>01/01/2021</td>
+                        <td>João da Silva</td>
+                        <td>Peça 1</td>
+                        <td><span class="status sucess">Reservado</span></td>
+                        <td>1</td>
+                        <td>R$ 100,00</td>
+                        <td>01/01/2021</td>
+                        <td class="item-acoes">
+                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
+                        </td>
+                    </tr>
+                    
+                    <tr class="table-line">
+                        <td>01/01/2021</td>
+                        <td>João da Silva</td>
+                        <td>Peça 1</td>
+                        <td><span class="status sucess">Reservado</span></td>
+                        <td>1</td>
+                        <td>R$ 100,00</td>
+                        <td>01/01/2021</td>
+                        <td class="item-acoes">
+                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
+                        </td>
+                    </tr>
+                    
+                    <tr class="table-line">
+                        <td>01/01/2021</td>
+                        <td>João da Silva</td>
+                        <td>Peça 1</td>
+                        <td><span class="status sucess">Reservado</span></td>
+                        <td>1</td>
+                        <td>R$ 100,00</td>
+                        <td>01/01/2021</td>
+                        <td class="item-acoes">
+                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <nav class="caixa-paginacao" aria-label="Page navigation example">
             <ul class="pagination">
               <li class="page-item">
@@ -200,5 +251,8 @@
     
 </main>
 
+
+<script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

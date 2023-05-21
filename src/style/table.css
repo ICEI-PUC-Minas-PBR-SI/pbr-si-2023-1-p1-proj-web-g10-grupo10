@@ -1,61 +1,64 @@
-.container-tabela{
+.component-tabela{
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: auto;
-  overflow-y: hidden;
+  width: 100%;
+  max-width: 1800px;
   margin-top: 30px;
 }
-.container-tabela table{
-  width: 95%;
+.component-tabela .container-tabela{
+  width: 100%;
+  overflow-x: auto;
+}
+.component-tabela .container-tabela table{
   border-collapse: collapse;
-  max-width: 1800px;
+  width: 100%;
   text-align: center;
 }
-.container-tabela table thead{
+.component-tabela .container-tabela table thead{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.container-tabela table thead th{
+.component-tabela .container-tabela table thead th{
   padding: 1rem 2rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-size: 0.7rem;
   font-weight: 900;
 }
-.container-tabela table tbody td{
+.component-tabela .container-tabela table tbody td{
   padding: 1rem 2rem;
   font-size: 0.8rem;
 }
 
-.container-tabela table tbody td .status{
+.component-tabela .container-tabela table tbody td .status{
   border-radius: 24px;
   padding: 0.2rem 1rem;
   text-align: center;
 }
-.container-tabela table tbody td .status.sucess{
+.component-tabela .container-tabela table tbody td .status.sucess{
   color: var(--color-success);
   background-color: var(--color-success-light);
 }
-.container-tabela table tbody td .status.pending{
+.component-tabela .container-tabela table tbody td .status.pending{
   color: var(--color-warning);
   background-color: var(--color-warning-light);
 }
 
-.container-tabela table tbody td .status.canceled{
+.component-tabela  .container-tabela table tbody td .status.canceled{
   color: var(--color-danger);
   background-color: var(--color-danger-light);
 }
 
-.container-tabela table tbody .table-line{
+.component-tabela .container-tabela table tbody .table-line{
   width: 100%;
   border-bottom: 1px solid var(--border-color-table);
 }
 
-.container-tabela table tbody .table-line > .item-acoes{
+.component-tabela .container-tabela table tbody .table-line > .item-acoes{
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.container-tabela .caixa-paginacao{
+.component-tabela .caixa-paginacao{
   margin-top: 20px;
 }
