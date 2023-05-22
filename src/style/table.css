@@ -62,3 +62,8 @@
 .component-tabela .caixa-paginacao{
   margin-top: 20px;
 }
+
+#imgTabelaProd {
+  max-width: 70px;
+  height: 60px;
+}

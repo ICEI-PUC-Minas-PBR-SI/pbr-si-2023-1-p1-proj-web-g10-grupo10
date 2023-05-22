@@ -10,6 +10,9 @@
     <script src="https://kit.fontawesome.com/b484666594.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css"> 
+    <link rel="stylesheet" href="style/screen.css">
+    <link rel="stylesheet" href="style/produto.css">
 </head>
 <body>
 
@@ -33,10 +36,10 @@
                             Produtos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Estoque</a></li>
-                            <li><a class="dropdown-item" href="#">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="./telaProdutos.html">Estoque</a></li>
+                            <li><a class="dropdown-item" href="./telaProdutos.html">Cadastrar</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Perto de você</a></li>
+                            <li><a class="dropdown-item" href="./telaProdutos.html">Perto de você</a></li>
                         </ul>
                     </li>
 
@@ -49,17 +52,45 @@
                     <i class="fas fa-search"></i>
                 </form>
                 <div class="caixa-perfil-notifications">
-                    <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça login</span></a>
-                    <button type="button" class="btn btn-primary">
+                    <li class="nav-item dropdown">
+                      <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button" aria-expanded="false"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça login</span></a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="./perfil.html">Perfil Usuário</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Métricas de Venda</a></li>
+                      </ul>
+                    </li>
+                  
+                    <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="fas fa-bell"></i> <span class="badge text-bg-secondary">4</span>
                     </button>
                 </div>
             </div>
         </div>
     </nav>
+    <!--Painel de notificações-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Painel de notificeções</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Notificação 1</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      <div class="offcanvas-body">
+        ...
+      </div>
+    </div>
+    <!---->
 </header>
 
-<main>
+  <main>
     <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -105,80 +136,118 @@
     </section>
 
     <section class="caixa-principal-produtos mt-3">
-        <div class="ultimos-lançamentos">
-            <h2>Últimos lançamentos</h2>
-            <div class="tamanho-caixa row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card">
-                        <img src="image/produtos/vela-ignicao-chevette-gas-p6tcmm.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Vela Ignição Chevette Gas</h5>
-                            <p class="card-price text-success">R$ 69,12</p>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="image/produtos/trava-roscas-alto-torque-10g-2679363.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Trava Rosca</h5>
-                            <p class="card-price text-success">R$ 69,12</p>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="image/produtos/anel-segmento-corsa-1.4-std-flex-93305514.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Anel Segmento Corsa 1.4 Std Flex</h5>
-                            <p class="card-price text-success">R$ 69,12</p>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="ultimos-lançamentos">
+        <h2>Últimos lançamentos</h2>
+        <div class="tamanho-caixa row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="image/produtos/vela-ignicao-chevette-gas-p6tcmm.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Vela Ignição Chevette Gas</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <a href="" class="card-price stretched-link text-success">R$ 69,12</a>
+              </div>
             </div>
-        </div>
-
-        <div class="produtos-destaque mt-3">
-            <h2>Produtos em destaque</h2>
-            <div class="tamanho-caixa row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card">
-                        <img src="image/produtos/vela-ignicao-chevette-gas-p6tcmm.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Vela Ignição Chevette Gas</h5>
-                            <p class="card-price text-success">R$ 69,12</p>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="image/produtos/trava-roscas-alto-torque-10g-2679363.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Trava Rosca</h5>
-                            <p class="card-price text-success">R$ 69,12</p>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="image/produtos/anel-segmento-corsa-1.4-std-flex-93305514.webp" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Anel Segmento Corsa 1.4 Std Flex</h5>
-                            <p class="card-price text-success">R$ 69,12</p>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="image/produtos/trava-roscas-alto-torque-10g-2679363.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Trava Rosca</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <a href="" class="card-price stretched-link text-success">R$ 69,12</a>
+              </div>
             </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="image/produtos/anel-segmento-corsa-1.4-std-flex-93305514.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Anel Segmento Corsa 1.4 Std Flex</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="card-price stretched-link text-success">R$ 69,12</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      
+      <div class="produtos-destaque mt-3">
+        <h2>Produtos em destaque</h2>
+        <div class="tamanho-caixa row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="image/produtos/vela-ignicao-chevette-gas-p6tcmm.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Vela Ignição Chevette Gas</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <a href="#" class="card-price stretched-link text-success">R$ 69,12</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="image/produtos/trava-roscas-alto-torque-10g-2679363.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Trava Rosca</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <a href="#" class="card-price stretched-link text-success">R$ 69,12</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="image/produtos/anel-segmento-corsa-1.4-std-flex-93305514.webp" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Anel Segmento Corsa 1.4 Std Flex</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="card-price stretched-link text-success">R$ 69,12</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-
-</main>
-
+    
+  </main>
+  
+  <footer class="text-light mt-3 pt-3 border-top rounded fixed.bottom">
+    <div class="container-fluid d-flex justify-content-between py-3">
+      <div class="row">
+        <!--Links rápidos-->
+        <div class="col col-md-2 col-lg-3 pt-3">
+          <h6 class="text fw-bold mb-4">Links Rápidos</h6>
+          <ul class="nav flex-column">
+            <li class="nav-link"><a href="#">Retornar à Loja</a></li>
+            <li class="nav-link"><a href="#">Sobre</a></li>
+            <li class="nav-link"><a href="#">Suporte</a></li>
+          </ul>
+        </div>
+        <!--Redes Sociais-->
+        <div  class="redes-sociais col col-md-2 col-lg-3 pt-3">
+          <h6 class="text fw-bold mb-4">Redes Sociais</h6>
+          <div class="group-social-medias">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+        <!--Contatos-->
+        <div class="col col-md-3 col-lg-3 pt-3">
+          <h6 class="text fw-bold mb-4">Contatos</h6>
+          <ul class="nav flex-column">
+            <li class="nav-link disabled contato"> <i class="fas fa-phone-alt"></i> <a href="#">31 9 8848-8224</a></li>
+            <li class="nav-link contato"> <i class="far fa-envelope"></i> <a href="mailto:suporte@autobook.com.br">suporte@autobook.com.br</a></li>
+            <li class="nav-link disabled contato"> <i class="fas fa-street-view"></i> <span>Av. Afonso Vaz de Melo, 1200 - Barreiro, Belo Horizonte - MG, 30640-070</span></li>
+          </ul>
+        </div>
+        
+      </div>
+      
+    </div>
+    <div class="text-center" style="background-color:#35429890; padding: 20px;">
+      &copy 2023 Copyright: <a href="#">Auto Book</a>
+    </div>
+  </footer>
 </body>
 </html>

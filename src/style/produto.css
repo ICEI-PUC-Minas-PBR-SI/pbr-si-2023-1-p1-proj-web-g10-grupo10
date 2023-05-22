@@ -1,0 +1,10 @@
+.caixa-principal-produtos .card .card-body .card-title{
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+}
+.caixa-principal-produtos .card .card-body .card-text{
+    font-size: 0.8rem;
+    font-weight: 500;
+}
