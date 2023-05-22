@@ -89,3 +89,14 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |07| O sistema deve estar em conformidade com as leis e regulamentações locais, estaduais e federais |
 |08| O sistema deve ser testado e validado regularmente para garantir a qualidade e a confiabilidade |
 |09| O sistema deve ter backups regulares para garantir a disponibilidade dos dados e informações em caso de falhas ou interrupções |
+
+## Casos de Uso
+
+### Caso de Uso Login
+![Caso de Uso Login](img/caso-uso-login.png)
+
+### Caso de Uso Produtos
+![Caso de Uso Login](img/caso-uso-produto.png)
+
+### Caso de Uso ADM
+![Caso de Uso Login](img/caso-uso-ADM.png)
