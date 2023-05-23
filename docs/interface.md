@@ -1,6 +1,14 @@
 
 # Projeto de Interface
 
+## Introdução
+
+  A Auto Book é um espaço online destinado à venda de peças, acessórios e produtos automotivos para carros tendo como público alvo autopeças que queiram disponibilizar mercadorias para vendas e clientes que necessitam de peças de reposição para automóveis. 
+
+## Tela início
+
+Priorizamos por uma tela principal clara e objetiva, apresentando os produtos mais relevantes em destaque, além de links para as principais categorias de produtos oferecidos.
+
 Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
 
  Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a>.
