@@ -1,0 +1,10 @@
+{
+    "notificacoes":[
+        {
+            "id": 1,
+            "usuarioId": 1,
+            "reservaId": 1,
+            "mensagem": "Produto reservado"
+        }
+    ]
+}
