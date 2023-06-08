@@ -16,7 +16,7 @@ Esta pasta contém os Json's que representam as tabelas do sistema
 | UF | varchar(2) | false | false |
 | Cidade | varchar(100) | false | false |
 | Bairro | varchar(100) | false | false |
-| Numero | varchar(7) | false |  |
+| Numero | varchar(7) | false | false |
 | Complemento | varchar(100) | false | false |
 | Telefone | varchar(11) | false | false |
 
@@ -25,6 +25,6 @@ Esta pasta contém os Json's que representam as tabelas do sistema
 Tipo Usuario é um Enum logo cada inteiro possui um valor dentro do codigo
 
 #### Tipo Usuario:
-Usuario: 0
-Loja: 1
-Adm: 2
+- Usuario: 0
+- Loja: 1
+- Adm: 2
