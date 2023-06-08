@@ -78,3 +78,18 @@ Status Pedido é um Enum logo cada inteiro possui um valor dentro do codigo
 - Reservado: 0
 - Concluído: 1
 - Cancelado: 2
+
+## Tabela de Notificação
+
+| Nome Coluna | Tipo | Primary key | Foreign key |
+| :---  |     :---      |  :--- | :---   |
+| Id | int | true   | false |
+| UsuarioId | int  | false     | true |
+| ReservaId | int | false | true |
+| Mensagem | varchar(500) | false | false |
+
+### Notas
+
+UsuarioId é uma chave estrangeira que é utilizada para se relacionar com a tabela de usuário, estabelecendo uma relação 1:N ou seja 1 usuário pode ter N notificações.
+
+ReservaId é uma chave estrangeira que é utilizada para se relacionar com a tabela de reservas, estabelecendo uma relação 1:N ou seja 1 reserva pode ter N notificações.
