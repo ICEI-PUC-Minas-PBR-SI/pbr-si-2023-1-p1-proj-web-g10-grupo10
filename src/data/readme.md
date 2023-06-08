@@ -48,3 +48,33 @@ Tipo Usuario é um Enum logo cada inteiro possui um valor dentro do codigo
 UsuarioId é uma chave estrangeira que é utilizada para se relacionar com a tabela de usuário, estabelecendo uma relação 1:N ou seja 1 usuário pode ter N produtos.
 
 Imagem armazena uma imagem codificada em Base64
+
+## Tabela de Reservas
+
+| Nome Coluna | Tipo | Primary key | Foreign key |
+| :---  |     :---      |  :--- | :---   |
+| Id | int | true   | false |
+| UsuarioId | int  | false     | true |
+| ProdutoId | int | false | true |
+| LojaId | int | false | true |
+| DataReserva | datetime | false | false |
+| DataLimite | datetime | false | false |
+| StatusPedido | int | false | false |
+| Quantidade | int | false | false |
+| Valor | money | false | false |
+| Ativo | bit | false | false |
+
+### Notas
+
+UsuarioId é uma chave estrangeira que é utilizada para se relacionar com a tabela de usuário, estabelecendo uma relação 1:N ou seja 1 usuário pode ter N reservas.
+
+LojaId é uma chave estrangeira que é utilizada para se relacionar com a tabela de usuário, estabelecendo uma relação 1:N ou seja 1 usuário(loja) pode ter N reservas.
+
+ProdutoId é uma chave estrangeira que é utilizada para se relacionar com a tabela de produtos, estabelecendo uma relação 1:N ou seja 1 produto pode ter N reservas.
+
+Status Pedido é um Enum logo cada inteiro possui um valor dentro do codigo
+
+#### Status Pedido:
+- Reservado: 0
+- Concluído: 1
+- Cancelado: 2
