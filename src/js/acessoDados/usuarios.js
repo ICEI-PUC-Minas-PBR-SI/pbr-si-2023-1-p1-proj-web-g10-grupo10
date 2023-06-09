@@ -81,9 +81,26 @@ function getProdutoByUserId(userId){
     fetch(URLprodutos)
         .then(response => response.json())
         .then(data => {
-            return data.filter(objeto => objeto.usuarioId === userId);
+            return data.filter(objeto => objeto.usuarioId === userId)
         })
         .catch(error => {
             console.error('Erro ao acessar banco:', error);
+        });
+}
+
+function login(nome, senha){
+    fetch(URL + '/usuarios')
+        .then(response => response.json())
+        .then(data => {
+            let existeLogin = data.filter(obj => obj.nome === nome && obj.senha === senha)
+
+            if(existeLogin.length > 0){
+                return true
+            }
+
+            return false
+        })
+        .catch(error => {
+            console.error('Erro ao ler o arquivo JSON:', error);
         });
 }
