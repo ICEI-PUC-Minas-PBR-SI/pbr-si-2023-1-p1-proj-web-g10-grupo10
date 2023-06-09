@@ -1,6 +1,22 @@
 # Dados do sistema
 
-Esta pasta contém os Json's que representam as tabelas do sistema
+Esta pasta contém os Json's que representam as tabelas do sistema, nosso banco roda em JSON Crud Server
+
+## Pré-requisitos
+ - Instalar o node.js (https://nodejs.org/)
+ - Instalar o json-server (https://github.com/typicode/json-server)
+
+  ```bash
+  npm install -g json-server
+  ```
+
+### Nota
+
+Para rodar o banco é necessário especificar a pasta que ele está ou seja a pasta data, após especificar a pasta basta rodar o comando
+
+ ```bash
+    json-server --watch db.json
+  ```
 
 ## Tabela de Usuarios
 
