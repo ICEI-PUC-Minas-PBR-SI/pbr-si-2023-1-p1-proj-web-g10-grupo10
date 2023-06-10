@@ -110,4 +110,37 @@ Esse documento contém uma listagem de tarefas realizadas por cada membro do pro
 
 ## Etapa 4
 
+### Isaac Portela: 
+
+### Pedro Henrique Assunção: 
+
+### Flávia Sergina Rodrigues:
+
+### Arthur Antunes Gomes Pinto:
+
+### Andrômeda Santos de Moura:
+
+### Caio Maciel Magalhães:
+
+### Ester Giovanna Teixeira:
+
 ## Etapa 5
+
+### Isaac Portela: 
+
+### Pedro Henrique Assunção: 
+
+### Flávia Sergina Rodrigues:
+
+
+
+### Arthur Antunes Gomes Pinto:
+
+
+### Andrômeda Santos de Moura:
+
+
+### Caio Maciel Magalhães:
+
+
+### Ester Giovanna Teixeira:
