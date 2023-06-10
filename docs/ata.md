@@ -76,6 +76,38 @@ Esse documento contém uma listagem de tarefas realizadas por cada membro do pro
 
 ## Etapa 3
 
+### Isaac Portela: 
+- Fez a tela de histórico de reservas, e seus componentes(tabela do sistema padrão, filtro padrão e o componente menu secundário);
+- Ajudou na escrita da documentação da tela principal e escreveu documentação  tela de histórico de reservas, abordando quais requisitos funcionais e não funcionais foram cumpridos
+- Fez a tela principal e seu componentes(card dos produtos e header);
+
+
+
+### Pedro Henrique Assunção: 
+- Criação da tela de produtos
+- Modal para adição de produtos ao estoque
+- Modal para importação de excel de produtos
+- Exibição de produtos reservados
+- Exibição de produtos disponíveis em estoque
+
+
+
+### Flávia Sergina Rodrigues:
+- Pendente preenchimeto
+
+
+### Arthur Antunes Gomes Pinto:
+- Pendente preenchimeto
+
+### Andrômeda Santos de Moura:
+- Pendente preenchimeto
+
+### Caio Maciel Magalhães:
+- Pendente preenchimeto
+
+### Ester Giovanna Teixeira:
+- Pendente preenchimeto
+
 ## Etapa 4
 
 ## Etapa 5
