@@ -4,7 +4,7 @@ Esse documento contém uma listagem de tarefas realizadas por cada membro do pro
 
 ## Etapa 1
 
-### Isaac Portela: 
+#### Isaac Portela: 
 - Ajudou na construção do slide;
 - Escreveu os objetivos e apresentou;
 - Escreveu as histórias de usuário e apresentou;
@@ -12,78 +12,78 @@ Esse documento contém uma listagem de tarefas realizadas por cada membro do pro
 - Escreveu as restrições;
 - Fez o diagrama de casos de uso e apresentou;
 
-### Pedro Henrique Assunção: 
+#### Pedro Henrique Assunção: 
 - Escreveu os requisitos funcionais e apresentou;
 - Escreveu a justificativa e apresentou;
 - Formatou o documento de entrega;
 - Colocou o conteúdo do documento no Git Hub;
 
-### Flávia Sergina Rodrigues:
+#### Flávia Sergina Rodrigues:
 - Ajudou na construção do slide;
 - Escreveu introdução e apresentou;
 - Escreveu personas e apresentou;
 
-### Arthur Antunes Gomes Pinto:
+#### Arthur Antunes Gomes Pinto:
 - Escreveu o Problema e apresentou;
 - Apresentou Requisitos não Funcionais;
 
-### Andrômeda Santos de Moura:
+#### Andrômeda Santos de Moura:
 - Apresentou as Restrições;
 - Ajudou na construção do slide;
 
-### Caio Maciel Magalhães:
+#### Caio Maciel Magalhães:
 - Escreveu o Público alvo e apresentou 
 
-### Ester Giovanna Teixeira:
+#### Ester Giovanna Teixeira:
 - Membro não fazia parte do grupo
 
 
 ## Etapa 2
 
-### Isaac Portela: 
+#### Isaac Portela: 
 - Prototipação da tela do histórico de reservas de clientes e fornecedores;
 - Prototipação do modal da tela para reservar os produtos;
 - Fez template da tela principal (HTML e  CSS);
 
 
-### Pedro Henrique Assunção: 
+#### Pedro Henrique Assunção: 
 - Prototipação da Tela de Produtos;
 - Definição das telas que seriam prototipadas
 - Organização do Trello
 - Prototipação dos Modais da tela de Produtos (Modal de Criação, Modal de Edição, Modal de Detalhes e Modal de Importação de Excel);
 
 
-### Flávia Sergina Rodrigues:
+#### Flávia Sergina Rodrigues:
 - Apresentou a logo e sugestão de algumas das cores;
 - Tela de login e cadastro cliente e fornecedor no Figma;
 - Fez o documento de Projeto de interface
 - Fez o documento Template Padrão do site
 
 
-### Arthur Antunes Gomes Pinto:
+#### Arthur Antunes Gomes Pinto:
 - Prototipação da tela principal da  versão Loja;
 - Fez o diagrama de navegação do site;
 
-### Andrômeda Santos de Moura:
+#### Andrômeda Santos de Moura:
 - Prototipação da tela inicial do cliente;
 - Fez o Navbar;
 
-### Caio Maciel Magalhães:
+#### Caio Maciel Magalhães:
 - Prototipação da tela de pesquisa e resultados
 
-### Ester Giovanna Teixeira:
+#### Ester Giovanna Teixeira:
 - Membro não fazia parte do grupo
 
 ## Etapa 3
 
-### Isaac Portela: 
+#### Isaac Portela: 
 - Fez a tela de histórico de reservas, e seus componentes(tabela do sistema padrão, filtro padrão e o componente menu secundário);
 - Ajudou na escrita da documentação da tela principal e escreveu documentação  tela de histórico de reservas, abordando quais requisitos funcionais e não funcionais foram cumpridos
 - Fez a tela principal e seu componentes(card dos produtos e header);
 
 
 
-### Pedro Henrique Assunção: 
+#### Pedro Henrique Assunção: 
 - Criação da tela de produtos
 - Modal para adição de produtos ao estoque
 - Modal para importação de excel de produtos
@@ -92,55 +92,55 @@ Esse documento contém uma listagem de tarefas realizadas por cada membro do pro
 
 
 
-### Flávia Sergina Rodrigues:
+#### Flávia Sergina Rodrigues:
 - Pendente preenchimeto
 
 
-### Arthur Antunes Gomes Pinto:
+#### Arthur Antunes Gomes Pinto:
 - Pendente preenchimeto
 
-### Andrômeda Santos de Moura:
+#### Andrômeda Santos de Moura:
 - Pendente preenchimeto
 
-### Caio Maciel Magalhães:
+#### Caio Maciel Magalhães:
 - Pendente preenchimeto
 
-### Ester Giovanna Teixeira:
+#### Ester Giovanna Teixeira:
 - Pendente preenchimeto
 
 ## Etapa 4
 
-### Isaac Portela: 
+##### Isaac Portela: 
 
-### Pedro Henrique Assunção: 
+#### Pedro Henrique Assunção: 
 
-### Flávia Sergina Rodrigues:
+#### Flávia Sergina Rodrigues:
 
-### Arthur Antunes Gomes Pinto:
+#### Arthur Antunes Gomes Pinto:
 
-### Andrômeda Santos de Moura:
+#### Andrômeda Santos de Moura:
 
-### Caio Maciel Magalhães:
+#### Caio Maciel Magalhães:
 
-### Ester Giovanna Teixeira:
+#### Ester Giovanna Teixeira:
 
 ## Etapa 5
 
-### Isaac Portela: 
+#### Isaac Portela: 
 
-### Pedro Henrique Assunção: 
+#### Pedro Henrique Assunção: 
 
-### Flávia Sergina Rodrigues:
-
-
-
-### Arthur Antunes Gomes Pinto:
+#### Flávia Sergina Rodrigues:
 
 
-### Andrômeda Santos de Moura:
+
+#### Arthur Antunes Gomes Pinto:
 
 
-### Caio Maciel Magalhães:
+#### Andrômeda Santos de Moura:
 
 
-### Ester Giovanna Teixeira:
+#### Caio Maciel Magalhães:
+
+
+#### Ester Giovanna Teixeira:
