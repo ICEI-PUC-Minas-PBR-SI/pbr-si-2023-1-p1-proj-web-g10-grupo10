@@ -2,81 +2,86 @@ const URL = 'http://localhost:3000/produtos'
 const URLusuarios = 'http://localhost:3000/usuarios'
 
 // Metodo que retorna todos os produtos do banco
-function getAllProdutos() {
-    fetch(URL)
-        .then(response => response.json())
-        .then(data => {
-            return data;
-        })
-        .catch(error => {
-            console.error('Erro ao acessar banco:', error);
-        });
+async function getAllProdutos() {
+    try {
+        const response = await fetch(URL);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Erro ao acessar banco:', error);
+    }
 }
 
 // Metodo que retorna o produto que possui o Id especificado
-function getProdutoById(id) {
-    fetch(URL + '/' + id)
-        .then(response => response.json())
-        .then(data => {
-            return data;
-        })
-        .catch(error => {
-            console.error('Erro ao acessar banco:', error);
-        });
+async function getProdutoById(id) {
+    try {
+        const response = await fetch(URL + '/' + id);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Erro ao acessar banco:', error);
+    }
 }
 
 // Metodo que deleta o produto indicado pelo id
-function deleteProduto(id){
-    fetch(URL + '/' + id, {
-        method: 'DELETE',
-    })
-    .then(response => response.json())
-    .then(() => location.reload())
-    .catch(error => {
+async function deleteProduto(id) {
+    try {
+        const response = await fetch(URL + '/' + id, {
+            method: 'DELETE',
+        });
+        const data = await response.json();
+        // Você pode retornar o data se quiser utilizá-lo em algum lugar
+        // return data;
+        location.reload()
+    } catch (error) {
         console.error('Erro ao acessar banco:', error);
-    });
+    }
 }
 
 // Metodo que adiciona o produto ao banco
-function createProduto(usuario){
-    fetch(URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: usuario
-    })
-    .then(response => response.json())
-    .then(() => location.reload())
-    .catch(error => {
+async function createProduto(produto) {
+    try {
+        const response = await fetch(URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: produto
+        })
+        // const data = await response.json()
+        // return data
+        location.reload()
+    } catch (error) {
         console.error('Erro ao acessar banco:', error);
-    });
+    }
 }
 
 // Metodo que atualiza um produto já existente
-function updateProduto(usuario){
-    fetch(URL, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: usuario
-    })
-    .then(response => response.json())
-    .then(() => location.reload())
-    .catch(error => {
+async function updateProduto(produto) {
+    try{
+        const response = await fetch(URL, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: produto
+        })
+        const data = await response.json();
+        location.reload()
+    }
+    catch(error){
         console.error('Erro ao acessar banco:', error);
-    });
+    } 
 }
 
 //Metodo que busca todos os produtos que pertecem ao usuário
-function getProdutoByUserId(userId){
-    fetch(URL)
-        .then(response => response.json())
-        .then(data => {
-            return data.filter(objeto => objeto.usuarioId === userId);
-        })
-        .catch(error => {
-            console.error('Erro ao acessar banco:', error);
-        });
+async function getProdutoByUserId(userId) {
+    try{
+        const response = await fetch(URL);
+        const data = await response.json();
+        return data.filter(objeto => objeto.usuarioId === userId);
+    }
+    catch(error){
+        console.error('Erro ao acessar banco:', error);
+    }
 }
