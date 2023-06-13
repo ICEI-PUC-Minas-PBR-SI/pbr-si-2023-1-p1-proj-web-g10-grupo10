@@ -63,9 +63,9 @@ async function createUsuario(usuario) {
 }
 
 // Metodo que atualiza um usuário já existente
-async function updateUsuario(usuario) {
+async function updateUsuario(usuario, id) {
     try {
-        const response = await fetch(URL + '/usuarios/', {
+        const response = await fetch(URL + '/usuarios/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

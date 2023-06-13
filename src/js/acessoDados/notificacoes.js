@@ -56,9 +56,9 @@ async function createNotificacao(notificacao) {
 }
 
 // Metodo que atualiza um notificacao já existente
-async function updateNotificacao(notificacao) {
+async function updateNotificacao(notificacao, id) {
     try {
-        const response = await fetch(URL, {
+        const response = await fetch(URL + '/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
