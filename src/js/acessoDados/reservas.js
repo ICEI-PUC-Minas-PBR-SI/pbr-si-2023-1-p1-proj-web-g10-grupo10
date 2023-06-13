@@ -56,9 +56,9 @@ async function createReserva(usuario) {
 }
 
 // Metodo que atualiza uma reserva já existente
-async function updateReserva(usuario) {
+async function updateReserva(usuario,id) {
     try {
-        const response = await fetch(URL, {
+        const response = await fetch(URL + '/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

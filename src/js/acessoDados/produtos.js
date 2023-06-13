@@ -32,8 +32,10 @@ async function deleteProduto(id) {
         const data = await response.json();
         // Você pode retornar o data se quiser utilizá-lo em algum lugar
         // return data;
-        location.reload()
+        // location.reload()
+        return true;
     } catch (error) {
+        return false;
         console.error('Erro ao acessar banco:', error);
     }
 }
@@ -50,27 +52,32 @@ async function createProduto(produto) {
         })
         // const data = await response.json()
         // return data
-        location.reload()
+        // location.reload()
+        return true;
     } catch (error) {
         console.error('Erro ao acessar banco:', error);
+        return false;
     }
 }
 
 // Metodo que atualiza um produto já existente
-async function updateProduto(produto) {
+async function updateProduto(produto, id) {
     try{
-        const response = await fetch(URL, {
+        const response = await fetch(URL + '/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: produto
         })
-        const data = await response.json();
-        location.reload()
+        // const data = await response.json();
+        // location.reload()
+        return true;
     }
     catch(error){
+        
         console.error('Erro ao acessar banco:', error);
+        return false;
     } 
 }
 
