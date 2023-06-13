@@ -61,20 +61,23 @@ async function createProduto(produto) {
 }
 
 // Metodo que atualiza um produto já existente
-async function updateProduto(produto) {
+async function updateProduto(produto, id) {
     try{
-        const response = await fetch(URL, {
+        const response = await fetch(URL + '/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: produto
         })
-        const data = await response.json();
-        location.reload()
+        // const data = await response.json();
+        // location.reload()
+        return true;
     }
     catch(error){
+        
         console.error('Erro ao acessar banco:', error);
+        return false;
     } 
 }
 

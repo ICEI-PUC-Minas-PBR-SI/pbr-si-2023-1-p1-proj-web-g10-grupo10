@@ -30,16 +30,24 @@ async function RecuperaProdutos(id) {
 async function RecuperaDadosProdutoModalEdit(id) {
     let produto = await getProdutoById(id)
 
+    let botao = document.getElementById("BotaoModalEditProd");
     let inputNome = document.getElementById("nomeProdutoEdit");
     let inputCarro = document.getElementById("carroEdit");
     let inputModelo = document.getElementById("modeloEdit");
     let inputAno = document.getElementById("anoEdit");
+    let inputPreco = document.getElementById("valorEdit");
+    let inputQtde = document.getElementById("qtdeEdit");
+    let inputMarca = document.getElementById("marcaEdit");
 
+    botao.setAttribute('data-id',id)
     // Preenche os campos de entrada com os dados do produto
     inputNome.value = produto.nomeDaPeca;
     inputCarro.value = produto.carro;
     inputModelo.value = produto.modelo;
     inputAno.value = produto.ano;
+    inputPreco.value = produto.valor;
+    inputQtde.value = produto.quantidadeDisponivel;
+    inputMarca.value = produto.marca;
 }
 
 async function RecuperaDadosProdutoModalDetalhes(id) {
@@ -118,4 +126,43 @@ async function DeleteProdutoModal() {
     let deuCerto = deleteProduto(deleteBotao.getAttribute('data-id'));
 
     if (deuCerto == true) location.reload();
+}
+
+async function SalvarModalEdit() {
+
+    let botao = document.getElementById("BotaoModalEditProd");
+    let fileInput = document.getElementById("formFileEditProduto");
+    let inputNome = document.getElementById("nomeProdutoEdit");
+    let inputCarro = document.getElementById("carroEdit");
+    let inputModelo = document.getElementById("modeloEdit");
+    let inputMarca = document.getElementById("marcaEdit");
+    let inputAno = document.getElementById("anoEdit");
+    let inputPreco = document.getElementById("valorEdit");
+    let inputQtde = document.getElementById("qtdeEdit");
+
+    const file = fileInput.files[0];
+    if (file) {
+        const reader = new FileReader();
+
+        reader.addEventListener('load', function () {
+            let img64 = reader.result;
+            let novoProduto = {
+                usuarioId: 1, //Alterar após login pronto
+                nomeDaPeca: inputNome.value,
+                carro: inputCarro.value,
+                modelo: inputModelo.value,
+                marca: inputMarca.value,
+                ano: inputAno.value,
+                imagem: img64,
+                valor: inputPreco.value,
+                quantidadeDisponivel: inputQtde.value
+            }
+
+            let deuCerto = updateProduto(JSON.stringify(novoProduto),botao.getAttribute('data-id'));
+
+            if (deuCerto == true) location.reload();
+        });
+
+        reader.readAsDataURL(file);
+    }
 }

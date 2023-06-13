@@ -244,27 +244,40 @@
                     <div class="modal-body">
                         <form>
                             <div class="mb-2 ">
-                                <label for="nomeProdutoEdit">Nome do Produto</label>
-                                <input type="text" class="form-control" id="nomeProdutoEdit" placeholder="Nome">
-
-                                <label for="carroEdit">Carro</label>
-                                <input type="text" class="form-control" id="carroEdit" placeholder="Carro">
-
-                                <label for="modeloEdit">Modelo</label>
-                                <input type="text" class="form-control" id="modeloEdit" placeholder="Modelo">
-
-                                <label for="anoEdit">Ano</label>
-                                <input type="date" class="form-control" id="anoEdit">
-                            </div>
-                            <div class="mb-2 border p-2">
-                                <h3>Selecione uma imagem do produto</h3>
-                                <P>JPG, tamanho máximo do arquivo 10MB</P>
-                                <input class="form-control " type="file" id="formFile">
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control m-2" id="nomeProdutoEdit"
+                                        placeholder="Nome do Produto" aria-label="Nome do Produto">
+                                    <input type="text" class="form-control m-2" id="carroEdit" placeholder="Carro"
+                                        aria-label="Carro">
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control m-2" id="modeloEdit" placeholder="Modelo"
+                                        aria-label="Modelo">
+                                    <input type="text" class="form-control m-2" id="marcaEdit" placeholder="Marca"
+                                        aria-label="Marca">
+                                </div>
+    
+                                <div class="modal-body">
+                                    <label for="valorCreate">Valor</label>
+                                    <input type="text" class="form-control mb-3" id="valorEdit" placeholder="0">
+                                    <label for="qtdeCreate">Quantidade</label>
+                                    <input type="number" class="form-control" id="qtdeEdit" placeholder="0">
+                                </div>
+    
+                                <div class="modal-body">
+                                    <label for="anoCreate">Ano</label>
+                                    <input type="date" class="form-control" id="anoEdit" >
+                                </div>
+                                <div class="mb-2 border p-2">
+                                    <h3>Selecione uma imagem do produto</h3>
+                                    <P>JPG, tamanho máximo do arquivo 10MB</P>
+                                    <input class="form-control" type="file" id="formFileEditProduto">
+                                </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary">Salvar</button>
+                        <button id="BotaoModalEditProd" data-id="" type="button" onclick="SalvarModalEdit()" class="btn btn-secondary">Salvar</button>
                     </div>
                 </div>
             </div>
