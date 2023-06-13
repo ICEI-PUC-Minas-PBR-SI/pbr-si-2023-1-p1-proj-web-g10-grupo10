@@ -189,32 +189,41 @@
                         </button>
                     </div>
 
-                    <div class="modal-body"></div>
-                    <form>
-                        <div class="modal-body">
-                            <label for="formGroupExampleInput">Nome do Produto</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nome">
-                        </div>
-                        <div class="modal-body">
-                            <label for="formGroupExampleInput2">Carro</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Carro">
-                        </div>
-                        <div class="modal-body">
-                            <label for="formGroupExampleInput2">Modelo</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Modelo">
-                        </div>
-                        <div class="modal-body">
-                            <label for="formGroupExampleInput2">Ano</label>
-                            <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Ano">
-                        </div>
-                        <div class="mb-2 border p-2">
-                            <h3>Selecione uma imagem do produto</h3>
-                            <P>JPG, PNG or PDF, file size no more than 10MB</P>
-                            <input class="form-control " type="file" id="formFile">
-                        </div>
-                    </form>
+                    <div class="modal-body">
+                        <form>
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control m-2" id="nomeProdCreate"
+                                    placeholder="Nome do Produto" aria-label="Nome do Produto">
+                                <input type="text" class="form-control m-2" id="carroCreate" placeholder="Carro"
+                                    aria-label="Carro">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control m-2" id="modeloCreate" placeholder="Modelo"
+                                    aria-label="Modelo">
+                                <input type="text" class="form-control m-2" id="marcaCreate" placeholder="Marca"
+                                    aria-label="Marca">
+                            </div>
+
+                            <div class="modal-body">
+                                <label for="valorCreate">Valor</label>
+                                <input type="text" class="form-control mb-3" id="valorCreate" placeholder="0">
+                                <label for="qtdeCreate">Quantidade</label>
+                                <input type="number" class="form-control" id="qtdeCreate" placeholder="0">
+                            </div>
+
+                            <div class="modal-body">
+                                <label for="anoCreate">Ano</label>
+                                <input type="date" class="form-control" id="anoCreate" placeholder="Ano">
+                            </div>
+                            <div class="mb-2 border p-2">
+                                <h3>Selecione uma imagem do produto</h3>
+                                <P>JPG, tamanho máximo do arquivo 10MB</P>
+                                <input class="form-control" type="file" id="formFileCreateProduto">
+                            </div>
+                        </form>
+                    </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary">Salvar</button>
+                        <button type="button" onclick="CreateProdutoModal()" class="btn btn-secondary">Salvar</button>
                     </div>
                 </div>
             </div>
@@ -232,30 +241,28 @@
                         </button>
                     </div>
 
-                    <div class="modal-body"></div>
-                    <form>
-                        <div class="modal-body">
-                            <label for="formGroupExampleInput">Nome do Produto</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nome">
-                        </div>
-                        <div class="modal-body">
-                            <label for="formGroupExampleInput2">Carro</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Carro">
-                        </div>
-                        <div class="modal-body">
-                            <label for="formGroupExampleInput2">Modelo</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Modelo">
-                        </div>
-                        <div class="modal-body">
-                            <label for="formGroupExampleInput2">Ano</label>
-                            <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Ano">
-                        </div>
-                        <div class="mb-2 border p-2">
-                            <h3>Selecione uma imagem do produto</h3>
-                            <P>JPG, PNG or PDF, file size no more than 10MB</P>
-                            <input class="form-control " type="file" id="formFile">
-                        </div>
-                    </form>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-2 ">
+                                <label for="nomeProdutoEdit">Nome do Produto</label>
+                                <input type="text" class="form-control" id="nomeProdutoEdit" placeholder="Nome">
+
+                                <label for="carroEdit">Carro</label>
+                                <input type="text" class="form-control" id="carroEdit" placeholder="Carro">
+
+                                <label for="modeloEdit">Modelo</label>
+                                <input type="text" class="form-control" id="modeloEdit" placeholder="Modelo">
+
+                                <label for="anoEdit">Ano</label>
+                                <input type="date" class="form-control" id="anoEdit">
+                            </div>
+                            <div class="mb-2 border p-2">
+                                <h3>Selecione uma imagem do produto</h3>
+                                <P>JPG, tamanho máximo do arquivo 10MB</P>
+                                <input class="form-control " type="file" id="formFile">
+                            </div>
+                        </form>
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary">Salvar</button>
                     </div>
@@ -268,7 +275,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5></h5>
+                        <h5 id="produtoDelete"></h5>
                         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
                             aria-label="Fechar">
                             <span aria-hidden="true">&times;</span>
@@ -282,7 +289,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-secondary">Deletar</button>
+                        <button id="botaoDeleteModal" data-id="" onclick="DeleteProdutoModal()" type="button" class="btn btn-secondary">Deletar</button>
                     </div>
                 </div>
             </div>
@@ -304,31 +311,31 @@
                             <div class="row">
                                 <div class="card align-items-center">
                                     <div class="card-header">
-                                        <h5>Pneu 205/60 R15 - Goodyear</h5>
+                                        <h5 id="tituloProdutoDet"></h5>
                                         <div class="card-body">
                                             <div class="col-12">
-                                                <img src="./image/produtos/pneu.jpg" />
+                                                <img id="imgProdutoDet" src="" />
                                             </div>
                                             <div class="col-12 d-flex justify-content-between">
                                                 <div class="col-5 d-inline-block">
-                                                    <p>Carro: Fiat Argo</p>
+                                                    <p id="carroDet"></p>
                                                 </div>
                                                 <div class="col-5 d-inline-block">
-                                                    <p>Modelo: Trekking</p>
+                                                    <p id="modeloDet"></p>
                                                 </div>
                                             </div>
                                             <div class="col-12 d-flex justify-content-between">
                                                 <div class="col-5 d-inline-block">
-                                                    <p>Ano: 2023</p>
+                                                    <p id="anoDet"></p>
                                                 </div>
-                                                <div class="col-5 d-inline-block">
-                                                    <i class="fa-solid fa-money-bill-wave" style="color: #5dc341;"></i>
-                                                    R$ 491,15
+                                                <div id="precoDet" class="col-5 d-inline-block">
+
+
                                                 </div>
                                             </div>
                                             <div class="col-12 d-flex align-items-center">
                                                 <div class="col-12 d-inline-block">
-                                                    <p>Qtde: 24</p>
+                                                    <p id="qtdeDet"></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -404,114 +411,8 @@
                             <th>Acões</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="table-line">
-                            <td><img id="imgTabelaProd"
-                                    src="/pbr-si-2023-1-p1-proj-web-g10-grupo10/src/image/produtos/pneu.jpg" alt="">
-                            </td>
-                            <td>Pneu</td>
-                            <td>FIAT Argo</td>
-                            <td>Argo Trekking</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalEdicao"><i
-                                        class="fas fa-edit"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDelecao"><i
-                                        class="fas fa-trash"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDetalhes"><i
-                                        class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
+                    <tbody id="TabelaProdutosBody">
 
-                        <tr class="table-line">
-                            <td><img id="imgTabelaProd"
-                                    src="/pbr-si-2023-1-p1-proj-web-g10-grupo10/src/image/produtos/pneu.jpg" alt="">
-                            </td>
-                            <td>Pneu</td>
-                            <td>FIAT Argo</td>
-                            <td>Argo Trekking</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalEdicao"><i
-                                        class="fas fa-edit"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDelecao"><i
-                                        class="fas fa-trash"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDetalhes"><i
-                                        class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
-
-                        <tr class="table-line">
-                            <td><img id="imgTabelaProd"
-                                    src="/pbr-si-2023-1-p1-proj-web-g10-grupo10/src/image/produtos/pneu.jpg" alt="">
-                            </td>
-                            <td>Pneu</td>
-                            <td>FIAT Argo</td>
-                            <td>Argo Trekking</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalEdicao"><i
-                                        class="fas fa-edit"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDelecao"><i
-                                        class="fas fa-trash"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDetalhes"><i
-                                        class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
-
-                        <tr class="table-line">
-                            <td><img id="imgTabelaProd"
-                                    src="/pbr-si-2023-1-p1-proj-web-g10-grupo10/src/image/produtos/pneu.jpg" alt="">
-                            </td>
-                            <td>Pneu</td>
-                            <td>FIAT Argo</td>
-                            <td>Argo Trekking</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalEdicao"><i
-                                        class="fas fa-edit"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDelecao"><i
-                                        class="fas fa-trash"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDetalhes"><i
-                                        class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
-
-                        <tr class="table-line">
-                            <td><img id="imgTabelaProd"
-                                    src="/pbr-si-2023-1-p1-proj-web-g10-grupo10/src/image/produtos/pneu.jpg" alt="">
-                            </td>
-                            <td>Pneu</td>
-                            <td>FIAT Argo</td>
-                            <td>Argo Trekking</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalEdicao"><i
-                                        class="fas fa-edit"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDelecao"><i
-                                        class="fas fa-trash"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDetalhes"><i
-                                        class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
-
-                        <tr class="table-line">
-                            <td><img id="imgTabelaProd"
-                                    src="/pbr-si-2023-1-p1-proj-web-g10-grupo10/src/image/produtos/pneu.jpg" alt="">
-                            </td>
-                            <td>Pneu</td>
-                            <td>FIAT Argo</td>
-                            <td>Argo Trekking</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalEdicao"><i
-                                        class="fas fa-edit"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDelecao"><i
-                                        class="fas fa-trash"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#modalDetalhes"><i
-                                        class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -664,6 +565,13 @@
 
     <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/acessoDados/produtos.js"></script>
+    <script src="js/telaProdutos/crudProdutos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            RecuperaProdutos(1)
+        });
+    </script>
 </body>
 
 </html>
