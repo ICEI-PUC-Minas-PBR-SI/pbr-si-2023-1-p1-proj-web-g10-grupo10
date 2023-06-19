@@ -10,15 +10,19 @@ const btnQtdReservas = $('.btn-qtd');
 btnQtdReservas.click(manipulaQuantidadeItensReservas);
 
 const btnReservar = $('.btn-reservar');
-btnReservar.click(function(){
+btnReservar.click(() => {
+  
   const jIdProdutoAtual = $(this).prop("id");
   const qtd = $(this).closets(".qtd-reservas").text();
   const id = jIdProdutoAtual.replace("prod_", "");
+
   fazReserva(id, qtd);
 });
 
 function manipulaQuantidadeItensReservas(){
+  
   const IdBtnAtual = $(this).prop("id");
+
   if(IdBtnAtual == "btn-mais"){
     const jQtdReservas = $(this).prev();
     let qtd = parseInt(jQtdReservas.text()) + 1;
@@ -38,6 +42,7 @@ function fazReserva(id, qtd){
   const idReserva = retornaIDAutoIncrementEntidades(getAllReservas());
   let produto = getProdutoById(id);
   const today = new Date();
+  // soma sete dias na data inicial, encontrando data limite para retirar o  produto
   const dataLimite = today.setDate(today.getDate() + QTD_MAX_DIAS_RESERVADO);
   
   const reserva = {
