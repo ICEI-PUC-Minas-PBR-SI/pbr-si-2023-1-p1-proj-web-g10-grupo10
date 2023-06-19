@@ -38,14 +38,14 @@ async function deleteReserva(id) {
 }
 
 // Metodo que adiciona a reserva ao banco
-async function createReserva(usuario) {
+async function createReserva(jsonReserva) {
     try {
         const response = await fetch(URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: usuario
+            body: jsonReserva
         });
         // const data = await response.json();
         // return data;
@@ -96,3 +96,5 @@ async function getReservasByLojaId(lojaId) {
         console.error('Erro ao acessar banco:', error);
     }
 }
+
+export{getAllReservas, getReservaById, deleteReserva, createReserva, updateReserva, getReservasByUserId, getReservasByLojaId}
