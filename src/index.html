@@ -160,20 +160,17 @@
       <div class="ultimos-lançamentos">
         <h2>Últimos lançamentos</h2>
         <div class="tamanho-caixa row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
+          <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <div class="card">
               <img src="image/produtos/vela-ignicao-chevette-gas-p6tcmm.webp" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Vela Ignição Chevette Gas</h5>
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
                   content. This content is a little bit longer.</p>
-                <a href="" class="card-price stretched-link text-success">R$ 69,12</a>
+                <a class="card-price stretched-link text-success">R$ 69,12</a>
               </div>
             </div>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Launch demo modal
-            </button>
 
             <!-- Modal -->
             <div class="modal fade modal-produto" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -205,9 +202,9 @@
                   <div class="modal-footer">
                     <div class="cmp">
                       <div class="caixa-qtd-reservas">
-                        <span class="btn-qtd"><i class="fas fa-minus"></i></span>
+                        <span class="btn-qtd" id="btn-menos"><i class="fas fa-minus"></i></span>
                         <span id="quantidade-reservada" class="numero">1</span>
-                        <span class="btn-qtd"><i class="fas fa-plus"></i></span>
+                        <span class="btn-qtd" id="btn-mais"><i class="fas fa-plus"></i></span>
                       </div>
                       <span class="btn-reservar">Reservar</span>
                     </div>
@@ -326,6 +323,8 @@
       &copy 2023 Copyright: <a href="#">Auto Book</a>
     </div>
   </footer>
+  
+  <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
 </body>
 
 </html>
