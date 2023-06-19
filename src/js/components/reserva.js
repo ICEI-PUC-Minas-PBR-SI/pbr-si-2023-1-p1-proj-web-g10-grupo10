@@ -1,4 +1,6 @@
-import { getProdutoById } from "../acessoDados/produtos";
+import { getProdutoById, updateProduto} from "../acessoDados/produtos";
+import { createReserva } from "../acessoDados/reservas";
+import { retornaIDAutoIncrementEntidades } from "../utils/auto_increment";
 
 const QTD_MAX_RESERVAS = 4;
 const QTD_MIN_RESERVAS = 1;
@@ -30,23 +32,38 @@ function manipulaQuantidadeItensReservas(){
 function fazReserva(id, qtd){
   // pega usuario logado 
   //const user = JSON.parse(localStorage.getItem("user"));
-  const produto = getProdutoById(id);
+  
+  const idReserva = retornaIDAutoIncrementEntidades(getAllReservas());
+  
+  let produto = getProdutoById(id);
+  
   const today = new Date();
-  console.log(today.toLocaleDateString());
   const dataLimite = today.setDate(today.getDate() + QTD_MAX_DIAS_RESERVADO);
   
   const reserva = {
-    id: 1,
+    id: idReserva,
     usuarioId: user.id,
     lojaId: produto.usuarioId,
     produtoId: produto.id,
     tipoUsuario: user.tipoUsuario,
     dataReserva: today.toLocaleDateString(),
     dataLimite: dataLimite.toLocaleDateString(),
-    statusPedido: 0,
+    statusPedido: "RESERVADO",
     quantidade: qtd,
     valor: produto.valor * qtd,
     ativo: 1
   };
   
+  const criou = createReserva(JSON.stringify(reserva));
+  // Se a reserva foi criada com sucesso
+  if(criou){
+  // Atualiza a quantidade disponivel do produto
+    produto.quantidadeDisponivel -= qtd;
+    updateProduto(JSON.stringify(produto), produto.id);
+  }
+  
+}
+
+function manupulaStatusReserva(){
+
 }
