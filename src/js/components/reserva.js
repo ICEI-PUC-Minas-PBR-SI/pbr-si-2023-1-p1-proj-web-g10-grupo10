@@ -1,6 +1,8 @@
+import { getProdutoById } from "../acessoDados/produtos";
 
 const QTD_MAX_RESERVAS = 4;
 const QTD_MIN_RESERVAS = 1;
+const QTD_MAX_DIAS_RESERVADO = 7;
 
 const btnQtdReservas = $('.btn-qtd');
 btnQtdReservas.click(manipulaQuantidadeItensReservas);
@@ -25,6 +27,26 @@ function manipulaQuantidadeItensReservas(){
   }
 }
 
-function fazReserva(id ,qtd){
-
+function fazReserva(id, qtd){
+  // pega usuario logado 
+  //const user = JSON.parse(localStorage.getItem("user"));
+  const produto = getProdutoById(id);
+  const today = new Date();
+  console.log(today.toLocaleDateString());
+  const dataLimite = today.setDate(today.getDate() + QTD_MAX_DIAS_RESERVADO);
+  
+  const reserva = {
+    id: 1,
+    usuarioId: user.id,
+    lojaId: produto.usuarioId,
+    produtoId: produto.id,
+    tipoUsuario: user.tipoUsuario,
+    dataReserva: today.toLocaleDateString(),
+    dataLimite: dataLimite.toLocaleDateString(),
+    statusPedido: 0,
+    quantidade: qtd,
+    valor: produto.valor * qtd,
+    ativo: 1
+  };
+  
 }
