@@ -4,4 +4,4 @@ function retornaIDAutoIncrementEntidades(arrayItensEntidade){
 }
 
 
-export { retornaIDAutoIncrementeEntidades };
+export { retornaIDAutoIncrementEntidades };
