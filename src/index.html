@@ -160,8 +160,8 @@
       <div class="ultimos-lançamentos">
         <h2>Últimos lançamentos</h2>
         <div class="tamanho-caixa row row-cols-1 row-cols-md-3 g-4">
-          <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <div class="card">
+          <div class="col">
+            <div class="card" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="image/produtos/vela-ignicao-chevette-gas-p6tcmm.webp" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Vela Ignição Chevette Gas</h5>
@@ -187,12 +187,18 @@
                     <div class="container-corpo-modal">
                       <h4 class="title">Bomba de Óleo para Cruze, Sonic e Tracker - 1.8 e 1.6 / 16V / 4 Cilindros - Schadek - 10.315 - Unitário</h4>
                       <div class="cmp">
-                        <p> <span class="fw-bold">Modelo:</span> carro tal</p>
+                        <span><span class="fw-bold">Ano:</span> 2021</span>
+                        <span><span class="fw-bold">Carro:</span> Fiat Argo</span>
+                      </div>
+                      
+                      <div class="cmp">
+                        <p> <span class="fw-bold">Marca:</span> Goodyear</p>
+                        <p> <span class="fw-bold">Modelo:</span> Trekking</p>
                       </div>
 
                       <div class="cmp">
                         <span class="diponibilidade">PRODUTO DISPONIVEL</span>
-                        <span><span class="fw-bold">COD:</span> 1232455</span>
+                        <span>QTD: 20</span>
                       </div>
                       <span class="span-price"><i class="fas fa-hand-holding-usd"></i> <span class="price">R$850,00</span></span>
 
@@ -203,10 +209,10 @@
                     <div class="cmp">
                       <div class="caixa-qtd-reservas">
                         <span class="btn-qtd" id="btn-menos"><i class="fas fa-minus"></i></span>
-                        <span id="quantidade-reservada" class="numero">1</span>
+                        <span class="qtd-reservas">1</span>
                         <span class="btn-qtd" id="btn-mais"><i class="fas fa-plus"></i></span>
                       </div>
-                      <span class="btn-reservar">Reservar</span>
+                      <span class="btn-reservar" id="prod_1">Reservar</span>
                     </div>
                   </div> 
                 </div>
@@ -325,6 +331,7 @@
   </footer>
   
   <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
+  <script src="js/components/reserva.js"></script>
 </body>
 
 </html>
