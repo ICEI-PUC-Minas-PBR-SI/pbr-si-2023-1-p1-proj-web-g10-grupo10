@@ -6,19 +6,55 @@ import { getReservasByLojaId, getReservasByUserId } from "../../acessoDados/rese
 
 // Reservas do Usuário
 
+const USER_CLIENTE = 1
+const USER_LOJA = 2
 const containerTabela = $('.container-tabela');
 
-function mostraProdutosReservadosByUser(idUser){
+arrReservas = getProdutosReservadosByUser(usuario.id);
+montaTabelaReservas(arrReservas, tipoUsuario);
+
+
+function getProdutosReservadosByUser(idUserOrLoja){
     const funcLojaOrUser = (tipoUsuario == 2) ? getReservasByLojaId : getReservasByUserId;
-    const arrReservas = funcLojaOrUser(idUser);
+    const arrReservas = funcLojaOrUser(idUserOrLoja);
+    return arrReservas;
 }
-function montaTabelaReservas(reserva){
+function montaTabelaReservas(arrReservas, tipoUsuario){
+    const corpoTabela = $('#table-body-reservas');
+    let tbHtml = '';
+
+    arrReservas.forEach(reserva => {
+        tbHtml += montaLinhaTabelaReservas(reserva, null, tipoUsuario);
+    });
+
+    corpoTabela.html(tbHtml);
 }
 
 
-function EditaReserva(reserva, idUser){
+function EditaReserva(idReserva, elLinhaTabela){
+    const reserva = getReservaById(idReserva);
+    const linha = getLinhaTabelaReservas(reserva, tipoUsuario);
+    elLinhaTabela.replaceWith(linha);
 }
-function montaLinhaTabelaReservas(reserva, elLinhaTabela){
+
+function getLinhaTabelaReservas(reserva, tipoUsuario){
+    const usuarioDaReserva = getUsuarioById(reserva.usuarioId);
+    const produtoReserva   = getProdutoById(reserva.produtoId);
+
+    const tdNomeUser = (tipoUsuario == USER_LOJA) ? `<td>${usuarioDaReserva.nome}</td>` : '';
+    const linha = `
+            <tr class="table-line">
+                <td>${reserva.dataReserva}</td>
+                ${tdNomeUser}
+                <td>${produtoReserva.nomeDaPeca}</td>
+                <td><span class="status pending">${reserva.statusPedido}</span></td>
+                <td>${reserva.quantidade}</td>
+                <td>R$ ${reserva.valor}</td>
+                <td>${reserva.dataLimite}</td>
+            </tr>    
+        `;
+  
+    return linha;
 }
 
 
