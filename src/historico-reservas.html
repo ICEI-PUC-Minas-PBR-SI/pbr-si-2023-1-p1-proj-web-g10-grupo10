@@ -199,7 +199,7 @@
                                     data-bs-target="#modalConcluirReserva" onclick="abriuModalConcluiReserva(1)"><i class="fas fa-check"
                                         style="color: #45af28;"></i></button>
                                 <button class="btn btn-light" data-bs-toggle="modal"
-                                    data-bs-target="#modalCancelarReserva"><i class="fas fa-trash"
+                                    data-bs-target="#modalCancelarReserva" onclick="abriuModalCancelaReserva(1)"><i class="fas fa-trash"
                                         style="color: #d92d20;"></i></button>
                                 <button class="btn btn-light" style="color: cornflowerblue;"><i class="fas fa-briefcase"></i></button>
                             </td>
@@ -348,8 +348,10 @@
                         </p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <form id="form-cancelar-reserva">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" onclick="fechaModalCancelaReserva()">Cancelar</button>
                         <button type="button" class="btn btn-secondary">Confirmar</button>
+                    </form>
                     </div>
                 </div>
             </div>

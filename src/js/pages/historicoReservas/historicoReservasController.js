@@ -2,6 +2,7 @@
 //     const usuario = JSON.parse(localStorage.getItem('usuario'))
 //     const tipoUsuario = usuario.tipoUsuario
 
+import { updateProduto } from "../../acessoDados/produtos";
 import { getReservaById, getReservasByLojaId, getReservasByUserId, updateReserva } from "../../acessoDados/reservas";
 import { exibirNotificacao } from "../../utils/notifications_geral";
 
@@ -57,8 +58,13 @@ function getLinhaTabelaReservas(reserva, tipoUsuario){
                 <td>R$ ${reserva.valor}</td>
                 <td>${reserva.dataLimite}</td>
                 <td class="item-acoes">
-                    <button class="btn btn-light" onclick=editaReserva(${reserva.id}, ${$(this)})><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                <button class="btn btn-light" data-bs-toggle="modal"
+                    data-bs-target="#modalConcluirReserva" onclick="abriuModalConcluiReserva(${reserva.id})"><i class="fas fa-check"
+                    style="color: #45af28;"></i></button>
+                   
+                <button class="btn btn-light" data-bs-toggle="modal"
+                    data-bs-target="#modalCancelarReserva" onclick="abriuModalCancelaReserva(${reserva.id})"><i class="fas fa-trash"
+                        style="color: #d92d20;"></i></button>
                     <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
                 </td>
             </tr>    
@@ -68,8 +74,8 @@ function getLinhaTabelaReservas(reserva, tipoUsuario){
 }
 
 // So a loja pode concluir e cancelar reserva
-var formReserva = $('#form-concluir-reserva');
-formReserva.submit(function(e) {
+var formConcluirReserva = $('#form-concluir-reserva');
+formConcluirReserva.on("submit",function(e) {
     concluiReserva(e);
 });
 
@@ -95,12 +101,47 @@ function concluiReserva (e) {
 }
 //Quando modal abrir, seta o id da reserva no form
 function abriuModalConcluiReserva(idReserva){
-    formReserva.attr('data-id-reserva', idReserva);
+    formConcluirReserva.attr('data-id-reserva', idReserva);
 }
 // Quando modal fechar remove o id da reserva do form
 function fechouModalConcluiReserva(){
-    formReserva.removeAttr('data-id-reserva');
+    formConcluirReserva.removeAttr('data-id-reserva');
 }
 
-function deletaReserva(idReserva, elLinhaTabela){
+
+let formCancelaReserva = $('#form-cancelar-reserva');
+formCancelaReserva.on("submit",function(e) {
+    cancelaReserva(e);
+});
+function cancelaReserva(e){
+    e.preventDefault();
+    const idReserva = $(this).attr('data-id-reserva');
+    let novosDados = {
+        statusPedido: STATUS_RESERVA.cancelado
+    }
+    const update =  updateReserva(JSON.stringify(novosDados), idReserva);
+    if(update){
+        fechaModalCancelaReserva();
+        const reservaAtualizada = getReservaById(idReserva);
+        let linha = $('#reserva-' + idReserva);
+        // Atualiza linha da tabela
+        linha.replaceWith(getLinhaTabelaReservas(reservaAtualizada, tipoUsuario));   
+        exibirNotificacao('Sucesso', 'Reserva cancelada com sucesso!', 'success');
+        
+        const produtoReserva = getProdutoById(reservaAtualizada.produtoId);
+        const novosDadosProdutos = {
+            quantidadeDisponivel: reservaAtualizada.quantidade + produtoReserva.quantidadeDisponivel
+        }
+        updateProduto(JSON.stringify(novosDadosProdutos), produtoReserva.id);
+    }
+    else{
+        alert('Erro ao cancelar reserva!');
+        exibirNotificacao('Erro', 'Erro ao cancelar reserva!', 'error');
+    }
+}
+function abriuModalCancelaReserva(){
+    formReserva.attr('data-id-reserva', idReserva);
+}
+function fechaModalCancelaReserva(){
+    formReserva.removeAttr('data-id-reserva');
 }
