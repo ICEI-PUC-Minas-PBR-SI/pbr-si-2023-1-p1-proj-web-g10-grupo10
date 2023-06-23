@@ -84,7 +84,8 @@ function getLinhaTabelaReservas(reserva){
     return linha;
 }
 
-// So a loja pode concluir e cancelar reserva
+// TODO: verificar com o pedro sobre se quando concluido a data limite vira data da retirada
+// So a loja pode concluir
 var formConcluirReserva = $('#form-concluir-reserva');
 formConcluirReserva.on("submit",function(e) {
     concluiReserva(e);
@@ -96,9 +97,9 @@ function concluiReserva (e) {
         statusPedido: STATUS_RESERVA.concluido
     }
     
-    const update =  updateReserva(JSON.stringify(novosDados), idReserva);
+    const isUpdated =  updateReserva(JSON.stringify(novosDados), idReserva);
     
-    if(update){
+    if(isUpdated){
         fechaModalConcluiReserva();
         $(this).closest("#modalConcluirReserva").modal("hide");
         
