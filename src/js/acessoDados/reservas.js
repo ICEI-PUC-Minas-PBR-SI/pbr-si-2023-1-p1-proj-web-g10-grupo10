@@ -56,20 +56,21 @@ async function createReserva(jsonReserva) {
 }
 
 // Metodo que atualiza uma reserva já existente
-async function updateReserva(usuario,id) {
+async function updateReserva(reserva,id) {
     try {
         const response = await fetch(URL + '/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: usuario
+            body: reserva
         });
         // const data = await response.json();
-        // return data;
+        return true;
         location.reload()
     } catch (error) {
         console.error('Erro ao acessar banco:', error);
+        return false;
     }
 }
 

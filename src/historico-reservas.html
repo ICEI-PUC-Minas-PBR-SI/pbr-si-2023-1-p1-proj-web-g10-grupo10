@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histórico de Reservas</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b484666594.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style/style.css">
@@ -18,14 +22,18 @@
     <link rel="stylesheet" href="style/table.css">
     <link rel="stylesheet" href="style/filtro.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <div class="caixa-icone">
-                    <a class="navbar-brand" href="#"><img src="image/logo-auto-book.png" alt="logo auto book" srcset=""></a>
+                    <a class="navbar-brand" href="#"><img src="image/logo-auto-book.png" alt="logo auto book"
+                            srcset=""></a>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -33,19 +41,22 @@
                         <li class="nav-item">
                             <a class="nav-link active text-light" aria-current="page" href="./index.html">Inicio</a>
                         </li>
-    
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-light" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Produtos
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Estoque</a></li>
                                 <li><a class="dropdown-item" href="#">Cadastrar</a></li>
-                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 <li><a class="dropdown-item" href="#">Perto de você</a></li>
                             </ul>
                         </li>
-    
+
                         <li class="nav-item">
                             <a class="nav-link text-light" href="./historico-reservas.html">Histórico de Reservas</a>
                         </li>
@@ -56,15 +67,20 @@
                     </form>
                     <div class="caixa-perfil-notifications">
                         <li class="nav-item dropdown">
-                          <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button" aria-expanded="false"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça login</span></a>
-                          <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Perfil Usuário</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Métricas de Venda</a></li>
-                          </ul>
+                            <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button"
+                                aria-expanded="false"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça
+                                    login</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Perfil Usuário</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Métricas de Venda</a></li>
+                            </ul>
                         </li>
-                      
-                        <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+
+                        <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                             <i class="fas fa-bell"></i> <span class="badge text-bg-secondary">4</span>
                         </button>
                     </div>
@@ -73,254 +89,319 @@
         </nav>
         <!--Painel de notificações-->
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">Painel de notificeções</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Notificação 1</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Painel de notificeções</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-          </div>
-          <div class="offcanvas-body">
-            ...
-          </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Notificação 1</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+            <div class="offcanvas-body">
+                ...
+            </div>
         </div>
         <!---->
     </header>
 
-<main class="container-fluid d-flex flex-column align-items-xxl-center mt-4">
-    <section class="tab-container">
-        <div data-target="#modal-filtro" id="filtro" data-toggle="modal" class="icon-filter-advanced"><i class="fas fa-filter"></i></div>
-        <div class="tab"><i class="fab fa-opencart"></i> <span>Produtos</span></div>
-        <div class="tab active"><i class="fas fa-history"></i> <span>Histórico Reservas</span></div>
-    </section>
+    <main class="container-fluid d-flex flex-column align-items-xxl-center mt-4">
+        <section class="tab-container">
+            <div data-target="#modal-filtro" id="filtro" data-toggle="modal" class="icon-filter-advanced"><i
+                    class="fas fa-filter"></i></div>
+            <div class="tab"><i class="fab fa-opencart"></i> <span>Produtos</span></div>
+            <div class="tab active"><i class="fas fa-history"></i> <span>Histórico Reservas</span></div>
+        </section>
 
-    <div class="modal fade" id="modal-filtro" tabindex="-1" role="dialog" aria-labelledby="#modal-filtro" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-filter"></i><span>Filtrar Resultados</span></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="situacao-reserva" class="col-form-label label-principal">Situação Reserva:</label>
-                            <div class="caixa-input-seach">
-                                <i class="fas fa-search"></i>
-                                <input type="text" class="form-control" id="situacao-reserva">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label label-principal">Data Reserva:</label>
+        <div class="modal fade" id="modal-filtro" tabindex="-1" role="dialog" aria-labelledby="#modal-filtro"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-filter"></i><span>Filtrar
+                                Resultados</span></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
                             <div class="form-group">
-                                <label for="data-inicio-reserva" class="col-form-label">De:</label>
-                                <input type="date"  id="data-inicio-reserva">
-
-                                <label for="data-fim-reserva" class="col-form-label">Até:</label>
-                                <input type="date" id="data-fim-reserva">
+                                <label for="situacao-reserva" class="col-form-label label-principal">Situação
+                                    Reserva:</label>
+                                <div class="caixa-input-seach">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" class="form-control" id="situacao-reserva">
+                                </div>
                             </div>
-
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label label-principal">Data Retirada:</label>
                             <div class="form-group">
-                                <label for="data-inicio-retirada" class="col-form-label">De:</label>
-                                <input type="date"  id="data-inicio-retirada">
+                                <label class="col-form-label label-principal">Data Reserva:</label>
+                                <div class="form-group">
+                                    <label for="data-inicio-reserva" class="col-form-label">De:</label>
+                                    <input type="date" id="data-inicio-reserva">
 
-                                <label for="data-fim-retirada" class="col-form-label">Até:</label>
-                                <input type="date" id="data-fim-retirada">
+                                    <label for="data-fim-reserva" class="col-form-label">Até:</label>
+                                    <input type="date" id="data-fim-reserva">
+                                </div>
+
                             </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-filtrar" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn-filtrar">Filtrar</button>
+                            <div class="form-group">
+                                <label class="col-form-label label-principal">Data Retirada:</label>
+                                <div class="form-group">
+                                    <label for="data-inicio-retirada" class="col-form-label">De:</label>
+                                    <input type="date" id="data-inicio-retirada">
+
+                                    <label for="data-fim-retirada" class="col-form-label">Até:</label>
+                                    <input type="date" id="data-fim-retirada">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-filtrar" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn-filtrar">Filtrar</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-      
-    <section class="component-tabela">
-        <div class="container-tabela">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Data de Reserva</th>
-                        <th>Nome do Cliente</th>
-                        <th>Descricão da Peça</th>
-                        <th>Status</th>
-                        <th>Quantidade Reservadas</th>
-                        <th>Valor Total</th>
-                        <th>Data Retirada</th>
-                        <th>Acões</th>
-                    </tr>
-                </thead>
-                <tbody id="table-body-reservas">
-                    <tr class="table-line">
-                        <td>01/01/2021</td>
-                        <td>João da Silva</td>
-                        <td>Peça 1</td>
-                        <td><span class="status pending">Reservado</span></td>
-                        <td>1</td>
-                        <td>R$ 100,00</td>
-                        <td>01/01/2021</td>
-                        <td class="item-acoes">
-                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                        </td>
-                    </tr>
-                    
-                    <tr class="table-line">
-                        <td>01/01/2021</td>
-                        <td>João da Silva</td>
-                        <td>Peça 1</td>
-                        <td><span class="status pending">Pendente</span></td>
-                        <td>1</td>
-                        <td>R$ 100,00</td>
-                        <td>01/01/2021</td>
-                        <td class="item-acoes">
-                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                        </td>
-                    </tr>
-                    
-                    <tr class="table-line">
-                        <td>01/01/2021</td>
-                        <td>João da Silva</td>
-                        <td>Peça 1</td>
-                        <td><span class="status canceled">Cancelado</span></td>
-                        <td>1</td>
-                        <td>R$ 100,00</td>
-                        <td>01/01/2021</td>
-                        <td class="item-acoes">
-                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                        </td>
-                    </tr>
-                    
-                    <tr class="table-line">
-                        <td>01/01/2021</td>
-                        <td>João da Silva</td>
-                        <td>Peça 1</td>
-                        <td><span class="status sucess">Reservado</span></td>
-                        <td>1</td>
-                        <td>R$ 100,00</td>
-                        <td>01/01/2021</td>
-                        <td class="item-acoes">
-                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                        </td>
-                    </tr>
-                    
-                    <tr class="table-line">
-                        <td>01/01/2021</td>
-                        <td>João da Silva</td>
-                        <td>Peça 1</td>
-                        <td><span class="status sucess">Reservado</span></td>
-                        <td>1</td>
-                        <td>R$ 100,00</td>
-                        <td>01/01/2021</td>
-                        <td class="item-acoes">
-                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                        </td>
-                    </tr>
-                    
-                    <tr class="table-line">
-                        <td>01/01/2021</td>
-                        <td>João da Silva</td>
-                        <td>Peça 1</td>
-                        <td><span class="status sucess">Reservado</span></td>
-                        <td>1</td>
-                        <td>R$ 100,00</td>
-                        <td>01/01/2021</td>
-                        <td class="item-acoes">
-                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                            <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <nav class="caixa-paginacao" aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </li>
-            </ul>
-        </nav>
-    </section>
-    
-</main>
 
-<footer class="text-light mt-3 pt-3 border-top rounded fixed.bottom">
-    <div class="container-fluid d-flex justify-content-between py-3">
-      <div class="row">
-        <!--Links rápidos-->
-        <div class="col col-md-2 col-lg-3 pt-3">
-          <h6 class="text fw-bold mb-4">Links Rápidos</h6>
-          <ul class="nav flex-column">
-            <li class="nav-link"><a href="#">Retornar à Loja</a></li>
-            <li class="nav-link"><a href="#">Sobre</a></li>
-            <li class="nav-link"><a href="#">Suporte</a></li>
-          </ul>
-        </div>
-        <!--Redes Sociais-->
-        <div  class="redes-sociais col col-md-2 col-lg-3 pt-3">
-          <h6 class="text fw-bold mb-4">Redes Sociais</h6>
-          <div class="group-social-medias">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-linkedin-in"></i>
-          </div>
-        </div>
-        <!--Contatos-->
-        <div class="col col-md-3 col-lg-3 pt-3">
-          <h6 class="text fw-bold mb-4">Contatos</h6>
-          <ul class="nav flex-column">
-            <li class="nav-link disabled contato"> <i class="fas fa-phone-alt"></i> <a href="#">31 9 8848-8224</a></li>
-            <li class="nav-link contato"> <i class="far fa-envelope"></i> <a href="mailto:suporte@autobook.com.br">suporte@autobook.com.br</a></li>
-            <li class="nav-link disabled contato"> <i class="fas fa-street-view"></i> <span>Av. Afonso Vaz de Melo, 1200 - Barreiro, Belo Horizonte - MG, 30640-070</span></li>
-          </ul>
-        </div>
+        <section class="component-tabela">
+            <div class="container-tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data de Reserva</th>
+                            <th>Nome do Cliente</th>
+                            <th>Descricão da Peça</th>
+                            <th>Status</th>
+                            <th>Quantidade Reservadas</th>
+                            <th>Valor Total</th>
+                            <th>Data Retirada</th>
+                            <th>Acões</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body-reservas">
+                        <tr class="table-line">
+                            <td>01/01/2021</td>
+                            <td>João da Silva</td>
+                            <td>Peça 1</td>
+                            <td><span class="status pending">Reservado</span></td>
+                            <td>1</td>
+                            <td>R$ 100,00</td>
+                            <td>01/01/2021</td>
+                            <td class="item-acoes">
+                                <button class="btn btn-light" data-bs-toggle="modal"
+                                    data-bs-target="#modalConcluirReserva" onclick="abriuModalConcluiReserva(1)"><i class="fas fa-check"
+                                        style="color: #45af28;"></i></button>
+                                <button class="btn btn-light" data-bs-toggle="modal"
+                                    data-bs-target="#modalCancelarReserva"><i class="fas fa-trash"
+                                        style="color: #d92d20;"></i></button>
+                                <button class="btn btn-light" style="color: cornflowerblue;"><i class="fas fa-briefcase"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr class="table-line">
+                            <td>01/01/2021</td>
+                            <td>João da Silva</td>
+                            <td>Peça 1</td>
+                            <td><span class="status pending">Pendente</span></td>
+                            <td>1</td>
+                            <td>R$ 100,00</td>
+                            <td>01/01/2021</td>
+                            <td class="item-acoes">
+                                <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr class="table-line">
+                            <td>01/01/2021</td>
+                            <td>João da Silva</td>
+                            <td>Peça 1</td>
+                            <td><span class="status canceled">Cancelado</span></td>
+                            <td>1</td>
+                            <td>R$ 100,00</td>
+                            <td>01/01/2021</td>
+                            <td class="item-acoes">
+                                <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr class="table-line">
+                            <td>01/01/2021</td>
+                            <td>João da Silva</td>
+                            <td>Peça 1</td>
+                            <td><span class="status sucess">Reservado</span></td>
+                            <td>1</td>
+                            <td>R$ 100,00</td>
+                            <td>01/01/2021</td>
+                            <td class="item-acoes">
+                                <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr class="table-line">
+                            <td>01/01/2021</td>
+                            <td>João da Silva</td>
+                            <td>Peça 1</td>
+                            <td><span class="status sucess">Reservado</span></td>
+                            <td>1</td>
+                            <td>R$ 100,00</td>
+                            <td>01/01/2021</td>
+                            <td class="item-acoes">
+                                <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr class="table-line">
+                            <td>01/01/2021</td>
+                            <td>João da Silva</td>
+                            <td>Peça 1</td>
+                            <td><span class="status sucess">Reservado</span></td>
+                            <td>1</td>
+                            <td>R$ 100,00</td>
+                            <td>01/01/2021</td>
+                            <td class="item-acoes">
+                                <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-light"><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <nav class="caixa-paginacao" aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
         
-      </div>
-      
-    </div>
-    <div class="text-center" style="background-color:#35429890; padding: 20px;">
-      &copy 2023 Copyright: <a href="#">Auto Book</a>
-    </div>
-</footer>
-  
-<script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
-<script src="js/script.js"></script>
-<script type="module" src="js/pages/historicoReservas/historicoReservasController.js"></script>
+        <div id="modalConcluirReserva" class="modal fade" tabindex="-1" role="dialog"
+            aria-labelledby="#modalConcluirReserva" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5></h5>
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                            aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3>Deseja concluir essa reserva?</h3>
+                        <p>
+                            Essa ação é irreversível.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <form id="form-concluir-reserva">
+                            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" onclick="fechouModalConcluiReserva">Cancelar</button>
+                            <button type="submit" class="btn btn-secondary">Confirmar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalCancelarReserva" class="modal fade" tabindex="-1" role="dialog"
+            aria-labelledby="#modalCancelarReserva" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5></h5>
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                            aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3>Deseja cancelar essa reserva?</h3>
+                        <p>
+                            Essa ação é irreversível.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-secondary">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-light mt-3 pt-3 border-top rounded fixed.bottom">
+        <div class="container-fluid d-flex justify-content-between py-3">
+            <div class="row">
+                <!--Links rápidos-->
+                <div class="col col-md-2 col-lg-3 pt-3">
+                    <h6 class="text fw-bold mb-4">Links Rápidos</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-link"><a href="#">Retornar à Loja</a></li>
+                        <li class="nav-link"><a href="#">Sobre</a></li>
+                        <li class="nav-link"><a href="#">Suporte</a></li>
+                    </ul>
+                </div>
+                <!--Redes Sociais-->
+                <div class="redes-sociais col col-md-2 col-lg-3 pt-3">
+                    <h6 class="text fw-bold mb-4">Redes Sociais</h6>
+                    <div class="group-social-medias">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                </div>
+                <!--Contatos-->
+                <div class="col col-md-3 col-lg-3 pt-3">
+                    <h6 class="text fw-bold mb-4">Contatos</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-link disabled contato"> <i class="fas fa-phone-alt"></i> <a href="#">31 9
+                                8848-8224</a></li>
+                        <li class="nav-link contato"> <i class="far fa-envelope"></i> <a
+                                href="mailto:suporte@autobook.com.br">suporte@autobook.com.br</a></li>
+                        <li class="nav-link disabled contato"> <i class="fas fa-street-view"></i> <span>Av. Afonso Vaz
+                                de Melo, 1200 - Barreiro, Belo Horizonte - MG, 30640-070</span></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="text-center" style="background-color:#35429890; padding: 20px;">
+            &copy 2023 Copyright: <a href="#">Auto Book</a>
+        </div>
+    </footer>
+
+    <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script type="module" src="js/pages/historicoReservas/historicoReservasController.js"></script>
 </body>
+
 </html>

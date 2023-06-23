@@ -2,16 +2,24 @@
 //     const usuario = JSON.parse(localStorage.getItem('usuario'))
 //     const tipoUsuario = usuario.tipoUsuario
 
-import { getReservasByLojaId, getReservasByUserId, updateReserva } from "../../acessoDados/reservas";
+import { getReservaById, getReservasByLojaId, getReservasByUserId, updateReserva } from "../../acessoDados/reservas";
+import { exibirNotificacao } from "../../utils/notifications_geral";
 
-// Reservas do Usuário
+const TIPO_USER = {
+    cliente: 0,
+    loja: 1,
+    admin: 2
+}
+const STATUS_RESERVA = {
+    reservado: '1',
+    concluido: '2',
+    cancelado: '3'
+} 
 
-const USER_CLIENTE = 1;
-const USER_LOJA = 2;
+const usuario = JSON.parse(localStorage.getItem('usuario'));
+var tipoUsuario = usuario.tipoUsuario;
 
 const containerTabela = $('.container-tabela');
-
-var tipoUsuario = usuario.tipoUsuario;
 
 arrReservas = getProdutosReservadosByUser(usuario.id);
 montaTabelaReservas(arrReservas, tipoUsuario);
@@ -28,31 +36,19 @@ function montaTabelaReservas(arrReservas, tipoUsuario){
     let tbHtml = '';
 
     arrReservas.forEach(reserva => {
-        tbHtml += montaLinhaTabelaReservas(reserva, tipoUsuario);
+        tbHtml += getLinhaTabelaReservas(reserva, tipoUsuario);
     });
 
     corpoTabela.html(tbHtml);
 }
 
-
-// function editaReserva(idReserva, elLinhaTabela){
-//     const reserva = getReservaById(idReserva);
-//     const linha = getLinhaTabelaReservas(reserva, tipoUsuario);
-    
-//     //atualiza dados editados
-//     updateReserva(reserva);
-
-//     //atualiza linha da tabela
-//     elLinhaTabela.replaceWith(linha);
-// }
-
 function getLinhaTabelaReservas(reserva, tipoUsuario){
     const usuarioDaReserva = getUsuarioById(reserva.usuarioId);
     const produtoReserva   = getProdutoById(reserva.produtoId);
 
-    const tdNomeUser = (tipoUsuario == USER_LOJA) ? `<td>${usuarioDaReserva.nome}</td>` : '';
+    const tdNomeUser = (tipoUsuario == TIPO_USER.loja) ? `<td>${usuarioDaReserva.nome}</td>` : '';
     const linha = `
-            <tr class="table-line">
+            <tr class="table-line" id="reserva-${reserva.id}">
                 <td>${reserva.dataReserva}</td>
                 ${tdNomeUser}
                 <td>${produtoReserva.nomeDaPeca}</td>
@@ -70,8 +66,40 @@ function getLinhaTabelaReservas(reserva, tipoUsuario){
   
     return linha;
 }
-function getModalLinhaReserva(){
 
+// So a loja pode concluir e cancelar reserva
+var formReserva = $('#form-concluir-reserva');
+formReserva.submit(function(e) {
+    concluiReserva(e);
+});
+
+function concluiReserva (e) {
+    e.preventDefault();
+    const idReserva = $(this).attr('data-id-reserva');
+    let novosDados = {
+        statusPedido: STATUS_RESERVA.concluido
+    }
+    const update =  updateReserva(JSON.stringify(novosDados), idReserva);
+    if(update){
+        fechaModalConcluiReserva();
+        const reservaAtualizada = getReservaById(idReserva);
+        let linha = $('#reserva-' + idReserva);
+        // Atualiza linha da tabela
+        linha.replaceWith(getLinhaTabelaReservas(reservaAtualizada, tipoUsuario));   
+        exibirNotificacao('Sucesso', 'Reserva concluída com sucesso!', 'success');
+    }
+    else{
+        alert('Erro ao concluir reserva!');
+        exibirNotificacao('Erro', 'Erro ao concluir reserva!', 'error');
+    }
+}
+//Quando modal abrir, seta o id da reserva no form
+function abriuModalConcluiReserva(idReserva){
+    formReserva.attr('data-id-reserva', idReserva);
+}
+// Quando modal fechar remove o id da reserva do form
+function fechouModalConcluiReserva(){
+    formReserva.removeAttr('data-id-reserva');
 }
 
 function deletaReserva(idReserva, elLinhaTabela){
