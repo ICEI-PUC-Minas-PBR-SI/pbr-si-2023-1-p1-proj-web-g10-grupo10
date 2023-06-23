@@ -48,6 +48,8 @@ function getLinhaTabelaReservas(reserva, tipoUsuario){
     const produtoReserva   = getProdutoById(reserva.produtoId);
 
     const tdNomeUser = (tipoUsuario == TIPO_USER.loja) ? `<td>${usuarioDaReserva.nome}</td>` : '';
+    // implementar funcao de desativar botao de concluir reserva e cancelar reserva quando o status for diferente de reservado
+    const desativado = (reserva.statusPedido != STATUS_RESERVA.reservado) ? 'disabled' : '';
     const linha = `
             <tr class="table-line" id="reserva-${reserva.id}">
                 <td>${reserva.dataReserva}</td>
@@ -59,11 +61,11 @@ function getLinhaTabelaReservas(reserva, tipoUsuario){
                 <td>${reserva.dataLimite}</td>
                 <td class="item-acoes">
                 <button class="btn btn-light" data-bs-toggle="modal"
-                    data-bs-target="#modalConcluirReserva" onclick="abriuModalConcluiReserva(${reserva.id})"><i class="fas fa-check"
+                    data-bs-target="#modalConcluirReserva" ${desativado} onclick="abriuModalConcluiReserva(${reserva.id})"><i class="fas fa-check"
                     style="color: #45af28;"></i></button>
                    
                 <button class="btn btn-light" data-bs-toggle="modal"
-                    data-bs-target="#modalCancelarReserva" onclick="abriuModalCancelaReserva(${reserva.id})"><i class="fas fa-trash"
+                    data-bs-target="#modalCancelarReserva" ${desativado} onclick="abriuModalCancelaReserva(${reserva.id})"><i class="fas fa-trash"
                         style="color: #d92d20;"></i></button>
                     <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
                 </td>
