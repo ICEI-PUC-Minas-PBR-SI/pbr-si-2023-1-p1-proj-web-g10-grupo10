@@ -12,3 +12,11 @@ btnSignin.addEventListener("click", function () {
 btnSignup.addEventListener("click", function () {
     body.className = "sign-up-js";
 })
+
+const formLogin = $("#fom-login");
+formLogin.submit(function (e) { 
+    e.preventDefault();
+    // Serializa os dados do formulário
+    const dadosFormulario = $(this).serialize();
+    
+});

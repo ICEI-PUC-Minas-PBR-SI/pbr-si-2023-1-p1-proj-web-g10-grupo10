@@ -8,3 +8,4 @@ const controlaModais = () => {
         $('#modal-filtro').modal('show');
     })
 }
+
