@@ -13,56 +13,85 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/screen.css">
     <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/secundary-tab.css">
     <link rel="stylesheet" href="style/table.css">
     <link rel="stylesheet" href="style/filtro.css">
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <div class="caixa-icone">
-                <a class="navbar-brand" href="#"><img src="image/logo-auto-book.png" alt="logo auto book" srcset=""></a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-light" aria-current="page" href="./index.html">Inicio</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Produtos
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Estoque</a></li>
-                            <li><a class="dropdown-item" href="#">Cadastrar</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Perto de você</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Histórico de Reservas</a>
-                    </li>
-                </ul>
-                <form class="d-flex search" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </form>
-                <div class="caixa-perfil-notifications">
-                    <a href="#" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça login</span></a>
-                    <button type="button" class="btn btn-primary">
-                        <i class="fas fa-bell"></i> <span class="badge text-bg-secondary">4</span>
-                    </button>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="caixa-icone">
+                    <a class="navbar-brand" href="#"><img src="image/logo-auto-book.png" alt="logo auto book" srcset=""></a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Produtos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Estoque</a></li>
+                                <li><a class="dropdown-item" href="#">Cadastrar</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Perto de você</a></li>
+                            </ul>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="./historico-reservas.html">Histórico de Reservas</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex search" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </form>
+                    <div class="caixa-perfil-notifications">
+                        <li class="nav-item dropdown">
+                          <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button" aria-expanded="false"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça login</span></a>
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Perfil Usuário</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#">Métricas de Venda</a></li>
+                          </ul>
+                        </li>
+                      
+                        <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <i class="fas fa-bell"></i> <span class="badge text-bg-secondary">4</span>
+                        </button>
+                    </div>
                 </div>
             </div>
+        </nav>
+        <!--Painel de notificações-->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Painel de notificeções</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Notificação 1</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+          <div class="offcanvas-body">
+            ...
+          </div>
         </div>
-    </nav>
-</header>
+        <!---->
+    </header>
 
 <main class="container-fluid d-flex flex-column align-items-xxl-center mt-4">
     <section class="tab-container">
@@ -251,7 +280,45 @@
     
 </main>
 
-
+<footer class="text-light mt-3 pt-3 border-top rounded fixed.bottom">
+    <div class="container-fluid d-flex justify-content-between py-3">
+      <div class="row">
+        <!--Links rápidos-->
+        <div class="col col-md-2 col-lg-3 pt-3">
+          <h6 class="text fw-bold mb-4">Links Rápidos</h6>
+          <ul class="nav flex-column">
+            <li class="nav-link"><a href="#">Retornar à Loja</a></li>
+            <li class="nav-link"><a href="#">Sobre</a></li>
+            <li class="nav-link"><a href="#">Suporte</a></li>
+          </ul>
+        </div>
+        <!--Redes Sociais-->
+        <div  class="redes-sociais col col-md-2 col-lg-3 pt-3">
+          <h6 class="text fw-bold mb-4">Redes Sociais</h6>
+          <div class="group-social-medias">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+        <!--Contatos-->
+        <div class="col col-md-3 col-lg-3 pt-3">
+          <h6 class="text fw-bold mb-4">Contatos</h6>
+          <ul class="nav flex-column">
+            <li class="nav-link disabled contato"> <i class="fas fa-phone-alt"></i> <a href="#">31 9 8848-8224</a></li>
+            <li class="nav-link contato"> <i class="far fa-envelope"></i> <a href="mailto:suporte@autobook.com.br">suporte@autobook.com.br</a></li>
+            <li class="nav-link disabled contato"> <i class="fas fa-street-view"></i> <span>Av. Afonso Vaz de Melo, 1200 - Barreiro, Belo Horizonte - MG, 30640-070</span></li>
+          </ul>
+        </div>
+        
+      </div>
+      
+    </div>
+    <div class="text-center" style="background-color:#35429890; padding: 20px;">
+      &copy 2023 Copyright: <a href="#">Auto Book</a>
+    </div>
+</footer>
+  
 <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
 <script src="js/script.js"></script>
 </body>

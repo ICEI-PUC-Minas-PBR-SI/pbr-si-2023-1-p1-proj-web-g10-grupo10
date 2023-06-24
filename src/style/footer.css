@@ -1,0 +1,46 @@
+/*
+FOOTER
+*/
+footer{
+  width: 100%;
+  background-color: var(--cor-header-second);
+}
+.marca-icon{
+  width: 50px;
+}
+.contato-icon{
+  width: 25px;
+}
+.social-icons{
+  width: 50px;
+}
+footer h6{
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+footer .redes-sociais .group-social-medias{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+footer .redes-sociais .group-social-medias i{
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+footer a, footer span{
+  color: var(--cor-header-first);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+footer .contato{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+footer .contato i{
+  font-size: 1.2rem;
+  color: var(--backgroud-color-btn);
+}
