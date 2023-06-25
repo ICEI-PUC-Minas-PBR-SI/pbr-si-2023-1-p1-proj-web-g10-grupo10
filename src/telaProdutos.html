@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="style/secundary-tab.css">
     <link rel="stylesheet" href="style/table.css">
     <link rel="stylesheet" href="style/filtro.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -166,12 +167,12 @@
                         <div class="mb-1 border p-0.5">
                             <h3>Selecione uma planilha</h3>
                             <P>CSV, file size no more than 10MB</P>
-                            <input class="form-control " type="file" id="formFile">
+                            <input class="form-control " type="file" id="formFileExcel">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-secondary">Salvar</button>
+                        <button type="button" onclick="importarProdutos()" class="btn btn-secondary">Salvar</button>
                     </div>
                 </div>
             </div>
@@ -223,7 +224,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="CreateProdutoModal()" class="btn btn-secondary">Salvar</button>
+                        <button type="button" onclick="CreateProdutoModal(usuario.id)" class="btn btn-secondary">Salvar</button>
                     </div>
                 </div>
             </div>
@@ -413,7 +414,7 @@
 
         <section id="TabelaProdutos" class="component-tabela">
             <div class="container-tabela">
-                <table>
+                <table id="TabelaProd">
                     <thead>
                         <tr>
                             <th></th>
@@ -429,25 +430,7 @@
                     </tbody>
                 </table>
             </div>
-            <nav class="caixa-paginacao" aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+           
         </section>
 
         <section id="TabelaHistorico" class="component-tabela" style="display: none;">
@@ -577,12 +560,19 @@
 
 
     <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/acessoDados/produtos.js"></script>
-    <script src="js/pages/telaProdutos/crudProdutos.js"></script>
+    <script src="js/telaProdutos/crudProdutos.js"></script>
+    <script src="js/telaProdutos/manipulacaoExcel.js"></script>
+  
     <script>
+        var usuario = ''
+
         document.addEventListener('DOMContentLoaded', function () {
-            RecuperaProdutos(1)
+            usuario = localStorage.getItem('usuario');
+            RecuperaProdutos(usuario.id)
         });
     </script>
 </body>

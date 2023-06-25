@@ -1,0 +1,46 @@
+.main{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  
+}
+
+.menu-lateral {
+    width: 130px;  
+    margin-left: 30px; 
+    margin-top: 20px;
+        
+
+}
+
+.pesquisa-avancada {
+    width: 130px; 
+    background-color: #f1f1f1; 
+    height: 500%; 
+    
+  }
+
+  .pesquisa-avancada ul {
+    list-style-type: none; 
+    padding: 0;
+    margin-top: 10px; 
+
+  }
+
+  .pesquisa-avancada li, .qtd-resultados {
+    display: block; 
+    padding: 5px; 
+    text-decoration: none; 
+    color: #666; 
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+    .pesquisa-avancada h4 {
+      font-size: 1rem;
+      font-weight: 900;
+
+    }
+  
+  
+  

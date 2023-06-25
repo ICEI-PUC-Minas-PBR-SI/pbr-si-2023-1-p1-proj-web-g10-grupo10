@@ -92,13 +92,32 @@ async function getProdutoByUserId(userId) {
     }
 }
 
-async function login(email, senha) {
+//Metodo que busca o usuario baseado no email
+async function getUsuarioByEmail(email) {
+    try {
+        const response = await fetch(URL + '/usuarios');
+        const data = await response.json();
+        const filteredData = data.filter(objeto => objeto.email === email);
+        return filteredData;
+    } catch (error) {
+        console.error('Erro ao acessar banco:', error);
+    }
+}
+
+async function loginUsuario(email, senha) {
     try {
         const response = await fetch(URL + '/usuarios');
         const data = await response.json();
         const existeLogin = data.filter(obj => obj.email === email && obj.senha === senha);
 
         if (existeLogin.length > 0) {
+            const usuario = {
+                id: existeLogin.id,
+                email: existeLogin.email,
+                tipoUsuario: existeLogin.tipoUsuario,
+            }
+            const usuarioString = JSON.stringify(usuario)
+            localStorage.setItem('usuario', usuarioString);
             return true;
         }
 

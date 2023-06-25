@@ -20,6 +20,7 @@ body{
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+  
 }
 
 /*
@@ -31,6 +32,7 @@ body{
 main{
   width:100%;
   overflow-x: hidden;
+  background-color: #f1f1f1;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -47,9 +49,7 @@ main .container-busca-avançada .container-fluid{
  main .container{
   background-color: var(--cor-header-second);
  }
- main .row{
-  background-color: var(--cor-header-first);
- }
+ 
  main .perfil{
   width: 250px;
  }

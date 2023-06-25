@@ -11,6 +11,9 @@
 .caixa-principal-produtos .card .card-body{
    width: 100%;
 }
+.tamanho-caixa {
+    background-color: #f1f1f1;
+}
 .caixa-principal-produtos .card .card-body .card-title{
     max-height: 0.9rem;
     text-transform: uppercase;

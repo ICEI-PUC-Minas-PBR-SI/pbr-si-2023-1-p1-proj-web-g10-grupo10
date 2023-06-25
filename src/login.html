@@ -39,7 +39,7 @@
                     </ul>
                 </div><!-- midia social -->
                 <p class="description description-second">Utilizei seu e-mail para registro:</p>
-                <form class="form">                    
+                <form class="form" id="form-cadastro">                    
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
                         <input type="email" placeholder="Email">
@@ -83,24 +83,26 @@
                     </ul>
                 </div><!-- midia social -->
                 <p class="description description-second">Por favor, informe e-mail e senha cadastrados:</p>
-                <form class="form">
+                <form class="form" id="form-login">
                 
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
+                        <input name="email" type="email" placeholder="Email">
                     </label>
                 
                     <label class="label-input" for="">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Senha">
+                        <input name="senha" type="password" placeholder="Senha">
                     </label>
                 
                     <a class="password" href="#">Esqueceu sua senha?</a>
-                    <button class="btn btn-second">Entrar</button>
+                    <button type="submit" class="btn btn-second">Entrar</button>
                 </form>
             </div><!-- segunda coluna -->
         </div><!-- segundo conteudo -->
     </div>
-    <script src="js/app.js"></script>
+    <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
+    <script src="js/acessoDados/usuarios.js"></script>
+    <script type="module" src="js/login.js"></script>
 </body>
 </html>
