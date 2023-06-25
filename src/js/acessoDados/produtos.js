@@ -1,10 +1,10 @@
-const URL = 'http://localhost:3000/produtos'
+const URL_PRODUTOS = 'http://localhost:3000/produtos'
 const URLusuarios = 'http://localhost:3000/usuarios'
 
 // Metodo que retorna todos os produtos do banco
 async function getAllProdutos() {
     try {
-        const response = await fetch(URL);
+        const response = await fetch(URL_PRODUTOS);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -15,7 +15,7 @@ async function getAllProdutos() {
 // Metodo que retorna o produto que possui o Id especificado
 async function getProdutoById(id) {
     try {
-        const response = await fetch(URL + '/' + id);
+        const response = await fetch(URL_PRODUTOS + '/' + id);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -26,7 +26,7 @@ async function getProdutoById(id) {
 // Metodo que deleta o produto indicado pelo id
 async function deleteProduto(id) {
     try {
-        const response = await fetch(URL + '/' + id, {
+        const response = await fetch(URL_PRODUTOS + '/' + id, {
             method: 'DELETE',
         });
         const data = await response.json();
@@ -43,12 +43,12 @@ async function deleteProduto(id) {
 // Metodo que adiciona o produto ao banco
 async function createProduto(produto) {
     try {
-        const response = await fetch(URL, {
+        const response = await fetch(URL_PRODUTOS, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: produto
+            body: JSON.stringify(produto)
         })
         // const data = await response.json()
         // return data
@@ -63,12 +63,12 @@ async function createProduto(produto) {
 // Metodo que atualiza um produto já existente
 async function updateProduto(produto, id) {
     try{
-        const response = await fetch(URL + '/' + id, {
+        const response = await fetch(URL_PRODUTOS + '/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: produto
+            body: JSON.stringify(produto)
         })
         // const data = await response.json();
         // location.reload()
@@ -84,7 +84,7 @@ async function updateProduto(produto, id) {
 //Metodo que busca todos os produtos que pertecem ao usuário
 async function getProdutoByUserId(userId) {
     try{
-        const response = await fetch(URL);
+        const response = await fetch(URL_PRODUTOS);
         const data = await response.json();
         return data.filter(objeto => objeto.usuarioId === userId);
     }

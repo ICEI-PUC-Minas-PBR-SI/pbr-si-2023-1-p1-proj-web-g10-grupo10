@@ -1,10 +1,10 @@
-const URL = 'http://localhost:3000'
+const URL_USUARIOS = 'http://localhost:3000'
 const URLprodutos = 'http://localhost:3000/produtos'
 
 // Metodo que retorna todos os usuarios do banco
 async function getAllUsuarios() {
     try {
-        const response = await fetch(URL + '/usuarios');
+        const response = await fetch(URL_USUARIOS + '/usuarios');
         const data = await response.json();
         return data;
     } catch (error) {
@@ -15,7 +15,7 @@ async function getAllUsuarios() {
 // Metodo que retorna o usuário que possui o Id especificado
 async function getUsuarioById(id) {
     try {
-        const response = await fetch(URL + '/usuarios/' + id);
+        const response = await fetch(URL_USUARIOS + '/usuarios/' + id);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -33,7 +33,7 @@ async function deleteUsuario(id) {
             return false;
         }
 
-        const response = await fetch(URL + '/usuarios/' + id, {
+        const response = await fetch(URL_USUARIOS + '/usuarios/' + id, {
             method: 'DELETE',
         });
         // const data = await response.json();
@@ -47,12 +47,12 @@ async function deleteUsuario(id) {
 // Metodo que adiciona o usuário ao banco
 async function createUsuario(usuario) {
     try {
-        const response = await fetch(URL + '/usuarios/', {
+        const response = await fetch(URL_USUARIOS + '/usuarios/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: usuario
+            body: JSON.stringify(usuario)
         });
         // const data = await response.json();
         // return data;
@@ -65,12 +65,12 @@ async function createUsuario(usuario) {
 // Metodo que atualiza um usuário já existente
 async function updateUsuario(usuario, id) {
     try {
-        const response = await fetch(URL + '/usuarios/' + id, {
+        const response = await fetch(URL_USUARIOS + '/usuarios/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: usuario
+            body: JSON.stringify(usuario)
         });
         // const data = await response.json();
         // return data;
@@ -95,7 +95,7 @@ async function getProdutoByUserId(userId) {
 //Metodo que busca o usuario baseado no email
 async function getUsuarioByEmail(email) {
     try {
-        const response = await fetch(URL + '/usuarios');
+        const response = await fetch(URL_USUARIOS + '/usuarios');
         const data = await response.json();
         const filteredData = data.filter(objeto => objeto.email === email);
         return filteredData;
@@ -106,22 +106,12 @@ async function getUsuarioByEmail(email) {
 
 async function loginUsuario(email, senha) {
     try {
-        const response = await fetch(URL + '/usuarios');
+        const response = await fetch(URL_USUARIOS + '/usuarios');
         const data = await response.json();
         const existeLogin = data.filter(obj => obj.email === email && obj.senha === senha);
 
-        if (existeLogin.length > 0) {
-            const usuario = {
-                id: existeLogin.id,
-                email: existeLogin.email,
-                tipoUsuario: existeLogin.tipoUsuario,
-            }
-            const usuarioString = JSON.stringify(usuario)
-            localStorage.setItem('usuario', usuarioString);
-            return true;
-        }
+        return existeLogin;
 
-        return false;
     } catch (error) {
         console.error('Erro ao ler o arquivo JSON:', error);
     }

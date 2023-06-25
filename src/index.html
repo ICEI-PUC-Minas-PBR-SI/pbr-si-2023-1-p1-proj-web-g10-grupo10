@@ -159,7 +159,7 @@
     <section class="caixa-principal-produtos mt-3">
       <div class="ultimos-lançamentos">
         <h2>Últimos lançamentos</h2>
-        <div class="tamanho-caixa row row-cols-1 row-cols-md-3 g-4">
+        <div id="caixa-produtos" class="tamanho-caixa row row-cols-sm-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-5  g-4">
           <div class="col">
             <div class="card" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <img src="image/produtos/vela-ignicao-chevette-gas-p6tcmm.webp" class="card-img-top" alt="...">
@@ -245,45 +245,6 @@
           </div>
         </div>
       </div>
-
-      <div class="produtos-destaque mt-3">
-        <h2>Produtos em destaque</h2>
-        <div class="tamanho-caixa row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card">
-              <img src="image/produtos/vela-ignicao-chevette-gas-p6tcmm.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Vela Ignição Chevette Gas</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <a href="#" class="card-price stretched-link text-success">R$ 69,12</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="image/produtos/trava-roscas-alto-torque-10g-2679363.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Trava Rosca</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <a href="#" class="card-price stretched-link text-success">R$ 69,12</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="image/produtos/anel-segmento-corsa-1.4-std-flex-93305514.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Anel Segmento Corsa 1.4 Std Flex</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                  content.</p>
-                <a href="#" class="card-price stretched-link text-success">R$ 69,12</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
   </main>
@@ -329,12 +290,11 @@
     </div>
   </footer>
   
-  
   <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
   <script src="js/acessoDados/produtos.js"></script>
   <script src="js/acessoDados/reservas.js"></script>
   <script src="js/utils/auto_increment.js"></script>
-  <script type="module" src="js/components/reserva.js"></script>
+  <script type="module" src="js/pages/telaInicial/index.js"></script>  
 </body>
 
 </html>
