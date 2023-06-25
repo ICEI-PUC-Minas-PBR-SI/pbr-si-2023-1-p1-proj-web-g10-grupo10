@@ -1,5 +1,3 @@
-import {createUsuario} from "./acessoDados/usuarios.js";
-
 const form = $("#form-cadastro-dados");
 form.submit(function (e){
   const dadosFormulario = $(this).serializeArray();

@@ -167,12 +167,12 @@
                         <div class="mb-1 border p-0.5">
                             <h3>Selecione uma planilha</h3>
                             <P>CSV, file size no more than 10MB</P>
-                            <input class="form-control " type="file" id="formFile">
+                            <input class="form-control " type="file" id="formFileExcel">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-secondary">Salvar</button>
+                        <button type="button" onclick="importarProdutos()" class="btn btn-secondary">Salvar</button>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="CreateProdutoModal()" class="btn btn-secondary">Salvar</button>
+                        <button type="button" onclick="CreateProdutoModal(usuario.id)" class="btn btn-secondary">Salvar</button>
                     </div>
                 </div>
             </div>
@@ -560,13 +560,19 @@
 
 
     <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/acessoDados/produtos.js"></script>
     <script src="js/telaProdutos/crudProdutos.js"></script>
-    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="js/telaProdutos/manipulacaoExcel.js"></script>
+  
     <script>
+        var usuario = ''
+
         document.addEventListener('DOMContentLoaded', function () {
-            RecuperaProdutos(1)
+            usuario = localStorage.getItem('usuario');
+            RecuperaProdutos(usuario.id)
         });
     </script>
 </body>

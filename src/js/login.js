@@ -1,6 +1,3 @@
-
-import {loginUsuario, getProdutoByEmail} from "./acessoDados/usuarios.js";
-
 var btnSignin = document.querySelector("#signin");
 var btnSignup = document.querySelector("#signup");
 
@@ -49,7 +46,7 @@ formCadastro.submit(function (e) {
         objetoFormulario[field.name] = field.value;
       });
 
-    if(getProdutoByEmail(objetoFormulario.email) !== undefined){
+    if(getUsuarioByEmail(objetoFormulario.email) !== undefined){
         alert("usuario ja existe");
         return false;
     }
