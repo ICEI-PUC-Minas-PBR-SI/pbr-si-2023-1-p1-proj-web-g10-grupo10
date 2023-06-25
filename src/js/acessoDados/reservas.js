@@ -101,7 +101,7 @@ async function getReservasByLojaId(lojaId) {
 // Busca todas as reservas feitas na loja que foram concluidas
 async function getReservasByLojaIdStatus(lojaId, status) {
     try {
-        const response = await fetch(`${URL}?lojaId=${lojaId}&statusPedido=${status}`);
+        const response = await fetch(`${URL_RESERVAS}?lojaId=${lojaId}&statusPedido=${status}`);
         const data = await response.json();
         return data;
     } catch (error) {

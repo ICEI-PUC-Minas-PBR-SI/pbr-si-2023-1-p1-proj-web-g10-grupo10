@@ -12,7 +12,7 @@ const arrQtdReservasMes = await getQuantidadeReservasMes();
 
 let arrQuantidadeVendas = new Array(12);
 arrQuantidadeVendas.fill(0);
-for(item in arrQtdReservasMes){
+for(let item in arrQtdReservasMes){
   arrQuantidadeVendas[arrQtdReservasMes[item].mes - 1] = arrQtdReservasMes[item].quantidadeReservas;
 }
 console.log(arrQuantidadeVendas);
@@ -20,7 +20,7 @@ console.log(arrQuantidadeVendas);
 async function getQuantidadeReservasMes(){
   const arrReservas = await getReservasByLojaIdStatus(2, STATUS_CONCLUIDO);
 
-  const arrQtdReservasMes = arrReservas.reduce((arrayAcumulador, reserva) =>{
+  const arrQtdReservasMes = arrReservas.reduce(async(arrayAcumulador, reserva) =>{
     const partes = reserva.dataLimite.split("/");
     const dataReorganizada = partes[1] + "/" + partes[0] + "/" + partes[2];
     

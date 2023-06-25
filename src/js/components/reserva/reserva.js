@@ -8,12 +8,13 @@ export function initReserva() {
   btnQtdReservas.click(manipulaQuantidadeItensReservas);
   
   const btnReservar = $('.btn-reservar');
-  btnReservar.click(function() {   
+  btnReservar.click(function(e) {  
+    e.preventDefault();
     const jIdProdutoAtual = $(this).prop("id");
     const qtd = parseInt($(this).prev().find('.qtd-reservas').text());
     const id = jIdProdutoAtual.replace("prod_", "");
 
-    fazReserva(id, qtd);
+    fazReserva(e, id, qtd);
   });
 
   function manipulaQuantidadeItensReservas(){
@@ -31,7 +32,8 @@ export function initReserva() {
     }
   }
 
-async function fazReserva(id, qtd){
+async function fazReserva(e, id, qtd){
+    e.preventDefault();
     // pega usuario logado 
     const user = JSON.parse(localStorage.getItem("usuario"));
     const idReserva = retornaIDAutoIncrementEntidades(getAllReservas());
@@ -60,6 +62,7 @@ async function fazReserva(id, qtd){
     if(created){
     // Atualiza a quantidade disponivel do produto
       produto.quantidadeDisponivel -= qtd;
+      console.log(produto.quantidadeDisponivel)
       updateProduto(JSON.stringify(produto), produto.id);
     }
     
