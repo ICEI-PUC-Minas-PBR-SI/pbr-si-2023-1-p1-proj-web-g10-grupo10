@@ -1,5 +1,5 @@
 
-import {loginUsuario} from "./acessoDados/usuarios.js";
+import {loginUsuario, getProdutoByEmail} from "./acessoDados/usuarios.js";
 
 var btnSignin = document.querySelector("#signin");
 var btnSignup = document.querySelector("#signup");
@@ -35,4 +35,28 @@ formLogin.submit(function (e) {
     }
 
     console.log(objetoFormulario);
+});
+
+const formCadastro = $("#form-cadastro");
+formCadastro.submit(function (e) { 
+    e.preventDefault();
+    // Serializa os dados do formulário
+    console.log("Formulário");
+    const dadosFormulario = $(this).serializeArray();
+    const objetoFormulario = {};
+
+    $.each(dadosFormulario, function(index, field) {
+        objetoFormulario[field.name] = field.value;
+      });
+
+    if(getProdutoByEmail(objetoFormulario.email) !== undefined){
+        alert("usuario ja existe");
+        return false;
+    }
+    
+    console.log(objetoFormulario);
+    const formularioString = JSON.stringify(objetoFormulario)
+    localStorage.setItem('formulario', formularioString);
+
+    window.location.href = "cadastro.html";
 });
