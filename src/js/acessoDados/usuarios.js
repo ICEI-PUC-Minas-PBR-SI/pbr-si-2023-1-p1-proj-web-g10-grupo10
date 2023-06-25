@@ -92,11 +92,11 @@ async function getProdutoByUserId(userId) {
     }
 }
 
-async function login(nome, senha) {
+async function login(email, senha) {
     try {
         const response = await fetch(URL + '/usuarios');
         const data = await response.json();
-        const existeLogin = data.filter(obj => obj.nome === nome && obj.senha === senha);
+        const existeLogin = data.filter(obj => obj.email === email && obj.senha === senha);
 
         if (existeLogin.length > 0) {
             return true;

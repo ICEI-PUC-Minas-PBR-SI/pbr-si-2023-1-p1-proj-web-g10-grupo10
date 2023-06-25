@@ -1,9 +1,9 @@
 //obtem usuário do local storage e tipo de usuário, para mostrar historico dele
 //     const usuario = JSON.parse(localStorage.getItem('usuario'))
 //     const tipoUsuario = usuario.tipoUsuario
-import { updateProduto } from "../../acessoDados/produtos";
-import { getReservaById, getReservasByLojaId, getReservasByUserId, updateReserva } from "../../acessoDados/reservas";
-import { exibirNotificacao } from "../../utils/notifications_geral";
+import { updateProduto } from "../../acessoDados/produtos.js";
+import { getReservaById, getReservasByLojaId, getReservasByUserId, updateReserva } from "../../acessoDados/reservas.js";
+import { exibirNotificacao } from "../../utils/notifications_geral.js";
 
 const TIPO_USER = {
     cliente: 0,
@@ -31,38 +31,57 @@ const usuario = JSON.parse(localStorage.getItem('usuario'));
 var tipoUsuario = usuario.tipoUsuario;
 const containerTabela = $('.container-tabela');
 
-// chamadas de funcoes quando a pagina carrega
+// armazena na variavel arrReservas todas reservas do usuario ou da loja
 arrReservas = getProdutosReservadosByUser(usuario.id);
+// monta tabela no html com as reservas do usuario ou da loja
 montaTabelaReservas(arrReservas);
 
+//obtem todas reservas do usuario ou da loja
 function getProdutosReservadosByUser(idUserOrLoja){
     const funcLojaOrUser = (tipoUsuario == 2) ? getReservasByLojaId : getReservasByUserId;
     const arrReservas = funcLojaOrUser(idUserOrLoja);
     return arrReservas;
 }
 
-//TODO: ao inves de colocar no html retornar tabela
 function montaTabelaReservas(arrReservas){
-    const corpoTabela = $('#table-body-reservas');
-    let tbHtml = '';
+    const cabecalhoTabela = $('#tb-head-reservas');
+    const corpoTabela = $('#tb-body-reservas');
+    let tbodyHtml = '';
 
     arrReservas.forEach(reserva => {
-        tbHtml += getLinhaTabelaReservas(reserva);
+        tbodyHtml += getLinhaTabelaReservas(reserva);
     });
-
-    corpoTabela.html(tbHtml);
+    
+    cabecalhoTabela.html(getCabecalhoTabelaReservas());
+    corpoTabela.html(tbodyHtml);
+}
+function getCabecalhoTabelaReservas(){
+    const thNomeCliente = (tipoUsuario == TIPO_USER.loja) ? `<th>Nome do Cliente</th>` : '';
+    const cabecalho = `
+        <tr>
+            <th>Data de Reserva</th>
+            ${tdNomeCliente}
+            <th>Descricão da Peça</th>
+            <th>Status</th>
+            <th>Quantidade Reservadas</th>
+            <th>Valor Total</th>
+            <th>Data Retirada</th>
+            <th>Acões</th>
+        </tr>
+    `;
+    return cabecalho;
 }
 function getLinhaTabelaReservas(reserva){
     const usuarioDaReserva = getUsuarioById(reserva.usuarioId);
     const produtoReserva   = getProdutoById(reserva.produtoId);
 
-    const tdNomeUser = (tipoUsuario == TIPO_USER.loja) ? `<td>${usuarioDaReserva.nome}</td>` : '';
+    const tdNomeCliente = (tipoUsuario == TIPO_USER.loja) ? `<td>${usuarioDaReserva.nome}</td>` : '';
     // implementar funcao de desativar botao de concluir reserva e cancelar reserva quando o status for diferente de reservado
     const desativado = (reserva.statusPedido != STATUS_RESERVA.reservado) ? 'disabled' : '';
     const linha = `
             <tr class="table-line" id="reserva-${reserva.id}">
                 <td>${reserva.dataReserva}</td>
-                ${tdNomeUser}
+                ${tdNomeCliente}
                 <td>${produtoReserva.nomeDaPeca}</td>
                 <td><span class="status ${ID_ClASS_RESERVA_STATUS[reserva.statusPedido]}">${ID_RESERVA_STATUS[reserva.statusPedido]}</span></td>
                 <td>${reserva.quantidade}</td>
@@ -113,7 +132,7 @@ function concluiReserva (e) {
     else{
         exibirNotificacao('Erro', 'Erro ao concluir reserva!', 'error');
     }
-}
+  }
 //Quando modal abrir, seta o id da reserva no form
 function abriuModalConcluiReserva(idReserva){
     formConcluirReserva.attr('data-id-reserva', idReserva);
@@ -148,6 +167,7 @@ function cancelaReserva(e){
         linha.replaceWith(getLinhaTabelaReservas(reservaAtualizada, tipoUsuario));   
         exibirNotificacao('Sucesso', 'Reserva cancelada com sucesso!', 'success');
         
+        // Atualiza quantidade disponivel do produto apos cancelar reserva
         const produtoReserva = getProdutoById(reservaAtualizada.produtoId);
         const novosDadosProdutos = {
             quantidadeDisponivel: reservaAtualizada.quantidade + produtoReserva.quantidadeDisponivel

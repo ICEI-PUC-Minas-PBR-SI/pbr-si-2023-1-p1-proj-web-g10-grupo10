@@ -26,11 +26,13 @@ body{
   MAIN
 */
 .tamanho-caixa{
-  max-width: 1000px;
+  max-width: 1400px;
 }
 main{
   width:100%;
   overflow-x: hidden;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 main .container-busca-avançada,  main .caixa-principal-produtos{
   display: flex;
