@@ -1,3 +1,6 @@
+.tamanho-caixa {
+    background-color: #f1f1f1;
+}
 .caixa-principal-produtos .card .card-body .card-title{
     text-transform: uppercase;
     font-size: 0.9rem;
