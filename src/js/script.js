@@ -9,13 +9,6 @@ function escondeTabelasProdutos(tabId,TabelaMostra,TabelaEsconder, tabDesativar)
             activeDivs[i].classList.remove("active");
         }
     }
-    const usuario = {
-        email:"usuarioemail@gmail.com",
-        tipoUsuario:0,
-        id:1
-      }
-      const usuariostrig = JSON.stringify(usuario)
-      localStorage.setItem('usuariologado', usuariostrig);
       
     tabId.classList.add("active");
 

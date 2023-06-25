@@ -92,13 +92,20 @@ async function getProdutoByUserId(userId) {
     }
 }
 
-async function login(nome, senha) {
+async function loginUsuario(email, senha) {
     try {
         const response = await fetch(URL + '/usuarios');
         const data = await response.json();
-        const existeLogin = data.filter(obj => obj.nome === nome && obj.senha === senha);
+        const existeLogin = data.filter(obj => obj.email === email && obj.senha === senha);
 
         if (existeLogin.length > 0) {
+            const usuario = {
+                id: existeLogin.id,
+                email: existeLogin.email,
+                tipoUsuario: existeLogin.tipoUsuario,
+            }
+            const usuarioString = JSON.stringify(usuario)
+            localStorage.setItem('usuario', usuarioString);
             return true;
         }
 
@@ -107,3 +114,5 @@ async function login(nome, senha) {
         console.error('Erro ao ler o arquivo JSON:', error);
     }
 }
+
+export{loginUsuario}
