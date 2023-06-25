@@ -1,30 +1,23 @@
-//obtem usuário do local storage e tipo de usuário, para mostrar historico dele
-//     const usuario = JSON.parse(localStorage.getItem('usuario'))
-//     const tipoUsuario = usuario.tipoUsuario
-import { updateProduto } from "../../acessoDados/produtos.js";
-import { getReservaById, getReservasByLojaId, getReservasByUserId, updateReserva } from "../../acessoDados/reservas.js";
-import { exibirNotificacao } from "../../utils/notifications_geral.js";
-
 const TIPO_USER = {
     cliente: 0,
     loja: 1,
     admin: 2
 }
 const STATUS_RESERVA = {
-    reservado: '1',
-    concluido: '2',
-    cancelado: '3'
+    reservado: '0',
+    concluido: '1',
+    cancelado: '2'
 } 
 const ID_RESERVA_STATUS = {
-    1: 'Reservado',
-    2: 'Concluido',
-    3: 'Cancelado'
+    0: 'Reservado',
+    1: 'Concluido',
+    2: 'Cancelado'
 }
 
 const ID_ClASS_RESERVA_STATUS = {
-    1: 'pending',
-    2: 'sucess',
-    3: 'canceled'
+    0: 'pending',
+    1: 'sucess',
+    2: 'canceled'
 }
 
 const usuario = JSON.parse(localStorage.getItem('usuario'));
@@ -32,35 +25,37 @@ var tipoUsuario = usuario.tipoUsuario;
 const containerTabela = $('.container-tabela');
 
 // armazena na variavel arrReservas todas reservas do usuario ou da loja
-arrReservas = getProdutosReservadosByUser(usuario.id);
+const arrReservas = await getProdutosReservadosByUser(usuario.id);
+console.log(arrReservas);
 // monta tabela no html com as reservas do usuario ou da loja
 montaTabelaReservas(arrReservas);
 
 //obtem todas reservas do usuario ou da loja
-function getProdutosReservadosByUser(idUserOrLoja){
-    const funcLojaOrUser = (tipoUsuario == 2) ? getReservasByLojaId : getReservasByUserId;
-    const arrReservas = funcLojaOrUser(idUserOrLoja);
+async function getProdutosReservadosByUser(idUserOrLoja){
+    const funcLojaOrUser = (tipoUsuario == TIPO_USER.loja) ? getReservasByLojaId : getReservasByUserId;
+    const arrReservas = await funcLojaOrUser(idUserOrLoja);
     return arrReservas;
 }
 
-function montaTabelaReservas(arrReservas){
+async function montaTabelaReservas(arrReservas) {
     const cabecalhoTabela = $('#tb-head-reservas');
     const corpoTabela = $('#tb-body-reservas');
     let tbodyHtml = '';
 
-    arrReservas.forEach(reserva => {
-        tbodyHtml += getLinhaTabelaReservas(reserva);
-    });
-    
+    for (const reserva of arrReservas) {
+        tbodyHtml += await getLinhaTabelaReservas(reserva);
+    }
+
     cabecalhoTabela.html(getCabecalhoTabelaReservas());
     corpoTabela.html(tbodyHtml);
 }
+
 function getCabecalhoTabelaReservas(){
     const thNomeCliente = (tipoUsuario == TIPO_USER.loja) ? `<th>Nome do Cliente</th>` : '';
     const cabecalho = `
         <tr>
             <th>Data de Reserva</th>
-            ${tdNomeCliente}
+            ${thNomeCliente}
             <th>Descricão da Peça</th>
             <th>Status</th>
             <th>Quantidade Reservadas</th>
@@ -71,9 +66,9 @@ function getCabecalhoTabelaReservas(){
     `;
     return cabecalho;
 }
-function getLinhaTabelaReservas(reserva){
-    const usuarioDaReserva = getUsuarioById(reserva.usuarioId);
-    const produtoReserva   = getProdutoById(reserva.produtoId);
+async function getLinhaTabelaReservas(reserva){
+    const usuarioDaReserva = await getUsuarioById(reserva.usuarioId);
+    const produtoReserva   = await getProdutoById(reserva.produtoId);
 
     const tdNomeCliente = (tipoUsuario == TIPO_USER.loja) ? `<td>${usuarioDaReserva.nome}</td>` : '';
     // implementar funcao de desativar botao de concluir reserva e cancelar reserva quando o status for diferente de reservado
