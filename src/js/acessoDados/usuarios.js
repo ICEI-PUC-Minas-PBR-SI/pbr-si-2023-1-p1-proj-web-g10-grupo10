@@ -91,6 +91,17 @@ async function getProdutoByUserId(userId) {
         console.error('Erro ao acessar banco:', error);
     }
 }
+//Metodo que busca todos os produtos que pertecem ao usuário
+async function getProdutoByEmail(email) {
+    try {
+        const response = await fetch(URLprodutos);
+        const data = await response.json();
+        const filteredData = data.filter(objeto => objeto.email === email);
+        return filteredData;
+    } catch (error) {
+        console.error('Erro ao acessar banco:', error);
+    }
+}
 
 async function loginUsuario(email, senha) {
     try {
@@ -115,4 +126,4 @@ async function loginUsuario(email, senha) {
     }
 }
 
-export{loginUsuario}
+export{loginUsuario, createUsuario, getProdutoByEmail}
