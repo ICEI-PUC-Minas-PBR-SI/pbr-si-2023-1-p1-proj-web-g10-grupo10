@@ -12,5 +12,3 @@ function exibirNotificacao(titulo, mensagem, tipo) {
   // passando o tipo como objeto
   toastr[tipo](mensagem, titulo);
 }
-
-export { exibirNotificacao };

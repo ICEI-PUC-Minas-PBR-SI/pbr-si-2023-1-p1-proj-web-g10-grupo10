@@ -10,7 +10,7 @@ export function initReserva() {
   const btnReservar = $('.btn-reservar');
   btnReservar.click(function() {   
     const jIdProdutoAtual = $(this).prop("id");
-    const qtd = $(this).closest(".qtd-reservas").text();
+    const qtd = parseInt($(this).prev().find('.qtd-reservas').text());
     const id = jIdProdutoAtual.replace("prod_", "");
 
     fazReserva(id, qtd);
@@ -31,14 +31,15 @@ export function initReserva() {
     }
   }
 
-  function fazReserva(id, qtd){
+async function fazReserva(id, qtd){
     // pega usuario logado 
     const user = JSON.parse(localStorage.getItem("usuario"));
     const idReserva = retornaIDAutoIncrementEntidades(getAllReservas());
-    let produto = getProdutoById(id);
+    let produto = await getProdutoById(id);
     const today = new Date();
     // soma sete dias na data inicial, encontrando data limite para retirar o  produto
-    const dataLimite = today.setDate(today.getDate() + QTD_MAX_DIAS_RESERVADO);
+    let dataLimite = new Date();
+    dataLimite = new Date(dataLimite.setDate(dataLimite.getDate() + QTD_MAX_DIAS_RESERVADO));
     
     const reserva = {
       id: idReserva,
