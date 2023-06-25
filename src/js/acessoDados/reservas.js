@@ -1,10 +1,10 @@
-const URL = 'http://localhost:3000/reservas'
-const URLusuarios = 'http://localhost:3000/usuarios'
+const URL_RESERVAS = 'http://localhost:3000/reservas'
+const URL_REERVA_Usuarios = 'http://localhost:3000/usuarios'
 
 // Metodo que retorna todos os reservas do banco
 async function getAllReservas() {
     try {
-        const response = await fetch(URL);
+        const response = await fetch(URL_RESERVAS);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -15,7 +15,7 @@ async function getAllReservas() {
 // Metodo que retorna a reserva que possui o Id especificado
 async function getReservaById(id) {
     try {
-        const response = await fetch(URL + '/' + id);
+        const response = await fetch(URL_RESERVAS + '/' + id);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -26,7 +26,7 @@ async function getReservaById(id) {
 // Metodo que deleta a reserva indicado pelo id
 async function deleteReserva(id) {
     try {
-        const response = await fetch(URL + '/' + id, {
+        const response = await fetch(URL_RESERVAS + '/' + id, {
             method: 'DELETE',
         });
         // const data = await response.json();
@@ -40,7 +40,7 @@ async function deleteReserva(id) {
 // Metodo que adiciona a reserva ao banco
 async function createReserva(jsonReserva) {
     try {
-        const response = await fetch(URL, {
+        const response = await fetch(URL_RESERVAS, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -49,34 +49,35 @@ async function createReserva(jsonReserva) {
         });
         // const data = await response.json();
         // return data;
-        location.reload()
+        return true;
     } catch (error) {
         console.error('Erro ao acessar banco:', error);
     }
 }
 
 // Metodo que atualiza uma reserva já existente
-async function updateReserva(usuario,id) {
+async function updateReserva(reserva,id) {
     try {
-        const response = await fetch(URL + '/' + id, {
+        const response = await fetch(URL_RESERVAS + '/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: usuario
+            body: reserva
         });
         // const data = await response.json();
-        // return data;
+        return true;
         location.reload()
     } catch (error) {
         console.error('Erro ao acessar banco:', error);
+        return false;
     }
 }
 
 //Metodo que busca todos os reservas que pertecem ao usuário
 async function getReservasByUserId(userId) {
     try {
-        const response = await fetch(URL);
+        const response = await fetch(URL_RESERVAS);
         const data = await response.json();
         const filteredData = data.filter(objeto => objeto.usuarioId === userId);
         return filteredData;
@@ -88,7 +89,7 @@ async function getReservasByUserId(userId) {
 //Metodo que busca todos os reservas que foram feitas na loja
 async function getReservasByLojaId(lojaId) {
     try {
-        const response = await fetch(URL);
+        const response = await fetch(URL_RESERVAS);
         const data = await response.json();
         const filteredData = data.filter(objeto => objeto.lojaId === lojaId);
         return filteredData;
