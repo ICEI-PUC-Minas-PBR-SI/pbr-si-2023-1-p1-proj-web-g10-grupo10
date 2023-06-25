@@ -92,4 +92,3 @@ async function getProdutoByUserId(userId) {
         console.error('Erro ao acessar banco:', error);
     }
 }
-export { getAllProdutos, getProdutoById, deleteProduto, createProduto, updateProduto, getProdutoByUserId }
