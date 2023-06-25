@@ -25,6 +25,7 @@ async function RecuperaProdutos(id) {
 
         tabela.innerHTML += template
     });
+    $('#TabelaProd').DataTable()
 }
 
 async function RecuperaDadosProdutoModalEdit(id) {
