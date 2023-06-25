@@ -91,10 +91,11 @@ async function getProdutoByUserId(userId) {
         console.error('Erro ao acessar banco:', error);
     }
 }
-//Metodo que busca todos os produtos que pertecem ao usuário
-async function getProdutoByEmail(email) {
+
+//Metodo que busca o usuario baseado no email
+async function getUsuarioByEmail(email) {
     try {
-        const response = await fetch(URLprodutos);
+        const response = await fetch(URL + '/usuarios');
         const data = await response.json();
         const filteredData = data.filter(objeto => objeto.email === email);
         return filteredData;
@@ -125,5 +126,3 @@ async function loginUsuario(email, senha) {
         console.error('Erro ao ler o arquivo JSON:', error);
     }
 }
-
-export{loginUsuario, createUsuario, getProdutoByEmail}
