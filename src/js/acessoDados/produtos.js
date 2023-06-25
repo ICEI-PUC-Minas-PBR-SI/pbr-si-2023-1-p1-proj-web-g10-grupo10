@@ -91,4 +91,3 @@ async function getProdutoByUserId(userId) {
     catch(error){
         console.error('Erro ao acessar banco:', error);
     }
-}
