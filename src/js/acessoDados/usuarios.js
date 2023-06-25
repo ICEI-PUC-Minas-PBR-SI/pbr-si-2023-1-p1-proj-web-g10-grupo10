@@ -110,18 +110,8 @@ async function loginUsuario(email, senha) {
         const data = await response.json();
         const existeLogin = data.filter(obj => obj.email === email && obj.senha === senha);
 
-        if (existeLogin.length > 0) {
-            const usuario = {
-                id: existeLogin.id,
-                email: existeLogin.email,
-                tipoUsuario: existeLogin.tipoUsuario,
-            }
-            const usuarioString = JSON.stringify(usuario)
-            localStorage.setItem('usuario', usuarioString);
-            return true;
-        }
+        return existeLogin;
 
-        return false;
     } catch (error) {
         console.error('Erro ao ler o arquivo JSON:', error);
     }

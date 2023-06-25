@@ -16,7 +16,6 @@ const formLogin = $("#form-login");
 formLogin.submit(async function (e) { 
     e.preventDefault();
     // Serializa os dados do formulário
-    console.log("Formulário");
     const dadosFormulario = $(this).serializeArray();
     const objetoFormulario = {};
 
@@ -24,14 +23,26 @@ formLogin.submit(async function (e) {
         objetoFormulario[field.name] = field.value;
       });
       
-    const isUser = await loginUsuario(objetoFormulario.email, objetoFormulario.senha)
+    const existeLogin =  await loginUsuario(objetoFormulario.email, objetoFormulario.senha)
+    
+    if (existeLogin.length > 0) {
+        const usuario = {
+            id: existeLogin[0].id,
+            email: existeLogin[0].email,
+            tipoUsuario: existeLogin[0].tipoUsuario,
+        }
+        
+        console.log(usuario);
+        const usuarioString = JSON.stringify(usuario)
+        localStorage.setItem('usuario', usuarioString);
+        window.location.href = "index.html";
+    }
+    else{
+        alert("usuario ou senha incorretos");
 
-    if (isUser){
-        sessionStorage.setItem('usuario', JSON.stringify(await getUsuarioByEmail(objetoFormulario.email)))
-        location.href= "index.html";
     }
 
-    console.log(objetoFormulario);
+    //console.log(objetoFormulario);
 });
 
 const formCadastro = $("#form-cadastro");

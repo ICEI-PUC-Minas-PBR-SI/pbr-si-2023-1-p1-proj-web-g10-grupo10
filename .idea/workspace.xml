@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b215696f-49dd-499a-9203-a07b95d3d947" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/data/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/historico-reservas.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/historico-reservas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/acessoDados/usuarios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/acessoDados/usuarios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/components/reserva.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/pages/historicoReservas/historicoReservasController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/pages/historicoReservas/historicoReservasController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/produto.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/produto.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/style.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Q4HxAZPebnToNK28AbQ6Y4j994" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "historico-reservas",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\pbr-si-2023-1-p1-proj-web-g10-grupo10\src\js\bibliotecas" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b215696f-49dd-499a-9203-a07b95d3d947" name="Changes" comment="" />
+      <created>1684606181177</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684606181177</updated>
+      <workItem from="1684606182708" duration="2360000" />
+      <workItem from="1684608573157" duration="970000" />
+      <workItem from="1684609565217" duration="5925000" />
+      <workItem from="1684635318769" duration="4947000" />
+      <workItem from="1684683884329" duration="2889000" />
+      <workItem from="1684709406586" duration="1930000" />
+      <workItem from="1687667163794" duration="949000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
