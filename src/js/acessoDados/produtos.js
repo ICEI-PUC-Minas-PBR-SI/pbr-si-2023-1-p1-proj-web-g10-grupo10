@@ -48,7 +48,7 @@ async function createProduto(produto) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: produto
+            body: JSON.stringify(produto)
         })
         // const data = await response.json()
         // return data
@@ -68,7 +68,7 @@ async function updateProduto(produto, id) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: produto
+            body: JSON.stringify(produto)
         })
         // const data = await response.json();
         // location.reload()

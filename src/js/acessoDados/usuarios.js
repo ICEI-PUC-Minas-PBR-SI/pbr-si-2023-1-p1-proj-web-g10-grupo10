@@ -52,7 +52,7 @@ async function createUsuario(usuario) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: usuario
+            body: JSON.stringify(usuario)
         });
         // const data = await response.json();
         // return data;
@@ -70,7 +70,7 @@ async function updateUsuario(usuario, id) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: usuario
+            body: JSON.stringify(usuario)
         });
         // const data = await response.json();
         // return data;

@@ -13,8 +13,7 @@ btnSignup.addEventListener("click", function () {
 })
 
 const formLogin = $("#form-login");
-console.log(formLogin);
-formLogin.submit(function (e) { 
+formLogin.submit(async function (e) { 
     e.preventDefault();
     // Serializa os dados do formulário
     console.log("Formulário");
@@ -25,20 +24,20 @@ formLogin.submit(function (e) {
         objetoFormulario[field.name] = field.value;
       });
       
-    const isUser = loginUsuario(objetoFormulario.email, objetoFormulario.senha)
+    const isUser = await loginUsuario(objetoFormulario.email, objetoFormulario.senha)
 
     if (isUser){
-        location.href("index.html");
+        sessionStorage.setItem('usuario', await getUsuarioByEmail(objetoFormulario.email))
+        location.href= "index.html";
     }
 
     console.log(objetoFormulario);
 });
 
 const formCadastro = $("#form-cadastro");
-formCadastro.submit(function (e) { 
+formCadastro.submit( async function (e) { 
     e.preventDefault();
     // Serializa os dados do formulário
-    console.log("Formulário");
     const dadosFormulario = $(this).serializeArray();
     const objetoFormulario = {};
 
@@ -46,12 +45,13 @@ formCadastro.submit(function (e) {
         objetoFormulario[field.name] = field.value;
       });
 
-    if(getUsuarioByEmail(objetoFormulario.email) !== undefined){
+    let teste = await getUsuarioByEmail(objetoFormulario.email)
+
+    if(teste.length > 0){
         alert("usuario ja existe");
         return false;
     }
     
-    console.log(objetoFormulario);
     const formularioString = JSON.stringify(objetoFormulario)
     localStorage.setItem('formulario', formularioString);
 
