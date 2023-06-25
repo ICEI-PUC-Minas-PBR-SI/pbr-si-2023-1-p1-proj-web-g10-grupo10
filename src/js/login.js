@@ -27,7 +27,7 @@ formLogin.submit(async function (e) {
     const isUser = await loginUsuario(objetoFormulario.email, objetoFormulario.senha)
 
     if (isUser){
-        sessionStorage.setItem('usuario', await getUsuarioByEmail(objetoFormulario.email))
+        sessionStorage.setItem('usuario', JSON.stringify(await getUsuarioByEmail(objetoFormulario.email)))
         location.href= "index.html";
     }
 
