@@ -96,5 +96,3 @@ async function getReservasByLojaId(lojaId) {
         console.error('Erro ao acessar banco:', error);
     }
 }
-
-export{getAllReservas, getReservaById, deleteReserva, createReserva, updateReserva, getReservasByUserId, getReservasByLojaId}
