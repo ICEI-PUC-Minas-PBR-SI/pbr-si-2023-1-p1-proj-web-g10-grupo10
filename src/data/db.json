@@ -14,6 +14,21 @@
       "Numero": 0,
       "Complemento": "Do seu lado",
       "Telefone": "31970042356"
+    },
+    {
+      "id": 2,
+      "nome": "loja legal",
+      "email": "loja@gmail.com",
+      "senha": "12345",
+      "tipoUsuario": 1,
+      "Cep": "32422344",
+      "Endereço": "Rua dos Bobos",
+      "UF": "MG",
+      "Cidade": "Pao de queijo",
+      "Bairro": "Paçoca",
+      "Numero": 0,
+      "Complemento": "Do seu lado",
+      "Telefone": "31970042356"
     }
   ],
   "produtos": [
@@ -55,7 +70,73 @@
       "quantidade": 5,
       "valor": 2000,
       "ativo": 1
+    },
+    {
+      "id": 2,
+      "usuarioId": 1,
+      "lojaId": 2,
+      "produtoId": 5,
+      "tipoUsuario": 2,
+      "dataReserva": "08/06/2023",
+      "dataLimite": "18/06/2023",
+      "statusPedido": 1,
+      "quantidade": 5,
+      "valor": 2000,
+      "ativo": 1
+    },
+    {
+      "id": 3,
+      "usuarioId": 1,
+      "lojaId": 2,
+      "produtoId": 5,
+      "tipoUsuario": 2,
+      "dataReserva": "08/06/2023",
+      "dataLimite": "18/06/2023",
+      "statusPedido": 1,
+      "quantidade": 5,
+      "valor": 2000,
+      "ativo": 1
+    },
+    {
+      "id": 4,
+      "usuarioId": 1,
+      "lojaId": 2,
+      "produtoId": 5,
+      "tipoUsuario": 2,
+      "dataReserva": "08/06/2023",
+      "dataLimite": "18/06/2023",
+      "statusPedido": 0,
+      "quantidade": 5,
+      "valor": 2000,
+      "ativo": 1
+    },
+    {
+      "id": 5,
+      "usuarioId": 1,
+      "lojaId": 2,
+      "produtoId": 5,
+      "tipoUsuario": 2,
+      "dataReserva": "08/06/2023",
+      "dataLimite": "18/06/2023",
+      "statusPedido": 1,
+      "quantidade": 5,
+      "valor": 2000,
+      "ativo": 1
+    },
+    {
+      "id": 6,
+      "usuarioId": 1,
+      "lojaId": 2,
+      "produtoId": 5,
+      "tipoUsuario": 2,
+      "dataReserva": "08/07/2023",
+      "dataLimite": "18/07/2023",
+      "statusPedido": 1,
+      "quantidade": 50000,
+      "valor": 2000,
+      "ativo": 1
     }
+
   ],
   "notificacoes": [
     {

@@ -96,3 +96,14 @@ async function getReservasByLojaId(lojaId) {
         console.error('Erro ao acessar banco:', error);
     }
 }
+
+// Busca todas as reservas feitas na loja que foram concluidas
+async function getReservasByLojaIdStatus(lojaId, status) {
+    try {
+        const response = await fetch(`${URL}?lojaId=${lojaId}&statusPedido=${status}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Erro ao acessar banco:', error);
+    }
+}
