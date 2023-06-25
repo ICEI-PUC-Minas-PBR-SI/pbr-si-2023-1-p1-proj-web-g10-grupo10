@@ -4,6 +4,44 @@ const gradient = ctx.createLinearGradient(0, 0, 0, 400)
 gradient.addColorStop(0, '#5cffca')
 gradient.addColorStop(1, '#66ff')
 
+const TIPO_USUARIO_LOJA = 1;
+const STATUS_CONCLUIDO = 1
+
+//const usuario = JSON.parse(localStorage.getItem('usuario'));
+const arrQtdReservasMes = await getQuantidadeReservasMes();
+
+let arrQuantidadeVendas = new Array(12);
+arrQuantidadeVendas.fill(0);
+for(item in arrQtdReservasMes){
+  arrQuantidadeVendas[arrQtdReservasMes[item].mes - 1] = arrQtdReservasMes[item].quantidadeReservas;
+}
+console.log(arrQuantidadeVendas);
+
+async function getQuantidadeReservasMes(){
+  const arrReservas = await getReservasByLojaIdStatus(2, STATUS_CONCLUIDO);
+
+  const arrQtdReservasMes = arrReservas.reduce((arrayAcumulador, reserva) =>{
+    const partes = reserva.dataLimite.split("/");
+    const dataReorganizada = partes[1] + "/" + partes[0] + "/" + partes[2];
+    
+    const dataLimite = new Date(dataReorganizada);
+    const mes = dataLimite.getMonth() + 1;
+    if (!arrayAcumulador[mes]) {
+      arrayAcumulador[mes] = {
+        mes: mes,
+        quantidadeReservas: 0
+      };
+    }
+
+    arrayAcumulador[mes].quantidadeReservas += reserva.quantidade;
+
+    return arrayAcumulador;
+  },[]);
+
+  return arrQtdReservasMes;
+}
+
+
 const labels = [
   'jan',
   'fev',
@@ -23,13 +61,15 @@ const data = {
   labels,
   datasets: [{
     //quantidade fictícia vendida em cada mes
-    data: [1500, 2100, 2600, 3400, 4000, 5200, 4800, 3000, 3700, 4600, 6000, 6400],
-    label: "Progressão de vendas",
+    data:  [...arrQuantidadeVendas],
+    label: "Progressão de Reservas",
     fill: true,
     backgroundColor: gradient
 
   }]
 }
+
+console.log(data);
 
 const config = {
   type: 'line',
@@ -44,9 +84,9 @@ const config = {
       y: {
         ticks: {
           callback: function (value) {
-            let finalValue = value.toFixed(2)
+            let finalValue = value.toFixed(0)
             //convertentedo . em , na moeda
-            return 'R$' + finalValue.replace('.', ',') + 'mil'
+            return finalValue.replace('.', ',')
             //no final cabe a definir o nivel de lucro com a venda das peças, ex: mil
           }
         }
