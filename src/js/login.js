@@ -39,16 +39,16 @@ formLogin.submit(async function (e) {
     }
     else{
         alert("usuario ou senha incorretos");
+
     }
 
     //console.log(objetoFormulario);
 });
 
 const formCadastro = $("#form-cadastro");
-formCadastro.submit(function (e) { 
+formCadastro.submit( async function (e) { 
     e.preventDefault();
     // Serializa os dados do formulário
-    console.log("Formulário");
     const dadosFormulario = $(this).serializeArray();
     const objetoFormulario = {};
 
@@ -56,12 +56,13 @@ formCadastro.submit(function (e) {
         objetoFormulario[field.name] = field.value;
       });
 
-    if(getUsuarioByEmail(objetoFormulario.email) !== undefined){
+    let teste = await getUsuarioByEmail(objetoFormulario.email)
+
+    if(teste.length > 0){
         alert("usuario ja existe");
         return false;
     }
     
-    console.log(objetoFormulario);
     const formularioString = JSON.stringify(objetoFormulario)
     localStorage.setItem('formulario', formularioString);
 

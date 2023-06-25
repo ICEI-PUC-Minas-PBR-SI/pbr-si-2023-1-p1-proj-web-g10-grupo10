@@ -1,10 +1,10 @@
-function importarProdutos(usuarioId) {
+async function importarProdutos(usuarioId) {
     var file = document.getElementById("formFileExcel").files[0];
-
+    let data = '';
     if (file) {
         var reader = new FileReader();
 
-        reader.onload = function (e) {
+        reader.onload = async function (e) {
             var fileName = file.name;
             var fileExtension = fileName.split(".").pop().toLowerCase();
 
@@ -18,7 +18,11 @@ function importarProdutos(usuarioId) {
                 // Obtém os dados da planilha como um objeto
                 var jsonData = XLSX.utils.sheet_to_json(worksheet, { raw: false });
 
-                jsonData.forEach(p => {
+                data = jsonData
+
+                console.log(jsonData)
+
+                await jsonData.forEach(async p => {
 
                     let novoProduto = {
                         usuarioId: usuarioId,
@@ -32,15 +36,13 @@ function importarProdutos(usuarioId) {
                         quantidadeDisponivel: p.QuantidadeDisponivel
                     }
 
-                    createProduto(novoProduto)
+                    //console.log(novoProduto)
+
+                    await createProduto(novoProduto)
                 });
 
                 location.reload()
             }
-            else if (fileExtension === "csv") {
-                
-            }
-
 
         };
 

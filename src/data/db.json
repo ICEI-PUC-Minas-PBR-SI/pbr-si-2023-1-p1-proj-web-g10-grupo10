@@ -44,6 +44,16 @@
       "Numero": 63,
       "Complemento": "Casa",
       "Telefone": "31991812680"
+    },
+    {
+      "nome": "DedeAutopeças",
+      "email": "DedeAutopecas@gmail.com",
+      "senha": "123",
+      "tipoUsuario": 1,
+      "Cep": "32215-000",
+      "Endereço": "Av. Tito Fulgêncio, 1370 - Jardim Industrial, Contagem - MG",
+      "Telefone": "(31) 33687900",
+      "id": 4
     }
     
   ],
