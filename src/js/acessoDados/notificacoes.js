@@ -1,10 +1,10 @@
-const URL = 'http://localhost:3000/notificacoes'
-const URLusuarios = 'http://localhost:3000/usuarios'
+const URL_NOTIFICACOES = 'https://api-storage-autobook.vercel.app/notificacoes'
+const URL_NOTIFICACOES_USUARIOS= 'https://api-storage-autobook.vercel.app/usuarios'
 
 // Metodo que retorna todos os notificacoes do banco
 async function getAllNotificacoes() {
     try {
-        const response = await fetch(URL);
+        const response = await fetch(URL_NOTIFICACOES);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -15,7 +15,7 @@ async function getAllNotificacoes() {
 // Metodo que retorna o notificacao que possui o Id especificado
 async function getNotificacaoById(id) {
     try {
-        const response = await fetch(URL + '/' + id);
+        const response = await fetch(URL_NOTIFICACOES + '/' + id);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -26,7 +26,7 @@ async function getNotificacaoById(id) {
 // Metodo que deleta o notificacao indicado pelo id
 async function deleteNotificacao(id) {
     try {
-        const response = await fetch(URL + '/' + id, {
+        const response = await fetch(URL_NOTIFICACOES + '/' + id, {
             method: 'DELETE',
         });
         // const data = await response.json();
@@ -40,7 +40,7 @@ async function deleteNotificacao(id) {
 // Metodo que adiciona o notificacao ao banco
 async function createNotificacao(notificacao) {
     try {
-        const response = await fetch(URL, {
+        const response = await fetch(URL_NOTIFICACOES, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ async function createNotificacao(notificacao) {
 // Metodo que atualiza um notificacao já existente
 async function updateNotificacao(notificacao, id) {
     try {
-        const response = await fetch(URL + '/' + id, {
+        const response = await fetch(URL_NOTIFICACOES + '/' + id, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ async function updateNotificacao(notificacao, id) {
 //Metodo que busca todos os notificacaos que pertecem ao usuário
 async function getNotificacaoByUserId(userId) {
     try {
-        const response = await fetch(URL);
+        const response = await fetch(URL_NOTIFICACOES);
         const data = await response.json();
         const filteredData = data.filter(objeto => objeto.usuarioId === userId);
         return filteredData;
