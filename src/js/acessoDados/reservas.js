@@ -1,5 +1,5 @@
-const URL_RESERVAS = 'http://localhost:3000/reservas'
-const URL_REERVA_Usuarios = 'http://localhost:3000/usuarios'
+const URL_RESERVAS = 'https://api-storage-autobook.vercel.app/reservas'
+const URL_RESERVAS_USUARIOS = 'https://api-storage-autobook.vercel.app/usuarios'
 
 // Metodo que retorna todos os reservas do banco
 async function getAllReservas() {
