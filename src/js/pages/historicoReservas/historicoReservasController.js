@@ -4,9 +4,9 @@ const TIPO_USER = {
     admin: 2
 }
 const STATUS_RESERVA = {
-    reservado: '0',
-    concluido: '1',
-    cancelado: '2'
+    reservado: 0,
+    concluido: 1,
+    cancelado: 2
 } 
 const ID_RESERVA_STATUS = {
     0: 'Reservado',
@@ -26,7 +26,6 @@ const containerTabela = $('.container-tabela');
 
 // armazena na variavel arrReservas todas reservas do usuario ou da loja
 const arrReservas = await getProdutosReservadosByUser(usuario.id);
-console.log(arrReservas);
 // monta tabela no html com as reservas do usuario ou da loja
 montaTabelaReservas(arrReservas);
 
@@ -67,8 +66,10 @@ function getCabecalhoTabelaReservas(){
     return cabecalho;
 }
 async function getLinhaTabelaReservas(reserva){
-    const usuarioDaReserva = await getUsuarioById(reserva.usuarioId);
-    const produtoReserva   = await getProdutoById(reserva.produtoId);
+    const [usuarioDaReserva, produtoReserva] = await Promise.all([
+        getUsuarioById(reserva.usuarioId),
+        getProdutoById(reserva.produtoId)
+      ]);
 
     const tdNomeCliente = (tipoUsuario == TIPO_USER.loja) ? `<td>${usuarioDaReserva.nome}</td>` : '';
     // implementar funcao de desativar botao de concluir reserva e cancelar reserva quando o status for diferente de reservado
@@ -83,12 +84,12 @@ async function getLinhaTabelaReservas(reserva){
                 <td>R$ ${reserva.valor}</td>
                 <td>${reserva.dataLimite}</td>
                 <td class="item-acoes">
-                <button class="btn btn-light" data-bs-toggle="modal"
-                    data-bs-target="#modalConcluirReserva" ${desativado} onclick="abriuModalConcluiReserva(${reserva.id})"><i class="fas fa-check"
+                <button class="btn btn-light btn-concluir" data-bs-toggle="modal"
+                    data-bs-target="#modalConcluirReserva" ${desativado} ><i class="fas fa-check"
                     style="color: #45af28;"></i></button>
                    
-                <button class="btn btn-light" data-bs-toggle="modal"
-                    data-bs-target="#modalCancelarReserva" ${desativado} onclick="abriuModalCancelaReserva(${reserva.id})"><i class="fas fa-trash"
+                <button class="btn btn-light btn-cancel" data-bs-toggle="modal"
+                    data-bs-target="#modalCancelarReserva" ${desativado}><i class="fas fa-trash"
                         style="color: #d92d20;"></i></button>
                     <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
                 </td>
@@ -100,40 +101,50 @@ async function getLinhaTabelaReservas(reserva){
 
 // TODO: verificar com o pedro sobre se quando concluido a data limite vira data da retirada
 // So a loja pode concluir
-var formConcluirReserva = $('#form-concluir-reserva');
-formConcluirReserva.on("submit",function(e) {
-    concluiReserva(e);
-});
-function concluiReserva (e) {
+
+const formConcluirReserva = $('#form-concluir-reserva');
+$(document).on("submit", "#form-concluir-reserva", function(e){
     e.preventDefault();
-    const idReserva = $(this).attr('data-id-reserva');
+    concluiReserva();
+})
+
+async function concluiReserva () {
+    const idReserva = formConcluirReserva.attr('data-id-reserva');
     let novosDados = {
         statusPedido: STATUS_RESERVA.concluido
     }
     
-    const isUpdated =  updateReserva(JSON.stringify(novosDados), idReserva);
-    
+    const isUpdated = await updateReserva(JSON.stringify(novosDados), idReserva);
+
     if(isUpdated){
-        fechaModalConcluiReserva();
-        $(this).closest("#modalConcluirReserva").modal("hide");
-        
-        const reservaAtualizada = getReservaById(idReserva);
+        fechouModalConcluiReserva();
+        formConcluirReserva.closest("#modalConcluirReserva").modal("hide");
+        const reservaAtualizada = await getReservaById(idReserva);
         let linha = $('#reserva-' + idReserva);
         
         // Atualiza linha da tabela
-        linha.replaceWith(getLinhaTabelaReservas(reservaAtualizada, tipoUsuario));   
+        const novaLinha = getLinhaTabelaReservas(reservaAtualizada)
+        linha.replaceWith(novaLinha);   
         exibirNotificacao('Sucesso', 'Reserva concluída com sucesso!', 'success');
     }
     else{
         exibirNotificacao('Erro', 'Erro ao concluir reserva!', 'error');
     }
-  }
+}
+
+const tabelaReservas = $('#tb-reservas');
+tabelaReservas.on("click",".btn-concluir", abriuModalConcluiReserva);
 //Quando modal abrir, seta o id da reserva no form
-function abriuModalConcluiReserva(idReserva){
+function abriuModalConcluiReserva(){
+    const idReserva = $(this).closest('.table-line').prop('id').replace('reserva-', '')
     formConcluirReserva.attr('data-id-reserva', idReserva);
 }
+
+const modalConcluirReserva = $("#modalConcluirReserva");
+modalConcluirReserva.on("click", ".btn-fechar", fechouModalConcluiReserva);
 // Quando modal fechar remove o id da reserva do form
 function fechouModalConcluiReserva(){
+    console.log("fechou")
     formConcluirReserva.removeAttr('data-id-reserva');
 }
 

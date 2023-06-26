@@ -13,6 +13,7 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b484666594.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_toastr.min.css">
 
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/screen.css">
@@ -172,7 +173,7 @@
 
         <section class="component-tabela">
             <div class="container-tabela">
-                <table>
+                <table id="tb-reservas">
                     <thead id="tb-head-reservas">
                         <tr>
                             <th>Data de Reserva</th>
@@ -322,8 +323,8 @@
                     </div>
                     <div class="modal-footer">
                         <form id="form-concluir-reserva">
-                            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" onclick="fechouModalConcluiReserva">Cancelar</button>
-                            <button type="submit" class="btn btn-secondary">Confirmar</button>
+                            <button type="button" class="btn btn-outline-danger btn-fechar" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit"  refresh="false" class="btn btn-secondary">Confirmar</button>
                         </form>
                     </div>
                 </div>
@@ -402,7 +403,7 @@
     </footer>
 
     <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/bibliotecas/cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_toastr.min.js"></script>
     <script src="js/acessoDados/usuarios.js"></script>
     <script src="js/acessoDados/produtos.js"></script>
     <script src="js/acessoDados/reservas.js"></script>
