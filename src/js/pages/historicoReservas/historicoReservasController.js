@@ -152,45 +152,53 @@ function fechouModalConcluiReserva(){
 
 let formCancelaReserva = $('#form-cancelar-reserva');
 formCancelaReserva.on("submit",function(e) {
-    cancelaReserva(e);
-});
-function cancelaReserva(e){
     e.preventDefault();
-    
-    const idReserva = $(this).attr('data-id-reserva');
+    cancelaReserva();
+});
+async function cancelaReserva(){
+
+    const idReserva = formCancelaReserva.attr('data-id-reserva');
     let novosDados = {
         statusPedido: STATUS_RESERVA.cancelado
     }
     
-    const update =  updateReserva(JSON.stringify(novosDados), idReserva);
+    const update =  await updateReserva(JSON.stringify(novosDados), idReserva);
     
     if(update){
         fechaModalCancelaReserva();
-        $(this).closest("#modalCancelarReserva").modal("hide");
+        formCancelaReserva.closest("#modalCancelarReserva").modal("hide");
         
-        const reservaAtualizada = getReservaById(idReserva);
+        const reservaAtualizada = await getReservaById(idReserva);
         let linha = $('#reserva-' + idReserva);
         // Atualiza linha da tabela
         linha.replaceWith(getLinhaTabelaReservas(reservaAtualizada, tipoUsuario));   
         exibirNotificacao('Sucesso', 'Reserva cancelada com sucesso!', 'success');
         
         // Atualiza quantidade disponivel do produto apos cancelar reserva
-        const produtoReserva = getProdutoById(reservaAtualizada.produtoId);
+        const produtoReserva = await getProdutoById(reservaAtualizada.produtoId);
         const novosDadosProdutos = {
             quantidadeDisponivel: reservaAtualizada.quantidade + produtoReserva.quantidadeDisponivel
         }
         
-        updateProduto(JSON.stringify(novosDadosProdutos), produtoReserva.id);
+        const isUpdatedProduto = await  updateProduto(JSON.stringify(novosDadosProdutos), produtoReserva.id);
+        if(isUpdatedProduto)
+            exibirNotificacao('Sucesso', 'Atualizado quantidade de produtos!', 'success');
     }
     else{
         fechaModalCancelaReserva();
-        $(this).closest("#modalCancelarReserva").modal("hide");
+        formCancelaReserva.closest("#modalCancelarReserva").modal("hide");
         exibirNotificacao('Erro', 'Erro ao cancelar reserva!', 'error');
     }
 }
+
+tabelaReservas.on("click",".btn-cancel", abriuModalCancelaReserva);
+const modalCancelarReserva = $("#modalCancelarReserva");
+modalCancelarReserva.on("click", ".btn-fechar", fechaModalCancelaReserva);
+
 function abriuModalCancelaReserva(){
-    formReserva.attr('data-id-reserva', idReserva);
+    const idReserva = $(this).closest('.table-line').prop('id').replace('reserva-', '')
+    formCancelaReserva.attr('data-id-reserva', idReserva);
 }
 function fechaModalCancelaReserva(){
-    formReserva.removeAttr('data-id-reserva');
+    formCancelaReserva.removeAttr('data-id-reserva');
 }
