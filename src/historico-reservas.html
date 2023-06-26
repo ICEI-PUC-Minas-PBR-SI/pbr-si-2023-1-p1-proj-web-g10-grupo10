@@ -30,7 +30,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <div class="caixa-icone">
-                    <a class="navbar-brand" href="#"><img src="image/logo-auto-book.png" alt="logo auto book"
+                    <a class="navbar-brand" href="./index.html"><img src="image/logo-auto-book.png" alt="logo auto book"
                             srcset=""></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -43,7 +43,7 @@
                         <li class="nav-item">
                             <a class="nav-link active text-light" aria-current="page" href="./index.html">Inicio</a>
                         </li>
-
+    
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-light" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,13 +58,13 @@
                                 <li><a class="dropdown-item" href="#">Perto de você</a></li>
                             </ul>
                         </li>
-
+    
                         <li class="nav-item">
                             <a class="nav-link text-light" href="./historico-reservas.html">Histórico de Reservas</a>
                         </li>
                     </ul>
-                    <form class="d-flex search" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                    <form id="form-pesquisa" class="d-flex search" role="search">
+                        <input id="inpt-pesquisa" class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
                         <i class="fas fa-search"></i>
                     </form>
                     <div class="caixa-perfil-notifications">
@@ -73,14 +73,14 @@
                                 aria-expanded="false"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça
                                     login</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Perfil Usuário</a></li>
+                                <li><a class="dropdown-item" href="./perfil.html">Perfil Usuário</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Métricas de Venda</a></li>
+                                <li><a class="dropdown-item" href="./metricas.html.html">Métricas de Venda</a></li>
                             </ul>
                         </li>
-
+    
                         <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                             <i class="fas fa-bell"></i> <span class="badge text-bg-secondary">4</span>
@@ -110,7 +110,7 @@
             </div>
         </div>
         <!---->
-    </header>
+      </header>
 
     <main class="container-fluid d-flex flex-column align-items-xxl-center mt-4">
         <section class="tab-container">
@@ -192,25 +192,6 @@
                     </tbody>
                 </table>
             </div>
-            <nav class="caixa-paginacao" aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
         </section>
         
         <div id="modalConcluirReserva" class="modal fade" tabindex="-1" role="dialog"
@@ -314,10 +295,12 @@
     <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
     <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="js/bibliotecas/cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_toastr.min.js"></script>
+    
     <script src="js/acessoDados/usuarios.js"></script>
     <script src="js/acessoDados/produtos.js"></script>
     <script src="js/acessoDados/reservas.js"></script>
     <script src="js/utils/notifications_geral.js"></script>
+    
     <script type="module" src="js/pages/historicoReservas/historicoReservasController.js"></script>
 
 </body>

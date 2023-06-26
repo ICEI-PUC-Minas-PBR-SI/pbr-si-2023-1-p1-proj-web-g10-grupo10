@@ -25,83 +25,86 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <div class="caixa-icone">
-          <a class="navbar-brand" href="#"><img src="image/logo-auto-book.png" alt="logo auto book" srcset=""></a>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="./index.html">Inicio</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Produtos
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./telaProdutos.html">Estoque</a></li>
-                <li><a class="dropdown-item" href="./telaProdutos.html">Cadastrar</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="./telaProdutos.html">Perto de você</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link text-light" href="./historico-reservas.html">Histórico de Reservas</a>
-            </li>
-          </ul>
-          <form class="d-flex search" role="search">
-            <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-            <i class="fas fa-search"></i>
-          </form>
-          <div class="caixa-perfil-notifications">
-            <li class="nav-item dropdown">
-              <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button" aria-expanded="false"><i
-                  class="fas fa-user"></i> <span>Olá visitante,<br> Faça login</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./perfil.html">Perfil Usuário</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Métricas de Venda</a></li>
-              </ul>
-            </li>
-
-            <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight">
-              <i class="fas fa-bell"></i> <span class="badge text-bg-secondary">4</span>
+        <div class="container-fluid">
+            <div class="caixa-icone">
+                <a class="navbar-brand" href="./index.html"><img src="image/logo-auto-book.png" alt="logo auto book"
+                        srcset=""></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-          </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="./index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Produtos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Estoque</a></li>
+                            <li><a class="dropdown-item" href="#">Cadastrar</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Perto de você</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./historico-reservas.html">Histórico de Reservas</a>
+                    </li>
+                </ul>
+                <form id="form-pesquisa" class="d-flex search" role="search">
+                    <input id="inpt-pesquisa" class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </form>
+                <div class="caixa-perfil-notifications">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button"
+                            aria-expanded="false"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça
+                                login</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./perfil.html">Perfil Usuário</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="./metricas.html.html">Métricas de Venda</a></li>
+                        </ul>
+                    </li>
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <i class="fas fa-bell"></i> <span class="badge text-bg-secondary">4</span>
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
     </nav>
     <!--Painel de notificações-->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Painel de notificeções</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Notificação 1</h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Painel de notificeções</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-      </div>
-      <div class="offcanvas-body">
-        ...
-      </div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Notificação 1</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+        <div class="offcanvas-body">
+            ...
+        </div>
     </div>
     <!---->
   </header>
@@ -152,6 +155,8 @@
   </footer>
   <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+  <script src="js/bibliotecas/cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_toastr.min.js"></script>
+  
   <script src="js/acessoDados/reservas.js"></script>
   <script type="module" src="js/metricasGrafico/metricas.js"></script>
 </body>

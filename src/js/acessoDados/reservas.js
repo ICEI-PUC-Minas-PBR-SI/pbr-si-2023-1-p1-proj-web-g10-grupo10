@@ -1,5 +1,5 @@
-const URL_RESERVAS = 'https://api-storage-autobook.vercel.app/reservas'
-const URL_RESERVAS_USUARIOS = 'https://api-storage-autobook.vercel.app/usuarios'
+const URL_RESERVAS = 'http://localhost:3000/reservas'
+const URL_RESERVAS_USUARIOS = 'http://localhost:3000/usuarios'
 
 // Metodo que retorna todos os reservas do banco
 async function getAllReservas() {
@@ -45,7 +45,7 @@ async function createReserva(jsonReserva) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: jsonReserva
+            body: JSON.stringify(jsonReserva)
         });
         // const data = await response.json();
         // return data;
@@ -63,7 +63,7 @@ async function updateReserva(reserva, id) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: reserva
+            body: JSON.stringify(reserva)
         });
         if (!response.ok) {
             throw new Error(`Erro de ${response.status} (${response.statusText}) ao atualizar reserva.`);

@@ -1,6 +1,3 @@
-import { initReserva } from "../../components/reserva/reserva.js";
-
-
 $(document).ready(async function() {
   const urlParams = new URLSearchParams(window.location.search);
   const pesquisa = urlParams.get('pesquisa');
@@ -73,6 +70,4 @@ $(document).ready(async function() {
   });
   
   $("#produtos-busca").html(produtosHTML);
-  
-  initReserva();
 });

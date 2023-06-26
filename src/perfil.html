@@ -22,7 +22,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <div class="caixa-icone">
-                    <a class="navbar-brand" href="#"><img src="image/logo-auto-book.png" alt="logo auto book"
+                    <a class="navbar-brand" href="./index.html"><img src="image/logo-auto-book.png" alt="logo auto book"
                             srcset=""></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -35,7 +35,7 @@
                         <li class="nav-item">
                             <a class="nav-link active text-light" aria-current="page" href="./index.html">Inicio</a>
                         </li>
-
+    
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-light" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,30 +50,29 @@
                                 <li><a class="dropdown-item" href="#">Perto de você</a></li>
                             </ul>
                         </li>
-
-
+    
                         <li class="nav-item">
                             <a class="nav-link text-light" href="./historico-reservas.html">Histórico de Reservas</a>
                         </li>
                     </ul>
-                    <form class="d-flex search" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                    <form id="form-pesquisa" class="d-flex search" role="search">
+                        <input id="inpt-pesquisa" class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
                         <i class="fas fa-search"></i>
                     </form>
-
                     <div class="caixa-perfil-notifications">
                         <li class="nav-item dropdown">
                             <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button"
-                                aria-expanded="false"><i class="fas fa-user"></i> <span>Olá Julia Saldanha</span></a>
+                                aria-expanded="false"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça
+                                    login</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Perfil Usuário</a></li>
+                                <li><a class="dropdown-item" href="./perfil.html">Perfil Usuário</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Métricas de Venda</a></li>
+                                <li><a class="dropdown-item" href="./metricas.html.html">Métricas de Venda</a></li>
                             </ul>
                         </li>
-
+    
                         <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                             <i class="fas fa-bell"></i> <span class="badge text-bg-secondary">4</span>
@@ -85,7 +84,7 @@
         <!--Painel de notificações-->
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">Painel de notificações</h5>
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Painel de notificeções</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="card" style="width: 18rem;">
@@ -103,8 +102,7 @@
             </div>
         </div>
         <!---->
-
-    </header>
+      </header>
 
     <main>
         <div class="container py-5" style="background-color: #3F51B5;">
@@ -226,7 +224,8 @@
             &copy 2023 Copyright: <a href="#">Decoralita</a>
         </div>
     </footer>
-
+    
+    <script src="js/bibliotecas/cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_toastr.min.js"></script>
 </body>
 
 </html>
