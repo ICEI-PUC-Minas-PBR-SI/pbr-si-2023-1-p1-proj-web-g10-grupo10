@@ -1,4 +1,4 @@
-const URL_USUARIOS = 'https://api-storage-autobook.vercel.app/usuarios'
+const URL_USUARIOS = 'https://api-storage-autobook.vercel.app'
 const URL_USUARIOS_PRODUTOS = 'https://api-storage-autobook.vercel.app/produtos'
 
 // Metodo que retorna todos os usuarios do banco
