@@ -18,7 +18,7 @@ body{
     width: 80%;
     height: 80vh;
     display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+    box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, .212);
 }
 
 .form-image{
@@ -147,8 +147,8 @@ fornecedorcliente-title h6{
 }
 
 .continue-button button{
-    width: 100%;
-    margin-top: 2.5rem;
+    width: 125%;
+    margin-top: 3.5rem;
     border: none;
     background-color: #3F51B5;
     padding: 0.62rem;

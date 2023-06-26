@@ -1,10 +1,32 @@
+.caixa-principal-produtos .card{
+    min-width: 280px;
+ }
+ .caixa-principal-produtos #caixa-produtos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    max-width: 1400px;
+ }
+.caixa-principal-produtos .card .card-body{
+   width: 100%;
+}
+.tamanho-caixa {
+    background-color: #f1f1f1;
+}
 .caixa-principal-produtos .card .card-body .card-title{
+    max-height: 0.9rem;
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 0.1rem;
     font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .caixa-principal-produtos .card .card-body .card-text{
     font-size: 0.8rem;
     font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3.4rem;
 }

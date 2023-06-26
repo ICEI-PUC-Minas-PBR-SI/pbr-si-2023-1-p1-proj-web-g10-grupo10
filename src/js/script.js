@@ -1,4 +1,5 @@
 function escondeTabelasProdutos(tabId,TabelaMostra,TabelaEsconder, tabDesativar){
+    
     var showTable = document.getElementById(TabelaMostra);
     var hideTable = document.getElementById(TabelaEsconder);
 
@@ -8,7 +9,7 @@ function escondeTabelasProdutos(tabId,TabelaMostra,TabelaEsconder, tabDesativar)
             activeDivs[i].classList.remove("active");
         }
     }
-
+      
     tabId.classList.add("active");
 
     showTable.style.display = "block";
