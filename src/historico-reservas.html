@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="style/secundary-tab.css">
     <link rel="stylesheet" href="style/table.css">
     <link rel="stylesheet" href="style/filtro.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -174,6 +175,7 @@
         <section class="component-tabela">
             <div class="container-tabela">
                 <table id="tb-reservas">
+                <table id="tb-reservas">
                     <thead id="tb-head-reservas">
                         <tr>
                             <th>Data de Reserva</th>
@@ -187,99 +189,7 @@
                         </tr>
                     </thead>
                     <tbody id="tb-body-reservas">
-                        <tr class="table-line">
-                            <td>01/01/2021</td>
-                            <td>João da Silva</td>
-                            <td>Peça 1</td>
-                            <td><span class="status pending">Reservado</span></td>
-                            <td>1</td>
-                            <td>R$ 100,00</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light" data-bs-toggle="modal"
-                                    data-bs-target="#modalConcluirReserva" onclick="abriuModalConcluiReserva(1)"><i class="fas fa-check"
-                                        style="color: #45af28;"></i></button>
-                                <button class="btn btn-light" data-bs-toggle="modal"
-                                    data-bs-target="#modalCancelarReserva" onclick="abriuModalCancelaReserva(1)"><i class="fas fa-trash"
-                                        style="color: #d92d20;"></i></button>
-                                <button class="btn btn-light" style="color: cornflowerblue;"><i class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
-
-                        <tr class="table-line">
-                            <td>01/01/2021</td>
-                            <td>João da Silva</td>
-                            <td>Peça 1</td>
-                            <td><span class="status pending">Pendente</span></td>
-                            <td>1</td>
-                            <td>R$ 100,00</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                                <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
-
-                        <tr class="table-line">
-                            <td>01/01/2021</td>
-                            <td>João da Silva</td>
-                            <td>Peça 1</td>
-                            <td><span class="status canceled">Cancelado</span></td>
-                            <td>1</td>
-                            <td>R$ 100,00</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                                <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
-
-                        <tr class="table-line">
-                            <td>01/01/2021</td>
-                            <td>João da Silva</td>
-                            <td>Peça 1</td>
-                            <td><span class="status sucess">Reservado</span></td>
-                            <td>1</td>
-                            <td>R$ 100,00</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                                <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
-
-                        <tr class="table-line">
-                            <td>01/01/2021</td>
-                            <td>João da Silva</td>
-                            <td>Peça 1</td>
-                            <td><span class="status sucess">Reservado</span></td>
-                            <td>1</td>
-                            <td>R$ 100,00</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                                <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
-
-                        <tr class="table-line">
-                            <td>01/01/2021</td>
-                            <td>João da Silva</td>
-                            <td>Peça 1</td>
-                            <td><span class="status sucess">Reservado</span></td>
-                            <td>1</td>
-                            <td>R$ 100,00</td>
-                            <td>01/01/2021</td>
-                            <td class="item-acoes">
-                                <button class="btn btn-light"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-light"><i class="fas fa-trash"></i></button>
-                                <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
@@ -403,12 +313,14 @@
     </footer>
 
     <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
+    <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="js/bibliotecas/cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_toastr.min.js"></script>
     <script src="js/acessoDados/usuarios.js"></script>
     <script src="js/acessoDados/produtos.js"></script>
     <script src="js/acessoDados/reservas.js"></script>
     <script src="js/utils/notifications_geral.js"></script>
     <script type="module" src="js/pages/historicoReservas/historicoReservasController.js"></script>
+
 </body>
 
 </html>

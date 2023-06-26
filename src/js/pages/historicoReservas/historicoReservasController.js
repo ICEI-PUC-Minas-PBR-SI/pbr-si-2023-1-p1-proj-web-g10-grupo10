@@ -47,6 +47,7 @@ async function montaTabelaReservas(arrReservas) {
 
     cabecalhoTabela.html(getCabecalhoTabelaReservas());
     corpoTabela.html(tbodyHtml);
+    $("#tb-reservas").DataTable();
 }
 
 function getCabecalhoTabelaReservas(){

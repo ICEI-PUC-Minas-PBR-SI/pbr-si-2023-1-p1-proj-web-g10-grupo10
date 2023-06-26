@@ -571,7 +571,7 @@
         var usuario = ''
 
         document.addEventListener('DOMContentLoaded', function () {
-            usuario = sessionStorage.getItem('usuario');
+            usuario = JSON.parse(localStorage.getItem('usuario'));
             RecuperaProdutos(usuario.id)
         });
     </script>
