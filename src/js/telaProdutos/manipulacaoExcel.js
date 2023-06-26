@@ -22,7 +22,7 @@ async function importarProdutos(usuarioId) {
 
                 console.log(jsonData)
 
-                await jsonData.forEach(async p => {
+                for (let p of jsonData) {
 
                     let novoProduto = {
                         usuarioId: usuarioId,
@@ -35,11 +35,9 @@ async function importarProdutos(usuarioId) {
                         valor: p.Valor.replace('R$', '').replace(' ', ''),
                         quantidadeDisponivel: p.QuantidadeDisponivel
                     }
-
-                    //console.log(novoProduto)
-
+                    
                     await createProduto(novoProduto)
-                });
+                }
 
                 location.reload()
             }
