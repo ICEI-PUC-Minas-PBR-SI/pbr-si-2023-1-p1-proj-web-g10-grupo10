@@ -1,5 +1,5 @@
-const URL_USUARIOS = 'http://localhost:3000'
-const URLprodutos = 'http://localhost:3000/produtos'
+const URL_USUARIOS = 'https://api-storage-autobook.vercel.app/usuarios'
+const URL_USUARIOS_PRODUTOS = 'https://api-storage-autobook.vercel.app/produtos'
 
 // Metodo que retorna todos os usuarios do banco
 async function getAllUsuarios() {
@@ -83,7 +83,7 @@ async function updateUsuario(usuario, id) {
 //Metodo que busca todos os produtos que pertecem ao usuário
 async function getProdutoByUserId(userId) {
     try {
-        const response = await fetch(URLprodutos);
+        const response = await fetch(URL_USUARIOS_PRODUTOS);
         const data = await response.json();
         const filteredData = data.filter(objeto => objeto.usuarioId === userId);
         return filteredData;
