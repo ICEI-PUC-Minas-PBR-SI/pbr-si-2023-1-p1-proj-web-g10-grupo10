@@ -9,7 +9,6 @@ async function getHTMLProdutos() {
   let produtosHTML = '';
   
   produtos.forEach(produto => {
-    const ano = new Date(produto.ano).getFullYear();
     const strDisponivel = produto.quantidadeDisponivel > 0 ? "PRODUTO DISPONIVEL" : "PRODUTO INDISPONIVEL";
     produtosHTML += `
       <div class="col">
@@ -17,7 +16,7 @@ async function getHTMLProdutos() {
           <img class="card-img-top" src="${produto.imagem}" alt="${produto.nomeDaPeca}">
           <div class="card-body">
             <h5 class="card-title">${produto.nomeDaPeca}</h5>
-            <p class="card-text">${produto.nomeDaPeca} de carro ${produto.carro}, modelo ${produto.modelo} da marca ${produto.marca}, do ano de ${ano}</p>
+            <p class="card-text">${produto.nomeDaPeca} de carro ${produto.carro}, modelo ${produto.modelo} da marca ${produto.marca}, do ano de ${produto.ano}</p>
             <a class="card-price stretched-link text-success">R$ ${produto.valor}</a>
           </div>
         </div>
@@ -36,7 +35,7 @@ async function getHTMLProdutos() {
                     <div class="container-corpo-modal">
                       <h4 class="title">${produto.nomeDaPeca}</h4>
                       <div class="cmp">
-                        <span><span class="fw-bold">Ano:</span> ${ano}</span>
+                        <span><span class="fw-bold">Ano:</span> ${produto.ano}</span>
                         <span><span class="fw-bold">Carro:</span> ${produto.carro}</span>
                       </div>
                       
