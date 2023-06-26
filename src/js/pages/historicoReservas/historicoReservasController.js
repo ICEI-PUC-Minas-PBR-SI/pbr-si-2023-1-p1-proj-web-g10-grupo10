@@ -115,7 +115,7 @@ async function concluiReserva () {
         statusPedido: STATUS_RESERVA.concluido
     }
     
-    const isUpdated = await updateReserva(JSON.stringify(novosDados), idReserva);
+    const isUpdated = await updateReserva(novosDados, idReserva);
 
     if(isUpdated){
         fechouModalConcluiReserva();
@@ -162,7 +162,7 @@ async function cancelaReserva(){
         statusPedido: STATUS_RESERVA.cancelado
     }
     
-    const update =  await updateReserva(JSON.stringify(novosDados), idReserva);
+    const update =  await updateReserva(novosDados, idReserva);
     
     if(update){
         fechaModalCancelaReserva();
@@ -180,7 +180,7 @@ async function cancelaReserva(){
             quantidadeDisponivel: reservaAtualizada.quantidade + produtoReserva.quantidadeDisponivel
         }
         
-        const isUpdatedProduto = await  updateProduto(JSON.stringify(novosDadosProdutos), produtoReserva.id);
+        const isUpdatedProduto = await  updateProduto(novosDadosProdutos, produtoReserva.id);
         if(isUpdatedProduto)
             exibirNotificacao('Sucesso', 'Atualizado quantidade de produtos!', 'success');
     }

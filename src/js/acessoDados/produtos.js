@@ -1,5 +1,5 @@
-const URL_PRODUTOS = 'https://api-storage-autobook.vercel.app/produtos'
-const URL_PRODUTOS_USUARIOS = 'https://api-storage-autobook.vercel.app/usuarios'
+const URL_PRODUTOS = 'http://localhost:3000/produtos'
+const URL_PRODUTOS_USUARIOS = 'http://localhost:3000/usuarios'
 
 // Metodo que retorna todos os produtos do banco
 async function getAllProdutos() {

@@ -1,10 +1,8 @@
-import { initReserva } from "../../components/reserva/reserva.js";
-
 const produtosHTML = await getHTMLProdutos();
 const caixaProdutos = $("#caixa-produtos");
 caixaProdutos.html(produtosHTML);
 
-initReserva();
+
 
 async function getHTMLProdutos() {
   const  produtos = await getAllProdutos();

@@ -1,5 +1,5 @@
 //GET /posts?title_like=server
-URL_BUSCADOR = "https://api-storage-autobook.vercel.app/produtos?nomeDaPeca_like=";
+URL_BUSCADOR = "http://localhost:3000/produtos?nomeDaPeca_like=";
 
 async function getProdutoBuscaLike(parametro) {
   try {
