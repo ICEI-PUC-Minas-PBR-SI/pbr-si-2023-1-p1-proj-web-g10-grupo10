@@ -12,6 +12,9 @@
     max-width: 220px;
 }
 .modal-produto .modal-body .img-modal img{
+    width: 100%;
+}
+.modal-produto .modal-body .img-modal img{
     object-fit: cover;
 }
 
