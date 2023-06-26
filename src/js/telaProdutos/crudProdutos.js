@@ -114,7 +114,7 @@ async function CreateProdutoModal(usuarioId) {
                 quantidadeDisponivel: inputQtde.value
             }
 
-            let deuCerto = createProduto(JSON.stringify(novoProduto));
+            let deuCerto = createProduto(novoProduto);
 
             if (deuCerto == true) location.reload();
         });
@@ -134,7 +134,7 @@ async function CreateProdutoModal(usuarioId) {
             quantidadeDisponivel: inputQtde.value
         }
 
-        let deuCerto = createProduto(JSON.stringify(novoProduto));
+        let deuCerto = createProduto(novoProduto);
 
         if (deuCerto == true) location.reload();
     }
@@ -177,7 +177,7 @@ async function SalvarModalEdit() {
                 quantidadeDisponivel: inputQtde.value
             }
 
-            let deuCerto = updateProduto(JSON.stringify(novoProduto),botao.getAttribute('data-id'));
+            let deuCerto = updateProduto(novoProduto,botao.getAttribute('data-id'));
 
             if (deuCerto == true) location.reload();
         });
@@ -195,7 +195,7 @@ async function SalvarModalEdit() {
             quantidadeDisponivel: inputQtde.value
         }
 
-        let deuCerto = updateProduto(JSON.stringify(novoProduto),botao.getAttribute('data-id'));
+        let deuCerto = updateProduto(novoProduto,botao.getAttribute('data-id'));
 
         if (deuCerto == true) location.reload();
     }

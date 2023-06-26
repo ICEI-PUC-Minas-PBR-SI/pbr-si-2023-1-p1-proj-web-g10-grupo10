@@ -35,6 +35,7 @@ main{
   background-color: #f1f1f1;
   margin-left: 20px;
   margin-right: 20px;
+  min-height: 100%;
 }
 main .container-busca-avançada,  main .caixa-principal-produtos{
   display: flex;
@@ -42,6 +43,7 @@ main .container-busca-avançada,  main .caixa-principal-produtos{
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-bottom: 3rem;
 }
 main .container-busca-avançada .container-fluid{
   background-color: var(--cor-header-second);
