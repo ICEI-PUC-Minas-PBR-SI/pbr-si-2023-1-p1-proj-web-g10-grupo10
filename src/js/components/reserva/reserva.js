@@ -14,7 +14,7 @@ $("#caixa-produtos, #produtos-busca").on("click", '.btn-reservar', function(e) {
   const qtd = parseInt($(this).prev().find('.qtd-reservas').text());
   const id = jIdProdutoAtual.replace("prod_", "");
 
-  fazReserva(id, qtd);
+  fazReserva(id, qtd, $(this));
 });
 
 function manipulaQuantidadeItensReservas(){
@@ -32,7 +32,7 @@ function manipulaQuantidadeItensReservas(){
   }
 }
 
-async function fazReserva(id, qtd){
+async function fazReserva(id, qtd, el){
   // pega usuario logado 
   const user = JSON.parse(localStorage.getItem("usuario"));
   const arrReservas = await getAllReservas();
@@ -63,14 +63,15 @@ async function fazReserva(id, qtd){
   };
   
   
-  const created = createReserva(reserva);
+  const created = await createReserva(reserva);
   // Se a reserva foi criada com sucesso
   if(created){
+    el.closest(".modal").modal("hide");
   // Atualiza a quantidade disponivel do produto
     exibirNotificacao('Sucesso', 'Reserva feita com sucesso!', 'success');
 
     produto.quantidadeDisponivel = parseFloat(produto.quantidadeDisponivel) - qtd;
-    const isUpdateProduto = updateProduto(produto, produto.id);
+    const isUpdateProduto = await updateProduto(produto, produto.id);
     
     if(isUpdateProduto){
       exibirNotificacao('Sucesso', 'Quantidade de Produtos Atualizado com sucesso', 'success');

@@ -1,5 +1,5 @@
-const URL_USUARIOS = 'http://localhost:3000'
-const URL_USUARIOS_PRODUTOS = 'http://localhost:3000/produtos'
+const URL_USUARIOS = 'https://mock-api-2jub.onrender.com'
+const URL_USUARIOS_PRODUTOS = 'https://mock-api-2jub.onrender.com/produtos'
 
 // Metodo que retorna todos os usuarios do banco
 async function getAllUsuarios() {

@@ -1,5 +1,5 @@
 //GET /posts?title_like=server
-URL_BUSCADOR = "http://localhost:3000/produtos?nomeDaPeca_like=";
+URL_BUSCADOR = "https://mock-api-2jub.onrender.com/produtos?nomeDaPeca_like=";
 
 async function getProdutoBuscaLike(parametro) {
   try {

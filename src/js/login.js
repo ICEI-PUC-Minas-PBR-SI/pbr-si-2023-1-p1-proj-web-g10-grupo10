@@ -63,8 +63,8 @@ formCadastro.submit( async function (e) {
         return false;
     }
     
-    const formularioString = JSON.stringify(objetoFormulario)
-    localStorage.setItem('formulario', formularioString);
+    //const formularioString = JSON.stringify(objetoFormulario)
+    //localStorage.setItem('formulario', formularioString);
 
     window.location.href = "cadastro.html";
 });

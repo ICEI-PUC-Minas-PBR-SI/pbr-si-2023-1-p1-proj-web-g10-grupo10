@@ -1,5 +1,5 @@
-const URL_RESERVAS = 'http://localhost:3000/reservas'
-const URL_RESERVAS_USUARIOS = 'http://localhost:3000/usuarios'
+const URL_RESERVAS = 'https://mock-api-2jub.onrender.com/reservas'
+const URL_RESERVAS_USUARIOS = 'https://mock-api-2jub.onrender.com/usuarios'
 
 // Metodo que retorna todos os reservas do banco
 async function getAllReservas() {

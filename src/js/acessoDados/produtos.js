@@ -1,5 +1,5 @@
-const URL_PRODUTOS = 'http://localhost:3000/produtos'
-const URL_PRODUTOS_USUARIOS = 'http://localhost:3000/usuarios'
+const URL_PRODUTOS = 'https://mock-api-2jub.onrender.com/produtos'
+const URL_PRODUTOS_USUARIOS = 'https://mock-api-2jub.onrender.com/usuarios'
 
 // Metodo que retorna todos os produtos do banco
 async function getAllProdutos() {
