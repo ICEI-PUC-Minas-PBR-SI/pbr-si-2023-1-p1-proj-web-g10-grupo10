@@ -1,5 +1,10 @@
-const produtosHTML = await getHTMLProdutos();
+// Inicia a funcao de loading antes da requisicao para api
 const caixaProdutos = $("#caixa-produtos");
+showLoadingIcon($(".prod-principais"));
+const produtosHTML = await getHTMLProdutos();
+// finaliza a funcao de loading apos a requisicao para api
+hideLoadingIcon();
+
 caixaProdutos.html(produtosHTML);
 
 
