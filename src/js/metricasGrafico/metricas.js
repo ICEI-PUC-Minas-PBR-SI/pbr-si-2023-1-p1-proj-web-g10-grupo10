@@ -12,18 +12,19 @@ const arrQtdReservasMes = await getQuantidadeReservasMes();
 
 let arrQuantidadeVendas = new Array(12);
 arrQuantidadeVendas.fill(0);
-for(let item in arrQtdReservasMes){
+for (let item in arrQtdReservasMes) {
   arrQuantidadeVendas[arrQtdReservasMes[item].mes - 1] = arrQtdReservasMes[item].quantidadeReservas;
 }
 console.log(arrQuantidadeVendas);
 
-async function getQuantidadeReservasMes(){
-  const arrReservas = await getReservasByLojaIdStatus(2, STATUS_CONCLUIDO);
+const usuario = JSON.parse(localStorage.getItem('usuario'));
+async function getQuantidadeReservasMes() {
+  const arrReservas = await getReservasByLojaIdStatus(usuario.id, STATUS_CONCLUIDO);
 
-  const arrQtdReservasMes = arrReservas.reduce(async(arrayAcumulador, reserva) =>{
+  const arrQtdReservasMes = arrReservas.reduce(async (arrayAcumulador, reserva) => {
     const partes = reserva.dataLimite.split("/");
     const dataReorganizada = partes[1] + "/" + partes[0] + "/" + partes[2];
-    
+
     const dataLimite = new Date(dataReorganizada);
     const mes = dataLimite.getMonth() + 1;
     if (!arrayAcumulador[mes]) {
@@ -36,7 +37,7 @@ async function getQuantidadeReservasMes(){
     arrayAcumulador[mes].quantidadeReservas += reserva.quantidade;
 
     return arrayAcumulador;
-  },[]);
+  }, []);
 
   return arrQtdReservasMes;
 }
@@ -61,7 +62,7 @@ const data = {
   labels,
   datasets: [{
     //quantidade fictícia vendida em cada mes
-    data:  [...arrQuantidadeVendas],
+    data: [...arrQuantidadeVendas],
     label: "Progressão de Reservas",
     fill: true,
     backgroundColor: gradient
