@@ -65,16 +65,17 @@
                     <i class="fas fa-search"></i>
                 </form>
                 <div class="caixa-perfil-notifications">
-                    <li class="nav-item dropdown">
+                    <li id="cx-usuario" class="nav-item dropdown">
                         <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button"
-                            aria-expanded="false"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça
+                            aria-expanded="false"><i class="fas fa-user"></i> <span id="user-name">Olá visitante,<br> Faça
                                 login</span></a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="./perfil.html">Perfil Usuário</a></li>
+                            <li><a class="dropdown-item" href="./metricas.html.html">Métricas de Venda</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="./metricas.html.html">Métricas de Venda</a></li>
+                            <li><a class="dropdown-item" href="#">Sair</a></li>
                         </ul>
                     </li>
 
@@ -222,6 +223,7 @@
   <script src="js/utils/notifications_geral.js"></script>
   
   <script src="js/components/iconLoading/loadIcon.js"></script>
+  <script src="js/components/login/loginComponent.js"></script>
   <script type="module" src="js/pages/telaInicial/index.js"></script>  
   <script src="js/components/busca/buscaComponent.js"></script>
   <script src="js/components/reserva/reserva.js"></script>

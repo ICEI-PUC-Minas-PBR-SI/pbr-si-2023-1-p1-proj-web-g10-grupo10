@@ -28,6 +28,7 @@ formLogin.submit(async function (e) {
     if (existeLogin.length > 0) {
         const usuario = {
             id: existeLogin[0].id,
+            nome: existeLogin[0].nome,
             email: existeLogin[0].email,
             tipoUsuario: existeLogin[0].tipoUsuario,
         }
