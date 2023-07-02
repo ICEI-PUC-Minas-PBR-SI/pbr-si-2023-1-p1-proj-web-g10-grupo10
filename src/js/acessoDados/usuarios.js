@@ -54,9 +54,8 @@ async function createUsuario(usuario) {
             },
             body: JSON.stringify(usuario)
         });
-        // const data = await response.json();
-        // return data;
-        location.reload()
+        
+        return true;
     } catch (error) {
         console.error('Erro ao acessar banco:', error);
     }
