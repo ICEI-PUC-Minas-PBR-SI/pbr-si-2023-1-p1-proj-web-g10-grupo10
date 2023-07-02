@@ -1,5 +1,5 @@
-const URL_PRODUTOS = 'https://mock-api-2jub.onrender.com/produtos'
-const URL_PRODUTOS_USUARIOS = 'https://mock-api-2jub.onrender.com/usuarios'
+const URL_PRODUTOS = 'https://api-autobook-production.up.railway.app/produtos'
+const URL_PRODUTOS_USUARIOS = 'https://api-autobook-production.up.railway.app/usuarios'
 
 // Metodo que retorna todos os produtos do banco
 async function getAllProdutos() {

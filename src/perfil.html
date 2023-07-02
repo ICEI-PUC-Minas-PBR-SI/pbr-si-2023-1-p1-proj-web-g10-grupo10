@@ -58,15 +58,16 @@
                         <i class="fas fa-search"></i>
                     </form>
                     <div class="caixa-perfil-notifications mx-5">
-                        <li class="nav-item dropdown me-2">
+                        <li id="cx-usuario" class="nav-item dropdown me-2">
                             <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button"
-                                aria-expanded="false"><i class="fas fa-user"></i></a>
+                                aria-expanded="false"><i class="fas fa-user"></i><span id="user-name"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="./perfil.html">Perfil Usuário</a></li>
+                                <li><a class="dropdown-item" href="./metricas.html.html">Métricas</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="./metricas.html.html">Métricas</a></li>
+                                <li><a class="dropdown-item" href="#">Sair</a></li>
                             </ul>
                         </li>
     
@@ -222,6 +223,7 @@
         </div>
     </footer>
     
+    <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
     <script src="js/bibliotecas/cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_toastr.min.js"></script>
     <script src="js/utils/testaLogin.js"></script>
     

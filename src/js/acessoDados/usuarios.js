@@ -1,5 +1,5 @@
-const URL_USUARIOS = 'https://mock-api-2jub.onrender.com'
-const URL_USUARIOS_PRODUTOS = 'https://mock-api-2jub.onrender.com/produtos'
+const URL_USUARIOS = 'https://api-autobook-production.up.railway.app'
+const URL_USUARIOS_PRODUTOS = 'https://api-autobook-production.up.railway.app/produtos'
 
 // Metodo que retorna todos os usuarios do banco
 async function getAllUsuarios() {
