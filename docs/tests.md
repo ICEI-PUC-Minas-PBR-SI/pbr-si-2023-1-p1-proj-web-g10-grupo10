@@ -1,23 +1,22 @@
-1.0 Teste - Tela Login/Cadastro
+## 1.0 Teste - Tela Login/Cadastro
 1.1 Plano de Testes de Software
 
 **Caso de Teste** | **CT01 - Login / Cadastro parte 1**
  :--------------: | ------------
-**Procedimento**  | 1- Usuário informa e-mail e senha e clica no botão Criar
-2- A aplicação verifica se os dados são válidos.
-3- A aplicação armazena os dados e direciona o usuário para o formulário de cadastro.
+**Procedimento**  | 1- Usuário informa e-mail e senha e clica no botão Criar. 2- A aplicação verifica se os dados são válidos. 3- A aplicação armazena os dados e direciona o usuário para o formulário de cadastro.
 **Requisitos associados** | RF-001
-**Resultado esperado** | Criação de cadastro
+**Resultado esperado** | Criação de cadastro.
 **Dados de entrada** | Inserção de dados válidos no formulário de cadastro.
 **Resultado obtido** | Sucesso.
 
-**Caso de Teste** | **CT02 - Criar conta parte 2**
+**Caso de Teste** | **CT01 - Login / Cadastro parte 2**
  :--------------: | ------------
-**Procedimento**  | 1) Usuário informa gênero, seu tipo de usuário (cuidador ou comum), data de nascimento e clica em criar.<br>2) A aplicação verifica se os dados são válidos e informa ao usuário caso não sejam.<br> 3) A aplicação armazena os dados e direciona o usuário para a tela de login.
-**Requisitos associados** | RF-001
-**Resultado esperado** | Criação de cadastro
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro.
+**Procedimento**  | 1- Usuário informa e-mail e senha cadastrados e clica no botão entrar. 2- A aplicação valida os dados informados.
+**Requisitos associados** | RF-002
+**Resultado esperado** | Prosseguir para a tela de início de acordo com a modalidade do usuário.
+**Dados de entrada** | Inserção de dados válidos no formulário de login.
 **Resultado obtido** | Sucesso.
+
 
 ## Registro dos Testes de Software
 
