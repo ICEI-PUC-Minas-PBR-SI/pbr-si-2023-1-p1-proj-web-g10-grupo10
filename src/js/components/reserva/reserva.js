@@ -1,4 +1,3 @@
-
 const QTD_MAX_RESERVAS = 4;
 const QTD_MIN_RESERVAS = 1;
 const QTD_MAX_DIAS_RESERVADO = 7;

@@ -39,8 +39,8 @@ formLogin.submit(async function (e) {
         window.location.href = "index.html";
     }
     else{
-        alert("usuario ou senha incorretos");
-
+        console.log("usuario nao existe");
+        exibirNotificacao('Erro', 'Usuário ou senha inválidos', 'error');
     }
 
     //console.log(objetoFormulario);
