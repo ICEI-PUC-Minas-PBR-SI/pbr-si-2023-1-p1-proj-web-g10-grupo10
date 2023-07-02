@@ -23,11 +23,18 @@ As tabelas que se seguem apresentam os requisitos funcionais e não-funcionais q
 
 ## Descrição das estruturas:
 
-## Notícia
+## Login
 |  **Nome**      | **Tipo**          | **Descrição**                             | **Exemplo**                                    |
 |:--------------:|-------------------|-------------------------------------------|------------------------------------------------|
-| Id             | Numero (Inteiro)  | Identificador único da notícia            | 1                                              |
-| Título         | Texto             | Título da notícia                         | Sistemas de Informação PUC Minas é o melhor                                   |
-| Conteúdo       | Texto             | Conteúdo da notícia                       | Sistemas de Informação da PUC Minas é eleito o melhor curso do Brasil                            |
-| Id do usuário  | Numero (Inteiro)  | Identificador do usuário autor da notícia | 1                                              |
+| Id             | Numero (Inteiro)  | Identificador de usuário                  | 001                                              |
+| Título         | Texto             | User do usuário                           | @usuarioteste                                  |
+| Conteúdo       | Texto             | E-mail do usuário                         | exemplo@gmail.com                            |
+| Id do usuário  | Numero (Inteiro)  | senha do usuário                          | ****** (secreto)                                            |
 
+## Cadastro
+|  **Nome**      | **Tipo**          | **Descrição**                             | **Exemplo**                                    |
+|:--------------:|-------------------|-------------------------------------------|------------------------------------------------|
+| Id             | Numero (Inteiro)  | Identificador de usuário                  | 001                                              |
+| Título         | Texto             | User do usuário                           | João Ferreira                                 |
+| Conteúdo       | Texto             | E-mail do usuário                         | exemplo@gmail.com                            |
+| Id do usuário  | Numero (Inteiro)  | senha do usuário                          | ****** (secreto)                                            |
