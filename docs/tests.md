@@ -160,7 +160,7 @@ Em alinhamento com o grupo, trabalharemos em cima desta notificação para a pr�
 # 3.0 Teste - Tela Busca de produto
 ## 3.1 Plano de Testes de Software
 
-**Caso de Teste** | **CT04 - Reserva de produto**
+**Caso de Teste** | **CT04 - Busca produto**
  :--------------: | ------------
 **Procedimento**  | 1- Usuário cliente busca por uma determinada peça 2- A aplicação retorna com a peça informada.
 **Requisitos associados** | RF-010
@@ -240,7 +240,7 @@ Em alinhamento com o grupo, trabalharemos em cima desta notificação para a pr�
 ## 4.2 Registro dos Testes de Software
 
 
-|*Caso de Teste*                                 |*TC-05 - Busca produto*                                         |
+|*Caso de Teste*                                 |*TC-05 - Produtos reservados*                                         |
 |---|---|
 |Requisito Associado | RF-009 - Histórico de produtos reservados.|
 |Link do vídeo do teste realizado: | [https://drive.google.com/file/d/1Y52xtNoXjyl1Im6FY_PGGsLHmrf7s2bo/view?usp=sharing](https://drive.google.com/file/d/1El0RB5KUKH-cy02a543UKYtUJnil3MCj/view?usp=sharing) | 
@@ -352,43 +352,43 @@ As notificações foram feitas com êxito no momento esperado.
 
 **Caso de Teste** | **CT02 - Edição de Produtos**
  :--------------: | ------------
-**Procedimento**  | 1. Preencher o formulário com os dados que deseja editar e clicar em Salvar.
+**Procedimento**          | 1. Preencher o formulário com os dados que deseja editar e clicar em Salvar.
 **Requisitos associados** | RF-004
-**Resultado esperado** | Informações do produto atualizadas.
-**Dados de entrada** | Dados que deseja atualizar.
-**Resultado obtido** | Sucesso.
+**Resultado esperado**    | Informações do produto atualizadas.
+**Dados de entrada**      | Dados que deseja atualizar.
+**Resultado obtido**      | Sucesso.
 
 **Caso de Teste** | **CT03 -  Deleção de Produtos**
  :--------------: | ------------
-**Procedimento**  | 1. Escolher o produto que se deseja deletar e clicar em confirmar.
+**Procedimento**          | 1. Escolher o produto que se deseja deletar e clicar em confirmar.
 **Requisitos associados** | RF-005
-**Resultado esperado** | Produto deletado do banco.
-**Dados de entrada** | Sem entradas.
-**Resultado obtido** | Sucesso.
+**Resultado esperado**    | Produto deletado do banco.
+**Dados de entrada**      | Sem entradas.
+**Resultado obtido**      | Sucesso.
 
 **Caso de Teste** | **CT04 - Detalhes de Produtos**
  :--------------: | ------------
-**Procedimento**  | 1. Escolher o produto que se deseja ver os detalhes.
+**Procedimento**          | 1. Escolher o produto que se deseja ver os detalhes.
 **Requisitos associados** | RF-007
-**Resultado esperado** | Abertura de um Modal com detalhes do produto.
-**Dados de entrada** | Sem entrada.
-**Resultado obtido** | Sucesso.
+**Resultado esperado**    | Abertura de um Modal com detalhes do produto.
+**Dados de entrada**      | Sem entrada.
+**Resultado obtido**      | Sucesso.
 
 **Caso de Teste** | **CT05 - Importar Excel**
  :--------------: | ------------
-**Procedimento**  | 1. Escolher o arquivo que se deseja importar e submeter o mesmo a um formulário e clicar em salvar.
+**Procedimento**          | 1. Escolher o arquivo que se deseja importar e submeter o mesmo a um formulário e clicar em salvar.
 **Requisitos associados** | RF-003
-**Resultado esperado** | Todos os produtos presentes no excel serão cadastrados.
-**Dados de entrada** | Arquivo Excel.
-**Resultado obtido** | Sucesso.
+**Resultado esperado**    | Todos os produtos presentes no excel serão cadastrados.
+**Dados de entrada**      | Arquivo Excel.
+**Resultado obtido**      | Sucesso.
 
 **Caso de Teste** | **CT06 - Exibir Produtos em Estoque**
  :--------------: | ------------
-**Procedimento**  | 1. Ao acessar a página de produtos ela será carregada.
+**Procedimento**          | 1. Ao acessar a página de produtos ela será carregada.
 **Requisitos associados** | RF-006
-**Resultado esperado** | Produtos sendo exibidos em tabela.
-**Dados de entrada** | Sem entrada.
-**Resultado obtido** | Sucesso.
+**Resultado esperado**    | Produtos sendo exibidos em tabela.
+**Dados de entrada**      | Sem entrada.
+**Resultado obtido**      | Sucesso.
 
 
 ## 6.2 Registro dos Testes de Software
