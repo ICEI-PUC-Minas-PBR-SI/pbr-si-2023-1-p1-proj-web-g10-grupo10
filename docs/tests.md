@@ -9,6 +9,7 @@
 **Dados de entrada** | Inserção de dados válidos no formulário de cadastro.
 **Resultado obtido** | Sucesso.
 
+
 **Caso de Teste** | **CT01 - Login / Cadastro parte 2**
  :--------------: | ------------
 **Procedimento**  | 1- Usuário informa e-mail e senha cadastrados e clica no botão entrar. 2- A aplicação valida os dados informados.
@@ -16,6 +17,7 @@
 **Resultado esperado** | Prosseguir para a tela de início de acordo com a modalidade do usuário.
 **Dados de entrada** | Inserção de dados válidos no formulário de login.
 **Resultado obtido** | Sucesso.
+
 
 **1.2 Registro dos Testes de Software**
 
@@ -30,18 +32,19 @@
 |Requisito Associado | RF-002 - Usuário com conta existente loga no sistema.|
 |Link do vídeo do teste realizado: | https://drive.google.com/file/d/13LzX5DkcwsgaR1zKEmnbNmvCrUCXndgr/view?usp=drive_link | 
 
+
 **1.3 Testes de Usabilidade**
 
 Elaboramos dois cenários, cada um baseado na definição apresentada sobre as histórias dos usuários, definido na etapa das especificações do projeto.
 Foram convidadas duas pessoas que os perfis se encaixam nas definições das histórias apresentadas na documentação, visando averiguar os seguintes indicadores:
-*Taxa de sucesso: responde se o usuário conseguiu ou não executar a tarefa proposta;
--Satisfação subjetiva: responde como o usuário avalia o sistema com relação à execução da tarefa proposta, conforme a seguinte escala:
+Taxa de sucesso: responde se o usuário conseguiu ou não executar a tarefa proposta;
+Satisfação subjetiva: responde como o usuário avalia o sistema com relação à execução da tarefa proposta, conforme a seguinte escala:
            1 - Péssimo;
            2 - Ruim;
            3 - Regular;
            4 - Bom;
            5 - Ótimo.
-+Tempo para conclusão da tarefa: em segundos, e em comparação com o tempo utilizado quando um especialista (um desenvolvedor) realiza a mesma tarefa.
+Tempo para conclusão da tarefa: em segundos, e em comparação com o tempo utilizado quando um especialista (um desenvolvedor) realiza a mesma tarefa.
 
 
 
