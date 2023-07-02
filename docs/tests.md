@@ -89,14 +89,8 @@ Cenário 2: Usuário cliente que já possui cadastro na plataforma deseja logar 
 
 ## Avaliação dos Testes de Usabilidade
 
+Foram realizadas duas rotinas, a primeira referente ao cadastro de uma Autopeças, o processo foi desenhado para ser simples e objetivo, com isso, o resultado obtido foi satisfatório, porém, foi constatado que o usuário no momento do cadastro consegue selecionar duas opções (cliente e autopeças), isto não deve ocorrer pois cada acesso tem suas determinadas funcionalidades liberada, apenas uma opção poderá ser selecionada. Para a próxima entrega, este erro deverá estar sanado, verificaremos os códigos e qual a melhor forma de resolver este problema que aparentemente é simples.
 
-Tomando como base os resultados obtidos, foi possível verificar que a aplicação web apresenta bons resultados quanto à taxa de sucesso na interação dos usuários, tendo em vista que os cenários propostos foram concluídos com sucesso.
-
-Além disso, a aplicação obteve também uma elevada satisfação subjetiva dos usuários no momento que realizavam os cenários propostos. Prova são as médias das avaliações em cada um dos cenários, que variou entre 4 (bom) e 5 (ótimo).
-
-Com relação ao tempo para conclusão de cada tarefa/cenário, notamos discrepância entre a média de tempo dos usuários e o tempo do especialista/desenvolvedor em todos os cenários. Tal discrepância, em certa medida, é esperada, tendo em vista que o desenvolvedor já tem prévio conhecimento de toda a interface da aplicação, do posicionamento dos elementos, lógica de organização das páginas, etc.
-
-Contudo, tendo em vista que a diferença foi relevante (por exemplo, 113 segundos — média usuários — contra 25 segundos — especialista — no cenário três), e ainda os comentários feitos por alguns usuários, entendemos haver oportunidades de melhoria na usabilidade da aplicação.
 
 
 
