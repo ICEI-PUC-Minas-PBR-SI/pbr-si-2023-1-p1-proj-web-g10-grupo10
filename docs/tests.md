@@ -1,5 +1,5 @@
 ## 1.0 Teste - Tela Login/Cadastro
-1.1 Plano de Testes de Software
+**1.1 Plano de Testes de Software**
 
 **Caso de Teste** | **CT01 - Login / Cadastro parte 1**
  :--------------: | ------------
@@ -17,7 +17,7 @@
 **Dados de entrada** | Inserção de dados válidos no formulário de login.
 **Resultado obtido** | Sucesso.
 
-## 1.2 Registro dos Testes de Software
+**1.2 Registro dos Testes de Software**
 
 
 |*Caso de Teste*                                 |*TC-01 - Criar uma conta*                                         |
@@ -30,7 +30,7 @@
 |Requisito Associado | RF-002 - Usuário com conta existente loga no sistema.|
 |Link do vídeo do teste realizado: | https://drive.google.com/file/d/13LzX5DkcwsgaR1zKEmnbNmvCrUCXndgr/view?usp=drive_link | 
 
-#1.3 Testes de Usabilidade
+**1.3 Testes de Usabilidade**
 
 Elaboramos dois cenários, cada um baseado na definição apresentada sobre as histórias dos usuários, definido na etapa das especificações do projeto.
 Foram convidadas duas pessoas que os perfis se encaixam nas definições das histórias apresentadas na documentação, visando averiguar os seguintes indicadores:
