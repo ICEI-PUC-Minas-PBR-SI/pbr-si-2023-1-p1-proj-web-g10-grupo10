@@ -68,27 +68,21 @@ Cenário 1: Usuário loja, dono de uma autopeças e deseja criar um cadastro na 
 | **Tempo para conclusão pelo especialista** | NÃO | 3 | 30 segundos |
 
 
-    Comentários dos usuários: Achei o site muito bom e intuitivo. 
-    Não tive dificuldades e acho que ficou bem intuitivo.
+    Comentários dos usuários: O processo é bem claro e objetivo mas não funciona em sua totalidade, precisa de ajustes e correções.
 
 
 
 
-Cenário 2: Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço.
+Cenário 2: Usuário cliente que já possui cadastro na plataforma deseja logar para navegação.
 
 | Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
 |---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 22.54 segundos                          |
-| 2       | SIM             | 5                    | 31.42 segundos                          |
-| 3       | SIM             | 5                    | 36.21 segundos                          |
-|  |  |  |  |
-| **Média**     | 0%           | 0                | 0 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 13.57 segundos |
+| 2       | 100%            | 5                    | 15 segundos                     |                          |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 15 segundos |
 
 
-    Comentários dos usuários: O site é fácil de acessar, mas algumas páginas poderiam 
-    redirecionar a gente automaticamente para outras. Senti a falta de mais opções de filtros, 
-    tanto na hora da pesquisa, quanto depois dela, nos resultados.
+    Comentários dos usuários: O processo de logar é simples e rápido. .
+
 
 
 
