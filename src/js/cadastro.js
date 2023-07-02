@@ -1,32 +1,6 @@
 const form = $("#form-cadastro-dados");
 const autopecasRadio = $('#Autopeças');
 const clienteRadio = $('#Cliente');
-form.submit(async function (e){
-  const dadosFormulario = $(this).serializeArray();
-  const objetoFormulario = {};
-  
-  $.each(dadosFormulario, function(index, field) {
-      objetoFormulario[field.name] = field.value;
-  });
-
-  //const dadosBasicosCadastro = await JSON.parse(getItem('formulario'));
-
-  const usuario = {
-    nome: objetoFormulario.firstname,
-    email: objetoFormulario.email,
-    senha: objetoFormulario.password,
-    tipoUsuario: objetoFormulario.Cliente == undefined ? 1 : 0,
-    Cep: objetoFormulario.cep,
-    Endereço: objetoFormulario.endereco,
-    Telefone: objetoFormulario.telefone
-  };
-
-  //cria usuario no banco de dados
-  await createUsuario(usuario);
-
-  //localStorage.removeItem('formulario');
-  window.location.href = "login.html";
-});
 
 autopecasRadio.on("change", function() {
   if (autopecasRadio.prop("checked")) {
@@ -39,45 +13,94 @@ clienteRadio.on("change", function() {
     autopecasRadio.prop("checked", false); // Desmarca o campo de radio "Autopeças" se estiver selecionado
   }
 });
-
-$.validator.addMethod("cpf", function(value, element) {
-  value = jQuery.trim(value);
-
-  value = value.replace(".", "");
-  value = value.replace(".", "");
-  cpf = value.replace("-", "");
-  while (cpf.length < 11) cpf = "0" + cpf;
-  var expReg = /^0+$|^1+$|^2+$|^3+$|^4+$|^5+$|^6+$|^7+$|^8+$|^9+$/;
-
-  if (cpf.length !== 11 || expReg.test(cpf)) return false;
-
-  var digitoDigitado = eval(cpf.charAt(9) + cpf.charAt(10));
-  var soma1 = 0,
-    soma2 = 0;
-  var vlr = 11;
-
-  for (i = 0; i < 9; i++) {
-    soma1 += eval(cpf.charAt(i) * (vlr - 1));
-    soma2 += eval(cpf.charAt(i) * vlr);
-    vlr--;
-  }
-
-  soma1 = ((soma1 * 10) % 11) % 10;
-  soma2 = ((soma2 + soma1 * 2) * 10) % 11;
-
-  var digitoGerado = soma1 * 10 + soma2;
-
-  if (digitoGerado !== digitoDigitado) return false;
-
-  return true;
-}, "CPF inválido");
-
 $(document).ready(function() {
-  $('#form-cadastro-dados').validate({
+  $.validator.addMethod("cpfCnpj", function(value, element) {
+    // Remove caracteres não numéricos
+    value = value.replace(/[^\d]+/g, '');
+  
+    // CPF
+    if (value.length === 11) {
+      var sum = 0;
+      var cpf = value.split('');
+  
+      // Verifica se todos os dígitos são iguais
+      if (/^([0-9])\1+$/.test(value)) return false;
+  
+      // Calcula o primeiro dígito verificador
+      for (var i = 0; i < 9; i++) {
+        sum += parseInt(cpf[i]) * (10 - i);
+      }
+  
+      var mod = (sum * 10) % 11;
+      if (mod === 10 || mod === 11) mod = 0;
+  
+      if (mod !== parseInt(cpf[9])) return false;
+  
+      // Calcula o segundo dígito verificador
+      sum = 0;
+      for (var i = 0; i < 10; i++) {
+        sum += parseInt(cpf[i]) * (11 - i);
+      }
+  
+      mod = (sum * 10) % 11;
+      if (mod === 10 || mod === 11) mod = 0;
+  
+      if (mod !== parseInt(cpf[10])) return false;
+  
+      return true;
+    }
+    // CNPJ
+    else if (value.length === 14) {
+      var cnpj = value.split('');
+  
+      // Verifica se todos os dígitos são iguais
+      if (/^([0-9])\1+$/.test(value)) return false;
+  
+      // Calcula o primeiro dígito verificador
+      var sum = 0;
+      var weight = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+      for (var i = 0; i < 12; i++) {
+        sum += parseInt(cnpj[i]) * weight[i];
+      }
+  
+      var mod = sum % 11;
+      if (mod < 2) {
+        if (parseInt(cnpj[12]) !== 0) return false;
+      } else {
+        if (parseInt(cnpj[12]) !== 11 - mod) return false;
+      }
+  
+      // Calcula o segundo dígito verificador
+      sum = 0;
+      weight = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+      for (var i = 0; i < 13; i++) {
+        sum += parseInt(cnpj[i]) * weight[i];
+      }
+  
+      mod = sum % 11;
+      if (mod < 2) {
+        if (parseInt(cnpj[13]) !== 0) return false;
+      } else {
+        if (parseInt(cnpj[13]) !== 11 - mod) return false;
+      }
+  
+      return true;
+    }
+  
+    return false;
+  }, "Por favor, insira um CPF ou CNPJ válido.");
+  
+  form.validate({
     rules: {
-      cpf: {
+      cpf_cnpj: {
         required: true,
-        cpf: true
+        cpfCnpj: true
+      },
+      firstname: {
+        maxlength: 100,
+        minlength: 10,
+        minWords: 2,
+        required: true
       },
       email: {
         required: true,
@@ -88,7 +111,9 @@ $(document).ready(function() {
         minlength: 10,
         maxlength: 14
       },
-      endereco: 'required',
+      endereco: {
+        required: true,
+      },
       cep: {
         required: true,
         minlength: 8,
@@ -101,18 +126,11 @@ $(document).ready(function() {
       Confirmpassword: {
         required: true,
         minlength: 6,
-        equalTo: '#senha'
+        equalTo: '#password'
       },
-      Autopeças:' required:',
-      Cliente:' required:'
-
     },
     messages: {
-      cpf: {
-        required: 'Por favor, digite seu CPF',
-        minlength: 'O CPF deve ter 11 dígitos',
-        maxlength: 'O CPF deve ter 11 dígitos'
-      },
+      cpf_cnpj: "Por favor, insira um CPF ou CNPJ válido.",
       email: {
         required: 'Por favor, digite seu e-mail',
         email: 'Por favor, digite um e-mail válido'
@@ -137,6 +155,56 @@ $(document).ready(function() {
         minlength: 'A senha de confirmação deve ter no mínimo 6 caracteres',
         equalTo: 'As senhas não coincidem'
       }
-    }
+    },
   });
+  
 });
+
+$("#btn-cadastrar").click(function(){
+  if(form.valid()){
+    form.on("submit", function (e) { 
+      e.preventDefault();
+      cadastraUsuario();
+    });
+  }
+  else{
+      exibirNotificacao("error", "Preencha todos os campos corretamente", 'warning');
+  }
+});
+
+async function cadastraUsuario() {
+  const dadosFormulario = form.serializeArray();
+  const objetoFormulario = {};
+
+  $.each(dadosFormulario, function(index, field) {
+    objetoFormulario[field.name] = field.value;
+  });
+  console.log(objetoFormulario);
+  //const dadosBasicosCadastro = await JSON.parse(getItem('formulario'));
+
+  const usuario = {
+  cpf_cnpj: objetoFormulario.cpf_cnpj,
+  nome: objetoFormulario.firstname,
+  email: objetoFormulario.email,
+  senha: objetoFormulario.password,
+  tipoUsuario: objetoFormulario.Cliente == undefined ? 1 : 0,
+  Cep: objetoFormulario.cep,
+  Endereço: objetoFormulario.endereco,
+  Telefone: objetoFormulario.telefone
+  };
+
+  //cria usuario no banco de dados
+  const isCreated =  await createUsuario(usuario);
+  if(!isCreated) {
+    exibirNotificacao("error", "Erro ao cadastrar usuário",'error')
+    return;
+  }
+  else{
+    exibirNotificacao("success", "Usuário cadastrado com sucesso \n Redirecionando para página de login", 'success')
+    setTimeout(function() {
+      // Redirecionar para outra página após 3 segundos
+      window.location.href = "login.html";
+    }, 3000); //
+  }
+  
+}
