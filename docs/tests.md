@@ -50,7 +50,7 @@ Foram convidadas duas pessoas que os perfis se encaixam nas definições das his
 Objetivando respeitar as diretrizes da Lei Geral de Proteção de Dados, as informações pessoais dos usuários que participaram do teste não foram coletadas, tendo em vista a ausência de Termo de Consentimento Livre e Esclarecido.
 
 
-## Cenários de Teste de Usabilidade
+## 1.4 Cenários de Teste de Usabilidade
 
 | Nº do Cenário | Descrição do cenário |
 |---------------|----------------------|
@@ -58,7 +58,7 @@ Objetivando respeitar as diretrizes da Lei Geral de Proteção de Dados, as info
 | 2             | Usuário cliente que já possui cadastro na plataforma deseja logar para navegar no site. |
 
 
-## Registro de Testes de Usabilidade
+## 1.5 Registro de Testes de Usabilidade
 
 Cenário 1: Usuário loja, dono de uma autopeças e deseja criar um cadastro na plataforma da Auto Book para aumentar minhas vendas.
 
@@ -87,7 +87,7 @@ Cenário 2: Usuário cliente que já possui cadastro na plataforma deseja logar 
 
 
 
-## Avaliação dos Testes de Usabilidade
+## 1.6 Avaliação dos Testes de Usabilidade
 
 Foram realizadas duas rotinas, a primeira referente ao cadastro de uma Autopeças, o processo foi desenhado para ser simples e objetivo, com isso, o resultado obtido foi satisfatório, porém, foi constatado que o usuário no momento do cadastro consegue selecionar duas opções (cliente e autopeças), isto não deve ocorrer pois cada acesso tem suas determinadas funcionalidades liberada, apenas uma opção poderá ser selecionada. Para a próxima entrega, este erro deverá estar sanado, verificaremos os códigos e qual a melhor forma de resolver este problema que aparentemente é simples.
 
@@ -104,7 +104,7 @@ Foram realizadas duas rotinas, a primeira referente ao cadastro de uma Autopeça
 
 
 
-## 1.2 Registro dos Testes de Software
+## 2.2 Registro dos Testes de Software
 
 
 |*Caso de Teste*                                 |*TC-01 - Reservar um produto*                                         |
@@ -113,7 +113,7 @@ Foram realizadas duas rotinas, a primeira referente ao cadastro de uma Autopeça
 |Link do vídeo do teste realizado: | https://drive.google.com/file/d/1EJQiGjT7wgRmPyAzSiKvkaB3hbuUVt50/view?usp=sharing | 
 
 
-## 1.3 Testes de Usabilidade
+## 2.3 Testes de Usabilidade
 
 Elaboramos um cenário baseado na definição apresentada sobre as histórias dos usuários, definido na etapa das especificações do projeto.
 Foi convidada uma pessoa que o perfil se encaixa nas definições das histórias apresentadas na documentação, visando averiguar os seguintes indicadores:
@@ -128,14 +128,14 @@ Foi convidada uma pessoa que o perfil se encaixa nas definições das histórias
 Objetivando respeitar as diretrizes da Lei Geral de Proteção de Dados, as informações pessoais dos usuários que participaram do teste não foram coletadas, tendo em vista a ausência de Termo de Consentimento Livre e Esclarecido.
 
 
-## Cenários de Teste de Usabilidade
+## 2.4 Cenários de Teste de Usabilidade
 
 | Nº do Cenário | Descrição do cenário |
 |---------------|----------------------|
 | 1             | Usuário precisa comprar uma peça para seu veículo que apresenta falha, ele entra na plataforma e encontra o que precisa, seleciona a peça e quantidade. |
 
 
-## Registro de Testes de Usabilidade
+## 2.5 Registro de Testes de Usabilidade
 
 Cenário 1: Usuário precisa comprar uma peça para seu veículo que apresenta falha, ele entra na plataforma e encontra o que precisa, seleciona a peça e quantidade.
 
@@ -150,7 +150,7 @@ acredito que fica muito bom.
 
 
 
-## Avaliação dos Testes de Usabilidade
+## 2.6 Avaliação dos Testes de Usabilidade
 
 Foi simulado uma reserva feita por um cliente que precisa de uma peça específica, o sistema seguiu corretamente todo o processo, no entanto, constatamos que seria necessário uma notificação informando que o processo foi finalizado. 
 Em alinhamento com o grupo, trabalharemos em cima desta notificação para a próxima entrega visto que isso trará mais clareza ao cliente de que sua peça de fato se encontra reserva e disponível para retirada na loja escolhida.
