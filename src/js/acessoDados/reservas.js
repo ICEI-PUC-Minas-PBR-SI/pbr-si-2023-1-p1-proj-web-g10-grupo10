@@ -1,5 +1,5 @@
-const URL_RESERVAS = 'https://mock-api-2jub.onrender.com/reservas'
-const URL_RESERVAS_USUARIOS = 'https://mock-api-2jub.onrender.com/usuarios'
+const URL_RESERVAS = 'https://api-autobook-production.up.railway.app/reservas'
+const URL_RESERVAS_USUARIOS = 'https://api-autobook-production.up.railway.app/usuarios'
 
 // Metodo que retorna todos os reservas do banco
 async function getAllReservas() {
