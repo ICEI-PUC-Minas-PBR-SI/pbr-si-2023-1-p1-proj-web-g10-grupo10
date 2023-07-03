@@ -10,39 +10,42 @@ const usuario = JSON.parse(localStorage.getItem('usuario'));
 console.log(usuario);
 
 const arrQtdReservasMes = await getQuantidadeReservasMes();
+console.log(arrQtdReservasMes);
 
 let arrQuantidadeVendas = new Array(12);
 arrQuantidadeVendas.fill(0);
 for (let item in arrQtdReservasMes) {
   arrQuantidadeVendas[arrQtdReservasMes[item].mes - 1] = arrQtdReservasMes[item].quantidadeReservas;
 }
-console.log(arrQuantidadeVendas);
+
 
 
 async function getQuantidadeReservasMes() {
   const arrReservas = await getReservasByLojaIdStatus(usuario.id, STATUS_CONCLUIDO);
-
-  const arrQtdReservasMes = arrReservas.reduce(async (arrayAcumulador, reserva) => {
+  console.log(arrReservas);
+  
+  const arrQtdReservasMes = [];
+  for (const reserva of arrReservas) {
     const partes = reserva.dataLimite.split("/");
     const dataReorganizada = partes[1] + "/" + partes[0] + "/" + partes[2];
 
     const dataLimite = new Date(dataReorganizada);
     const mes = dataLimite.getMonth() + 1;
-    if (!arrayAcumulador[mes]) {
-      arrayAcumulador[mes] = {
+    
+    if (!arrQtdReservasMes[mes]) {
+      arrQtdReservasMes[mes] = {
         mes: mes,
         quantidadeReservas: 0
       };
     }
 
-    arrayAcumulador[mes].quantidadeReservas += reserva.quantidade;
-
-    return arrayAcumulador;
-  }, []);
-
+    arrQtdReservasMes[mes].quantidadeReservas += reserva.quantidade;
+    console.log(arrQtdReservasMes[mes].quantidadeReservas);
+  }
+  
   return arrQtdReservasMes;
 }
-
+  
 
 const labels = [
   'jan',
