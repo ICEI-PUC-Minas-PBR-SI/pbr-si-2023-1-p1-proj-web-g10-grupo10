@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_toastr.min.css">
     <link rel="stylesheet" href="./style/cadastro.css">
     <title>Tela de cadastro</title>
 </head>
@@ -15,7 +16,7 @@
             <img src="./image/Logotipo Auto Book Atual.png">
         </div>
         <div class="form">
-            <form action="#" id="form-cadastro-dados">
+            <form id="form-cadastro-dados">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastre-se</h1>
@@ -23,14 +24,14 @@
                 </div>
                 <div class="input-group">
 
-                    <!-- <div class="input-box">
+                    <div class="input-box">
                     <label for="CPF/CNPJ">CPF/CNPJ</label>
-                    <input id="CPF/CNPJ" type="text" name="CPF/CNPJ" placeholder="Digite o CPF ou CNPJ" required>
-                </div> -->
+                    <input id="CPFNPJ" type="text" name="cpf_cnpj" placeholder="Digite o CPF ou CNPJ" required>
+                </div>
 
                     <div class="input-box">
                         <label for="firstname">Nome</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu nome" required>
+                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu nome">
                     </div>
 
                     <!-- <div class="input-box">
@@ -40,32 +41,32 @@
 
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail">
                     </div>
 
                     <div class="input-box">
                         <label for="number">Telefone</label>
-                        <input id="number" type="tel" name="telefone" placeholder=" (XX) XXXXX-XXXX " required>
+                        <input id="number" type="tel" name="telefone" placeholder=" (XX) XXXXX-XXXX ">
                     </div>
 
                     <div class="input-box">
                         <label for="endereço">Endereço</label>
-                        <input id="endereço" type="endereço" name="endereco" placeholder="Digite seu endereço" required>
+                        <input id="endereço" type="endereço" name="endereco" placeholder="Digite seu endereço">
                     </div>
 
                     <div class="input-box">
                         <label for="cep">CEP</label>
-                        <input id="cep" type="cep" name="cep" placeholder=" XXXXX-XXX " required>
+                        <input id="cep" type="cep" name="cep" placeholder=" XXXXX-XXX ">
                     </div>
 
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input id="password" type="tel" name="Confirmpassword" placeholder="Digite sua senha" required>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha">
                     </div>
 
                     <div class="input-box">
                         <label for="password">Confirme sua senha</label>
-                        <input id="password" type="tel" name="password" placeholder="Digite sua senha" required>
+                        <input id="password" type="password" name="Confirmpassword" placeholder="Digite sua senha">
                     </div>
 
                     <div class="fornecedorcliente-inputs">
@@ -87,13 +88,19 @@
                         </div>
                     </div>
                     <div class="continue-button">
-                        <button type="submit">Cadastrar</button>
+                        <button id="btn-cadastrar">Cadastrar</button>
                     </div>
             </form>
         </div>
     </div>
 
     <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
+    <script src="js/bibliotecas/jquery.validate.min.js"></script>
+    <script src="js/bibliotecas/cdn.jsdelivr.net_npm_jquery-validation@1.19.5_dist_additional-methods.js"></script>
+    <script src="js/bibliotecas/localization/messages_pt_BR.js"></script>
+    <script src="js/bibliotecas/cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_toastr.min.js"></script>
+    
+    <script src="js/utils/notifications_geral.js"></script>
     <script src="js/acessoDados/usuarios.js"></script>
     <script src="js/cadastro.js"></script>
 </body>

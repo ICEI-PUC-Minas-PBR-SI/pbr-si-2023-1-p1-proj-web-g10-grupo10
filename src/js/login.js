@@ -28,6 +28,7 @@ formLogin.submit(async function (e) {
     if (existeLogin.length > 0) {
         const usuario = {
             id: existeLogin[0].id,
+            nome: existeLogin[0].nome,
             email: existeLogin[0].email,
             tipoUsuario: existeLogin[0].tipoUsuario,
         }
@@ -35,11 +36,15 @@ formLogin.submit(async function (e) {
         console.log(usuario);
         const usuarioString = JSON.stringify(usuario)
         localStorage.setItem('usuario', usuarioString);
-        window.location.href = "index.html";
+        
+        if(usuario.tipoUsuario == 0)
+            window.location.href = "index.html";
+        else
+            window.location.href = "telaProdutos.html";
     }
     else{
-        alert("usuario ou senha incorretos");
-
+        console.log("usuario nao existe");
+        exibirNotificacao('Erro', 'Usuário ou senha inválidos', 'error');
     }
 
     //console.log(objetoFormulario);
@@ -63,8 +68,8 @@ formCadastro.submit( async function (e) {
         return false;
     }
     
-    const formularioString = JSON.stringify(objetoFormulario)
-    localStorage.setItem('formulario', formularioString);
+    //const formularioString = JSON.stringify(objetoFormulario)
+    //localStorage.setItem('formulario', formularioString);
 
     window.location.href = "cadastro.html";
 });

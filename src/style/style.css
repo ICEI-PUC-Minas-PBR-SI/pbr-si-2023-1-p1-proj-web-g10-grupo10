@@ -28,6 +28,7 @@ body{
 */
 .tamanho-caixa{
   max-width: 1400px;
+  width: 100%;
 }
 main{
   width:100%;
@@ -59,3 +60,14 @@ main .container-busca-avançada .container-fluid{
    width: 215px;
  }
 
+
+#user-name{
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#loading-icon{
+  margin-top: 5rem;
+}

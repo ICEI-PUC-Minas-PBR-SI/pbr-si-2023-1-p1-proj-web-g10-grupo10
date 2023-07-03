@@ -1,5 +1,5 @@
-const URL_USUARIOS = 'http://localhost:3000'
-const URL_USUARIOS_PRODUTOS = 'http://localhost:3000/produtos'
+const URL_USUARIOS = 'https://api-autobook-production.up.railway.app'
+const URL_USUARIOS_PRODUTOS = 'https://api-autobook-production.up.railway.app/produtos'
 
 // Metodo que retorna todos os usuarios do banco
 async function getAllUsuarios() {
@@ -54,9 +54,8 @@ async function createUsuario(usuario) {
             },
             body: JSON.stringify(usuario)
         });
-        // const data = await response.json();
-        // return data;
-        location.reload()
+        
+        return true;
     } catch (error) {
         console.error('Erro ao acessar banco:', error);
     }

@@ -14,9 +14,9 @@
     <script src="https://kit.fontawesome.com/b484666594.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/header.css">
-</head>
+    <link rel="stylesheet" href="style/footer.css">
 
-<body>
+<body onload="init()">
 
     <header>
         <nav class="navbar navbar-expand-lg">
@@ -35,8 +35,12 @@
                         <li class="nav-item">
                             <a class="nav-link active text-light" aria-current="page" href="./index.html">Inicio</a>
                         </li>
-    
-                        <li class="nav-item dropdown">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page"
+                                href="./telaProdutos.html">Produtos</a>
+                        </li>
+
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-light" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Produtos
@@ -44,35 +48,32 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Estoque</a></li>
                                 <li><a class="dropdown-item" href="#">Cadastrar</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Perto de você</a></li>
                             </ul>
                         </li>
-    
+     -->
                         <li class="nav-item">
                             <a class="nav-link text-light" href="./historico-reservas.html">Histórico de Reservas</a>
                         </li>
                     </ul>
                     <form id="form-pesquisa" class="d-flex search" role="search">
-                        <input id="inpt-pesquisa" class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                        <input id="inpt-pesquisa" class="form-control me-2" type="search" placeholder="Pesquisar"
+                            aria-label="Search">
                         <i class="fas fa-search"></i>
                     </form>
-                    <div class="caixa-perfil-notifications">
-                        <li class="nav-item dropdown">
+                    <div class="caixa-perfil-notifications mx-5">
+                        <li id="cx-usuario" class="nav-item dropdown me-2">
                             <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button"
-                                aria-expanded="false"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça
-                                    login</span></a>
+                                aria-expanded="false"><i class="fas fa-user"></i><span id="user-name"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="./perfil.html">Perfil Usuário</a></li>
+                                <li><a class="dropdown-item" href="./metricas.html">Métricas</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="./metricas.html.html">Métricas de Venda</a></li>
+                                <li><a class="dropdown-item" href="#">Sair</a></li>
                             </ul>
                         </li>
-    
+
                         <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                             <i class="fas fa-bell"></i> <span class="badge text-bg-secondary">4</span>
@@ -102,66 +103,49 @@
             </div>
         </div>
         <!---->
-      </header>
+    </header>
+    
 
     <main>
-        <div class="container py-5" style="background-color: #3F51B5;">
-            <div class="row mx-5 rounded-top-4 border-bottom border-dark">
-                <div class="col col-12 col-md-3 py-5">
-                    <img src="image/Perfil/Perfil.png" alt="Teste" class="user rounded-circle border border-black">
-                </div>
-                <div class="col col-md-5 py-5">
-                    <h5>Julia Saldanha</h5>
-                    <p><b>Código:</b> 20212-1112</p>
-                    <a href="#" class="text-danger">Alterar imagem do perfil</a>
-                </div>
-                <div class="col col-md-3 py-5">
-                    <i class="edit-icon fas fa-edit"></i>
-                </div>
-            </div>
-            <div class="row mx-5 py-3 rounded-bottom-4">
-                <div class="col col-12">
-                    <h2>Dados Pessoais:</h2>
-                    <form>
-                        <div class="row">
-                            <div class="col col-12 col-md-6 mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nome</label>
-                                <div class="col-sm-10">
-                                    <input type="text" readonly class="form-control" value="Julia Saldanha">
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-6 mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Sobrenome</label>
-                                <div class="col-sm-10">
-                                    <input type="text" readonly class="form-control" value="Julia Saldanha">
-                                </div>
-                            </div>
-                            <div class="col col-12 col-md-6 mb-3">
-                                <label for="exampleInputEmail1" class="form-label">CPF</label>
-                                <div class="col-sm-10">
-                                    <input type="text" readonly class="form-control" value="Julia Saldanha">
-                                </div>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="text" readonly class="form-control" id="staticEmail"
-                                        value="juliasaldanha@gmail.com">
-                                </div>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
-                            </div>
-                        </div>
-                </div>
-                </form>
+        <div class="container py-5" style="background-color: #3F51B5;" id="Perfil">
+        </div>
+        </form>
 
-            </div>
+        </div>
         </div>
 
         </div>
+
+        <div id="modalEdicao" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="#modalCriacao" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Alteração de Usuario</h5>
+                  <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="input-group mb-2">
+                      <input type="text" class="form-control m-2" id="nomeEdit" placeholder="Nome" aria-label="Nome">
+                      <input type="email" class="form-control m-2" id="emailEdit" placeholder="Email" aria-label="Email">
+                    </div>
+                    <div class="input-group">
+                      <input type="text" class="form-control m-2" id="telefoneEdit" placeholder="Telefone" aria-label="Telefone">
+                      <input type="password" class="form-control m-2" id="senhaEdit" placeholder="Senha" aria-label="Senha">
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" onclick="SalvarModalEdit()" class="btn btn-secondary">Salvar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
     </main>
+
 
     <footer class="text-light mt-3 pt-3 border-top rounded fixed.bottom">
         <div class="container-fluid py-3">
@@ -224,9 +208,16 @@
             &copy 2023 Copyright: <a href="#">Decoralita</a>
         </div>
     </footer>
-    
+
+    <script src="js/bibliotecas/jquery-3.7.0.min.js"></script>
     <script src="js/bibliotecas/cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_toastr.min.js"></script>
+    <script src="js/acessoDados/usuarios.js"></script>
     <script src="js/utils/testaLogin.js"></script>
-</body>
+    <script src="js/utils/controleAcesso.js"></script>
+
+    <script src="js/components/iconLoading/loadIcon.js"></script>
+    <script src="js/components/login/loginComponent.js"></script>
+    <script src="js/pages/TelaPerfil/perfil.js"></script>
+    </body>
 
 </html>

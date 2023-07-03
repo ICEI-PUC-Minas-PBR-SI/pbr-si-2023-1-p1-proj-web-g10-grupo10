@@ -40,8 +40,11 @@
                     <li class="nav-item">
                         <a class="nav-link active text-light" aria-current="page" href="./index.html">Inicio</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="./telaProdutos.html">Produtos</a>
+                    </li>
 
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Produtos
@@ -49,13 +52,9 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Estoque</a></li>
                             <li><a class="dropdown-item" href="#">Cadastrar</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Perto de você</a></li>
                         </ul>
                     </li>
-
+ -->
                     <li class="nav-item">
                         <a class="nav-link text-light" href="./historico-reservas.html">Histórico de Reservas</a>
                     </li>
@@ -64,19 +63,19 @@
                     <input id="inpt-pesquisa" class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
                     <i class="fas fa-search"></i>
                 </form>
-                <div class="caixa-perfil-notifications">
-                    <li class="nav-item dropdown">
-                        <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button"
-                            aria-expanded="false"><i class="fas fa-user"></i> <span>Olá visitante,<br> Faça
-                                login</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./perfil.html">Perfil Usuário</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="./metricas.html.html">Métricas de Venda</a></li>
-                        </ul>
-                    </li>
+                <div class="caixa-perfil-notifications mx-5">
+                  <li id="cx-usuario" class="nav-item dropdown me-2">
+                    <a href="#" class="text-decoration-none" data-bs-toggle="dropdown" role="button"
+                        aria-expanded="false"><i class="fas fa-user"></i><span id="user-name"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./perfil.html">Perfil Usuário</a></li>
+                        <li><a class="dropdown-item" href="./metricas.html">Métricas</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sair</a></li>
+                    </ul>
+                </li>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -157,6 +156,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
   <script src="js/bibliotecas/cdnjs.cloudflare.com_ajax_libs_toastr.js_latest_toastr.min.js"></script>
   <script src="js/utils/testaLogin.js"></script>
+  <script src="js/utils/controleAcesso.js"></script>
+  
+  <script src="js/components/iconLoading/loadIcon.js"></script>
+  <script src="js/components/login/loginComponent.js"></script>
   
   <script src="js/acessoDados/reservas.js"></script>
   <script type="module" src="js/metricasGrafico/metricas.js"></script>

@@ -1,5 +1,5 @@
 //GET /posts?title_like=server
-URL_BUSCADOR = "http://localhost:3000/produtos?nomeDaPeca_like=";
+URL_BUSCADOR = "https://api-autobook-production.up.railway.app/produtos?nomeDaPeca_like=";
 
 async function getProdutoBuscaLike(parametro) {
   try {

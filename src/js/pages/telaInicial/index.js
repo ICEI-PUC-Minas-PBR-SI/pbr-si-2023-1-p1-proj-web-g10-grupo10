@@ -1,5 +1,10 @@
-const produtosHTML = await getHTMLProdutos();
+// Inicia a funcao de loading antes da requisicao para api
 const caixaProdutos = $("#caixa-produtos");
+showLoadingIcon($(".prod-principais"));
+const produtosHTML = await getHTMLProdutos();
+// finaliza a funcao de loading apos a requisicao para api
+hideLoadingIcon();
+
 caixaProdutos.html(produtosHTML);
 
 
@@ -9,15 +14,14 @@ async function getHTMLProdutos() {
   let produtosHTML = '';
   
   produtos.forEach(produto => {
-    const ano = new Date(produto.ano).getFullYear();
     const strDisponivel = produto.quantidadeDisponivel > 0 ? "PRODUTO DISPONIVEL" : "PRODUTO INDISPONIVEL";
     produtosHTML += `
       <div class="col">
         <div class="card" id="prod-${produto.id}" data-bs-toggle="modal" data-bs-target="#produto_${produto.id}">
           <img class="card-img-top" src="${produto.imagem}" alt="${produto.nomeDaPeca}">
           <div class="card-body">
-            <h5 class="card-title">${produto.nomeDaPeca}</h5>
-            <p class="card-text">${produto.nomeDaPeca} de carro ${produto.carro}, modelo ${produto.modelo} da marca ${produto.marca}, do ano de ${ano}</p>
+            <h5 class="card-title">${produto.nomeDaPeca} ${produto.carro}</h5>
+            <p class="card-text">${produto.nomeDaPeca} de carro ${produto.carro}, modelo ${produto.modelo} da marca ${produto.marca}, do ano de ${produto.ano}</p>
             <a class="card-price stretched-link text-success">R$ ${produto.valor}</a>
           </div>
         </div>
@@ -36,7 +40,7 @@ async function getHTMLProdutos() {
                     <div class="container-corpo-modal">
                       <h4 class="title">${produto.nomeDaPeca}</h4>
                       <div class="cmp">
-                        <span><span class="fw-bold">Ano:</span> ${ano}</span>
+                        <span><span class="fw-bold">Ano:</span> ${produto.ano}</span>
                         <span><span class="fw-bold">Carro:</span> ${produto.carro}</span>
                       </div>
                       
@@ -75,3 +79,4 @@ async function getHTMLProdutos() {
     return produtosHTML;
     
 }
+

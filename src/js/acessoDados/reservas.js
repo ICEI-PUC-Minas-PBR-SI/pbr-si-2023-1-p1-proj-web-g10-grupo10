@@ -1,5 +1,5 @@
-const URL_RESERVAS = 'http://localhost:3000/reservas'
-const URL_RESERVAS_USUARIOS = 'http://localhost:3000/usuarios'
+const URL_RESERVAS = 'https://api-autobook-production.up.railway.app/reservas'
+const URL_RESERVAS_USUARIOS = 'https://api-autobook-production.up.railway.app/usuarios'
 
 // Metodo que retorna todos os reservas do banco
 async function getAllReservas() {
@@ -104,6 +104,16 @@ async function getReservasByLojaId(lojaId) {
 async function getReservasByLojaIdStatus(lojaId, status) {
     try {
         const response = await fetch(`${URL_RESERVAS}?lojaId=${lojaId}&statusPedido=${status}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Erro ao acessar banco:', error);
+    }
+}
+
+async function getReservasByUsuarioIdStatus(lojaId, status) {
+    try {
+        const response = await fetch(`${URL_RESERVAS}?usuarioId=${lojaId}&statusPedido=${status}`);
         const data = await response.json();
         return data;
     } catch (error) {
