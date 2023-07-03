@@ -1,0 +1,67 @@
+/*
+  Barra de navegação
+*/
+header nav{
+    padding: 0;
+}
+header nav .caixa-icone{
+    background-color: var(--cor-header-first);
+    width: 20%;
+    height: 100%;
+    min-height: 80px;
+}
+header nav .navbar-collapse{
+    height: 100%;
+    width: 80%;
+    min-height: 80px;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    background-color: var(--cor-header-second);
+}
+header nav .caixa-icone .navbar-brand img{
+    height: 70px;
+}
+
+header nav .search{
+    position: relative;
+    align-items: center;
+}
+header nav .search input{
+    width: 100%;
+}
+header nav .search i{
+    position: absolute;
+    right: 12px;
+}
+
+header nav .caixa-perfil-notifications{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+header nav .caixa-perfil-notifications li{
+    list-style: none;
+}
+header nav .caixa-perfil-notifications a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF;
+}
+header nav .caixa-perfil-notifications li ul li a{
+    color: black;
+}
+header nav .caixa-perfil-notifications a i{
+    font-size: 1.4em;
+}
+header nav .caixa-perfil-notifications a span{
+    font-size: 0.8em;
+}
+header nav .caixa-perfil-notifications button{
+    background-color: var(--cor-header-second);
+    border: 0;
+}
+
+/*
+  Barra de navegação FIM
+*/

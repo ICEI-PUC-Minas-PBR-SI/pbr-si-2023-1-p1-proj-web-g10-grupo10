@@ -1,0 +1,40 @@
+#modal-filtro .modal-content .modal-header h5 span{
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+#modal-filtro .modal-content .modal-body .form-group .label-principal{
+    color: black;
+    font-size: 1rem;
+    font-weight: 900;
+}
+#modal-filtro .modal-content .modal-body .form-group label{
+    color: black;
+}
+#modal-filtro .modal-content .modal-body .form-group input[type="date"]{
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+    min-height: 38px;
+}
+
+#modal-filtro .modal-content .modal-footer .btn-filtrar{
+    border-radius: 20px;
+    border: 1.73067px solid var(--color-btn-border);
+    background-color: var(--backgroud-color-btn);
+    padding: 5px 20px
+}
+.caixa-input-seach{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+}
+
+.caixa-input-seach i {
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    font-size: 1.2rem;
+}

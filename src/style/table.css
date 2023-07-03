@@ -1,0 +1,69 @@
+.component-tabela{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1800px;
+  margin-top: 30px;
+}
+.component-tabela .container-tabela{
+  width: 100%;
+  overflow-x: auto;
+}
+.component-tabela .container-tabela table{
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+.component-tabela .container-tabela table thead{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.component-tabela .container-tabela table thead th{
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+.component-tabela .container-tabela table tbody td{
+  padding: 1rem 2rem;
+  font-size: 0.8rem;
+}
+
+.component-tabela .container-tabela table tbody td .status{
+  border-radius: 24px;
+  padding: 0.2rem 1rem;
+  text-align: center;
+}
+.component-tabela .container-tabela table tbody td .status.sucess{
+  color: var(--color-success);
+  background-color: var(--color-success-light);
+}
+.component-tabela .container-tabela table tbody td .status.pending{
+  color: var(--color-warning);
+  background-color: var(--color-warning-light);
+}
+
+.component-tabela  .container-tabela table tbody td .status.canceled{
+  color: var(--color-danger);
+  background-color: var(--color-danger-light);
+}
+
+.component-tabela .container-tabela table tbody .table-line{
+  width: 100%;
+  border-bottom: 1px solid var(--border-color-table);
+}
+
+.component-tabela .container-tabela table tbody .table-line > .item-acoes{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.component-tabela .caixa-paginacao{
+  margin-top: 20px;
+}
+
+#imgTabelaProd {
+  max-width: 70px;
+  height: 60px;
+}
