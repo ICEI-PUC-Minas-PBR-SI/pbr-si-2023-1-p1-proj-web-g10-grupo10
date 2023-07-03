@@ -228,6 +228,15 @@
   <script type="module" src="js/pages/telaInicial/index.js"></script>
   <script src="js/components/busca/buscaComponent.js"></script>
   <script src="js/components/reserva/reserva.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let usuario = JSON.parse(localStorage.getItem('usuario'))
+      TestarVencimento(usuario.id)
+      recuperarNotificacao(usuario.id, usuario.tipoUsuario)
+    });
+
+  </script>
 </body>
 
 </html>
