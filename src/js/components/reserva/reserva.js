@@ -69,6 +69,14 @@ async function fazReserva(id, qtd, el){
   // Atualiza a quantidade disponivel do produto
     exibirNotificacao('Sucesso', 'Reserva feita com sucesso!', 'success');
 
+    const notificacao = {
+      usuarioId: produto.usuarioId,
+      reservaId: reserva.id,
+      mensagem: `O usuário ${user.nome} reservou ${qtd} do produto ${produto.nomeDaPeca}`
+    }
+
+    await createNotificacao(JSON.stringify(notificacao))
+
     produto.quantidadeDisponivel = parseFloat(produto.quantidadeDisponivel) - qtd;
     const isUpdateProduto = await updateProduto(produto, produto.id);
     
