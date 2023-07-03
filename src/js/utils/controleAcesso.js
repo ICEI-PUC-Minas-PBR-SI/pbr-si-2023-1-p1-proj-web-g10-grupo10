@@ -16,7 +16,7 @@ if(tipoUsuario == USER_NORMAL){
   })
   arrDropdownLinks.each( function(){
     if($(this).attr("href") == "./metricas.html"){
-      $(this).text("Minhas Compras");
+      $(this).text("Metricas de Compras");
     }
   });
   
