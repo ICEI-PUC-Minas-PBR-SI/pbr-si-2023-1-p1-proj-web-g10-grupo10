@@ -2,8 +2,6 @@
 const caixaProdutos = $("#caixa-produtos");
 showLoadingIcon($(".prod-principais"));
 const produtosHTML = await getHTMLProdutos();
-let usuario = JSON.parse(localStorage.getItem('usuario'))
-recuperarNotificacao(usuario.id,usuario.tipoUsuario)
 // finaliza a funcao de loading apos a requisicao para api
 hideLoadingIcon();
 
