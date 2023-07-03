@@ -6,8 +6,9 @@ gradient.addColorStop(1, '#66ff')
 
 const TIPO_USUARIO_LOJA = 1;
 const STATUS_CONCLUIDO = 1
+const usuario = JSON.parse(localStorage.getItem('usuario'));
+console.log(usuario);
 
-//const usuario = JSON.parse(localStorage.getItem('usuario'));
 const arrQtdReservasMes = await getQuantidadeReservasMes();
 
 let arrQuantidadeVendas = new Array(12);
@@ -17,7 +18,7 @@ for (let item in arrQtdReservasMes) {
 }
 console.log(arrQuantidadeVendas);
 
-const usuario = JSON.parse(localStorage.getItem('usuario'));
+
 async function getQuantidadeReservasMes() {
   const arrReservas = await getReservasByLojaIdStatus(usuario.id, STATUS_CONCLUIDO);
 

@@ -24,6 +24,7 @@ const usuario = JSON.parse(localStorage.getItem('usuario'));
 var tipoUsuario = usuario.tipoUsuario;
 const containerTabela = $('.container-tabela');
 
+showLoadingIcon(containerTabela);
 // armazena na variavel arrReservas todas reservas do usuario ou da loja
 const arrReservas = await getProdutosReservadosByUser(usuario.id);
 // monta tabela no html com as reservas do usuario ou da loja
@@ -48,6 +49,8 @@ async function montaTabelaReservas(arrReservas) {
     cabecalhoTabela.html(getCabecalhoTabelaReservas());
     corpoTabela.html(tbodyHtml);
     $("#tb-reservas").DataTable();
+    
+    hideLoadingIcon();
 }
 
 function getCabecalhoTabelaReservas(){
