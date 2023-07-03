@@ -110,3 +110,13 @@ async function getReservasByLojaIdStatus(lojaId, status) {
         console.error('Erro ao acessar banco:', error);
     }
 }
+
+async function getReservasByUsuarioIdStatus(lojaId, status) {
+    try {
+        const response = await fetch(`${URL_RESERVAS}?usuarioId=${lojaId}&statusPedido=${status}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Erro ao acessar banco:', error);
+    }
+}

@@ -20,7 +20,7 @@ async function getHTMLProdutos() {
         <div class="card" id="prod-${produto.id}" data-bs-toggle="modal" data-bs-target="#produto_${produto.id}">
           <img class="card-img-top" src="${produto.imagem}" alt="${produto.nomeDaPeca}">
           <div class="card-body">
-            <h5 class="card-title">${produto.nomeDaPeca}</h5>
+            <h5 class="card-title">${produto.nomeDaPeca} ${produto.carro}</h5>
             <p class="card-text">${produto.nomeDaPeca} de carro ${produto.carro}, modelo ${produto.modelo} da marca ${produto.marca}, do ano de ${produto.ano}</p>
             <a class="card-price stretched-link text-success">R$ ${produto.valor}</a>
           </div>
