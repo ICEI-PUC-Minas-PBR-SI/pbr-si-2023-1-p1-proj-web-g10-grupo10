@@ -63,30 +63,37 @@ async function fazReserva(id, qtd, el){
   
   isReservadoAnteriormente = verificaSeUsuarioJaReservouProduto(user.id, produto.id, arrReservas);
   if(isReservadoAnteriormente){
-    const created = await createReserva(reserva);
-    // Se a reserva foi criada com sucesso
-    if(created){
-      el.closest(".modal").modal("hide");
-    // Atualiza a quantidade disponivel do produto
-      exibirNotificacao('Sucesso', 'Reserva feita com sucesso!', 'success');
+      const created = await createReserva(reserva);
+      // Se a reserva foi criada com sucesso
+      if(created){
+        el.closest(".modal").modal("hide");
+      // Atualiza a quantidade disponivel do produto
+        exibirNotificacao('Sucesso', 'Reserva feita com sucesso!', 'success');
 
-      produto.quantidadeDisponivel = parseFloat(produto.quantidadeDisponivel) - qtd;
-      const isUpdateProduto = await updateProduto(produto, produto.id);
-      
-      if(isUpdateProduto){
-        exibirNotificacao('Sucesso', 'Quantidade de Produtos Atualizado com sucesso', 'success');
-      }
+        produto.quantidadeDisponivel = parseFloat(produto.quantidadeDisponivel) - qtd;
+        const isUpdateProduto = await updateProduto(produto, produto.id);
+        
+        if(isUpdateProduto){
+          exibirNotificacao('Sucesso', 'Quantidade de Produtos Atualizado com sucesso', 'success');
+        }
+        
+        const notificacao = {
+          usuarioId: produto.usuarioId,
+          reservaId: reserva.id,
+          mensagem: `O usuário ${user.nome} reservou ${qtd} do produto ${produto.nomeDaPeca}`
+        }
+        await createNotificacao(JSON.stringify(notificacao))
     }
     else{
       exibirNotificacao('Erro', 'Erro ao fazer reserva', 'error');
-    }  
+    }
+    
   }
   else{
     exibirNotificacao('Rervado Anteriormente', 'Voce nao pode reservar um produto que está pendente para ser retirado', 'warning');
   }
-  
-}
 
+}
 
 function verificaSeUsuarioJaReservouProduto(idUsuario, idProduto, arrReservas){
   const reservas = arrReservas.filter(reserva => reserva.usuarioId == idUsuario && reserva.produtoId == idProduto && reserva.statusPedido == RESERVADO);

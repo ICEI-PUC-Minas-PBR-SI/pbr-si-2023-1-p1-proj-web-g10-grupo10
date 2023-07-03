@@ -31,9 +31,11 @@ async function deleteNotificacao(id) {
         });
         // const data = await response.json();
         // return data;
-        location.reload()
+        // location.reload()
+        return true;
     } catch (error) {
         console.error('Erro ao acessar banco:', error);
+        return false;
     }
 }
 
@@ -49,7 +51,7 @@ async function createNotificacao(notificacao) {
         });
         // const data = await response.json();
         // return data;
-        location.reload()
+        //location.reload()
     } catch (error) {
         console.error('Erro ao acessar banco:', error);
     }
