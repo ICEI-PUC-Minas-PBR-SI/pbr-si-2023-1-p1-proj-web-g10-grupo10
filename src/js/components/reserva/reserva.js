@@ -61,23 +61,34 @@ async function fazReserva(id, qtd, el){
     ativo: 1
   };
   
-  
-  const created = await createReserva(reserva);
-  // Se a reserva foi criada com sucesso
-  if(created){
-    el.closest(".modal").modal("hide");
-  // Atualiza a quantidade disponivel do produto
-    exibirNotificacao('Sucesso', 'Reserva feita com sucesso!', 'success');
+  isReservadoAnteriormente = verificaSeUsuarioJaReservouProduto(user.id, produto.id, arrReservas);
+  if(isReservadoAnteriormente){
+    const created = await createReserva(reserva);
+    // Se a reserva foi criada com sucesso
+    if(created){
+      el.closest(".modal").modal("hide");
+    // Atualiza a quantidade disponivel do produto
+      exibirNotificacao('Sucesso', 'Reserva feita com sucesso!', 'success');
 
-    produto.quantidadeDisponivel = parseFloat(produto.quantidadeDisponivel) - qtd;
-    const isUpdateProduto = await updateProduto(produto, produto.id);
-    
-    if(isUpdateProduto){
-      exibirNotificacao('Sucesso', 'Quantidade de Produtos Atualizado com sucesso', 'success');
+      produto.quantidadeDisponivel = parseFloat(produto.quantidadeDisponivel) - qtd;
+      const isUpdateProduto = await updateProduto(produto, produto.id);
+      
+      if(isUpdateProduto){
+        exibirNotificacao('Sucesso', 'Quantidade de Produtos Atualizado com sucesso', 'success');
+      }
     }
+    else{
+      exibirNotificacao('Erro', 'Erro ao fazer reserva', 'error');
+    }  
   }
   else{
-    exibirNotificacao('Erro', 'Erro ao fazer reserva', 'error');
+    exibirNotificacao('Rervado Anteriormente', 'Voce nao pode reservar um produto que está pendente para ser retirado', 'warning');
   }
   
+}
+
+
+function verificaSeUsuarioJaReservouProduto(idUsuario, idProduto, arrReservas){
+  const reservas = arrReservas.filter(reserva => reserva.usuarioId == idUsuario && reserva.produtoId == idProduto && reserva.statusPedido == RESERVADO);
+  return reservas.length > 0;
 }

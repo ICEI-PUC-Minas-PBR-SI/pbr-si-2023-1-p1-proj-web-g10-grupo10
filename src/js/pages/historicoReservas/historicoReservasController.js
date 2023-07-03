@@ -77,7 +77,8 @@ async function getLinhaTabelaReservas(reserva){
 
     const tdNomeCliente = (tipoUsuario == TIPO_USER.loja) ? `<td>${usuarioDaReserva.nome}</td>` : '';
     // implementar funcao de desativar botao de concluir reserva e cancelar reserva quando o status for diferente de reservado
-    const desativado = (reserva.statusPedido != STATUS_RESERVA.reservado) ? 'disabled' : '';
+    const desativadoConfirmar = ((reserva.statusPedido != STATUS_RESERVA.reservado) || tipoUsuario == TIPO_USER.cliente) ? 'disabled' : '';
+    const desativadoCancelar = (reserva.statusPedido != STATUS_RESERVA.reservado) ? 'disabled' : '';
     const linha = `
             <tr class="table-line" id="reserva-${reserva.id}">
                 <td>${reserva.dataReserva}</td>
@@ -89,11 +90,11 @@ async function getLinhaTabelaReservas(reserva){
                 <td>${reserva.dataLimite}</td>
                 <td class="item-acoes">
                 <button class="btn btn-light btn-concluir" data-bs-toggle="modal"
-                    data-bs-target="#modalConcluirReserva" ${desativado} ><i class="fas fa-check"
+                    data-bs-target="#modalConcluirReserva" ${desativadoConfirmar} ><i class="fas fa-check"
                     style="color: #45af28;"></i></button>
                    
                 <button class="btn btn-light btn-cancel" data-bs-toggle="modal"
-                    data-bs-target="#modalCancelarReserva" ${desativado}><i class="fas fa-trash"
+                    data-bs-target="#modalCancelarReserva" ${desativadoCancelar}><i class="fas fa-trash"
                         style="color: #d92d20;"></i></button>
                     <button class="btn btn-light"><i class="fas fa-briefcase"></i></button>
                 </td>
@@ -112,10 +113,13 @@ $(document).on("submit", "#form-concluir-reserva", function(e){
     concluiReserva();
 })
 
+
 async function concluiReserva () {
     const idReserva = formConcluirReserva.attr('data-id-reserva');
+    const today = new Date();
     let novosDados = {
-        statusPedido: STATUS_RESERVA.concluido
+        statusPedido: STATUS_RESERVA.concluido,
+        dataLimite: today.toLocaleDateString()
     }
     
     const isUpdated = await updateReserva(novosDados, idReserva);
