@@ -36,7 +36,11 @@ formLogin.submit(async function (e) {
         console.log(usuario);
         const usuarioString = JSON.stringify(usuario)
         localStorage.setItem('usuario', usuarioString);
-        window.location.href = "index.html";
+        
+        if(usuario.tipoUsuario == 0)
+            window.location.href = "index.html";
+        else
+            window.location.href = "telaProdutos.html";
     }
     else{
         console.log("usuario nao existe");

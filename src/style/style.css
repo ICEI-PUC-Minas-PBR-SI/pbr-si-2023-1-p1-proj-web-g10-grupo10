@@ -67,3 +67,7 @@ main .container-busca-avançada .container-fluid{
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+#loading-icon{
+  margin-top: 5rem;
+}
