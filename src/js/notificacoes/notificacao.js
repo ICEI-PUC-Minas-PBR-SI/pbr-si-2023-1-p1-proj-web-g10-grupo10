@@ -42,13 +42,41 @@ async function recuperarNotificacao(userId,tipoUsuario){
     }
 }
 
-function excluirNotificacao(notId,idCard){
+async function excluirNotificacao(notId,idCard){
     var divElement = document.getElementById(idCard)
 
-    if(deleteNotificacao(notId) == true){
-        divElement.remove()
+    let aux = await deleteNotificacao(notId)
+
+    if(aux == true){
+        divElement.style.display = 'none';
     }
     else{
-
+        exibirNotificacao('Erro','Não foi possível excluir','error')
     }
+}
+
+async function TestarVencimento(userId){
+    let reservas = await getReservasByUserId(userId)
+
+    reservas.forEach(item => {
+        let partesData1 = item.dataLimite.split('/');
+        let data1 = new Date(partesData1[2], partesData1[1] - 1, partesData1[0]);
+        let dataAtual = new Date();
+
+        // Calcular a diferença em milissegundos entre as duas datas
+        let diffEmMilissegundos = Math.abs(dataAtual - data1);
+
+        // Converter a diferença em milissegundos para dias
+        let diffEmDias = Math.ceil(diffEmMilissegundos / (1000 * 60 * 60 * 24));
+
+        if(diffEmDias <= 2){
+            let notificacao = {
+                usuarioId: userId,
+                reservaId: item.id,
+                mensagem: `Uma de suas reservas vão vencer em breve!!`
+            }
+          
+            createNotificacao(JSON.stringify(notificacao))
+        }
+    })
 }
