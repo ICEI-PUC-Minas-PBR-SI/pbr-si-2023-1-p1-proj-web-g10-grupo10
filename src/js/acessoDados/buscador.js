@@ -1,5 +1,5 @@
 //GET /posts?title_like=server
-URL_BUSCADOR = "https://api-autobook-production.up.railway.app/produtos?nomeDaPeca_like=";
+URL_BUSCADOR = "https://mock-api-2jub.onrender.com/produtos?nomeDaPeca_like=";
 
 async function getProdutoBuscaLike(parametro) {
   try {

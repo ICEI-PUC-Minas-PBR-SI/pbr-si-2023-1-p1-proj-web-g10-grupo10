@@ -1,5 +1,5 @@
-const URL_NOTIFICACOES = 'https://api-autobook-production.up.railway.app/notificacoes'
-const URL_NOTIFICACOES_USUARIOS= 'https://api-autobook-production.up.railway.app/usuarios'
+const URL_NOTIFICACOES = 'https://mock-api-2jub.onrender.com/notificacoes'
+const URL_NOTIFICACOES_USUARIOS= 'https://mock-api-2jub.onrender.com/usuarios'
 
 // Metodo que retorna todos os notificacoes do banco
 async function getAllNotificacoes() {
